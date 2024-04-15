@@ -57,12 +57,28 @@ int main ()
             cout<<"-------------------------------------------------------------------"<<endl; break;
             case 5:
             cout<<"-------------------------------------------------------------------"<<endl;
-            cout<<"Mostrando elementos de la pila: "<<endl;
-            while (pila.empty() != true)
+            if (pila.empty() != true)
             {
-                cout<<pila.top();
-                cout<<endl;
-                pila.pop();
+                int j = pila.size();
+                int j2 = pila.size();
+                int elementos[j];
+                cout<<"Mostrando elementos de la pila: "<<endl;
+                while (pila.empty() != true)
+                {
+                    cout<<pila.top();
+                    cout<<endl;
+                    elementos[j] = pila.top();
+                    pila.pop();
+                    j--;
+                }
+                for (int i = 1 ; i <= j2 ; i++)
+                {
+                    pila.push(elementos[i]);
+                }
+            }
+             else
+            {
+                cout<<"La pila esta vacia, nada para mostrar"<<endl;
             }
             cout<<"-------------------------------------------------------------------"<<endl; break;
             case 6:
