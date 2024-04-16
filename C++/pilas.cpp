@@ -89,6 +89,6 @@ int main ()
             cout<<"Favor seleccionar solo del 1 al 6"<<endl; break;
         }
     }while(opciones != 6);
-
+    system("pause");
     return 0;
 }
