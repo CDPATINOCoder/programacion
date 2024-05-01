@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi primera página web</title>
+    <link rel="stylesheet" href="assets/estilos.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="home">Inicio</a>
+            <a href="about">Acerca de</a>
+            <a href="contact">Contacto</a>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <h1>HTML</h1>
+        <p>
+            HTML, que significa "Lenguaje de marcado de Hipertexto" en inglés (Hypertext Markup Language), es el lenguaje estándar utilizado para crear y diseñar páginas web. Es un lenguaje de marcado que define la estructura y el contenido de una página web utilizando una serie de etiquetas y elementos. 
+        </p>
+        <p>
+            El propósito principal de HTML es organizar el contenido de una página web de una manera estructurada y semántica, lo que significa que cada elemento HTML describe el tipo de contenido que contiene (por ejemplo. párrafos, encabezados, listas, enlaces, imágenes, formularios, etc.). Esto permite a los navegadores web interpretar correctamente la página y mostrarla de manera adecuada al usuario. 
+            HTML se compone de una serie de elementos que están delimitados por etiquetas. Cada etiqueta tiene una función específica y ppuede contener atributos para proporcionar información adicional sobre el elemento. Por ejemplo, la etiqueta "&lt;p&gt;" se utiliza para definir un párrafo, y la etiqueta "&lt;img&gt;" se utiliza para insertar imágenes en la página.
+        <p>    
+            En resumen, HTML es el lenguaje fundamental que se utiliza para crear páginas web y proporciona la estructrua básica y el contenido de una página, lo que permite a los desarrolladores web crear experiencias interactivas y multimedia para los usuarios en la web.
+        </p>
+        <hr>
+        <h2>Tipos de etiqueta HTML</h2>
+        <ol>
+            <li>
+                <h3>Etiquetas de texto básica:</h3>
+            </li>
+            <p>
+                Son utlizadas para resaltar textos de manera visible, estos son algunos de ellos;
+            </p>
+                <ol type="A">
+                    <li>
+                        &lt;p&gt; &lt;/p&gt;: Sirve para escribir un párrafo de texto.
+                        <br>
+                            &lt;p&gt;Esto es un párrafo&lt;/p&gt;
+                    </li>
+                    <li>
+                        &lt;b&gt; &lt;/b&gt;: Sirve para escribir un texto en negrita.
+                        <br>
+                            &lt;b&gt;<b>negrita</b>&lt;/b&gt;
+                    </li>
+                    <li>
+                        &lt;i&gt; &lt;/i&gt;: Sive para escribir texto en itálica.
+                        <br>
+                        &lt;i&gt;<i>itálica</i>&lt;/i&gt;
+                    </li>
+                    <li>
+                        &lt;u&gt; &lt;/u&gt;: Sirve para subrayar texto.
+                        <br>
+                        &lt;u&gt;<u>subrayado</u>&lt;/u&gt;
+                    </li>
+                    <li>
+                        &lt;sup&gt; &lt;sup/b&gt;: Sirve para expresar potencia:
+                        <br>
+                        &lt;sup&gt;2<sup>2</sup>&lt;/sup&gt;
+                    </li>
+                    <li>
+                        &lt;sub&gt; &lt;/sub&gt;: Sirve para colocar sub indice.
+                        <br>
+                        H&lt;sub&gt;2&lt;/sub&gt;O = H<sub>2</sub>O
+                    </li>
+                    <li>
+                        &lt;mark&gt; &lt;/mark&gt;: Sirve para marcar Texto.
+                        <br>
+                        &lt;mark&gt;<mark>Marcatexto</mark>&lt;/mark&gt;
+                    </li>
+                    <li>
+                        &lt;small&gt; &lt;/small&gt;: Sirve para que el texto escritó salga pequeño.
+                        <br>
+                        &lt;small&gt;Este texto se verá pequeño&lt;/small&gt; = <small>Este texto se verá pequeño</small>
+                    </li>
+                </ol>
+                <hr>
+                <li>
+                    <h3>Etiquetas de texto semántica: </h3>
+                </li>
+                <p>
+                    Son utilizadas para resaltar palabras o textos que son importantes también de manera visual, estos son algunos de ellos;
+                </p>
+                <ol type="A">
+                    <li>
+                        &lt;strong&gt; &lt;/strong&gt;: Sirve para resaltar un texto indicando que es importante "negrita"
+                        <br>
+                        &lt;strong&gt;texto importante&lt;/strong&gt; = <strong>texto importante</strong>
+                    </li>
+                    <li>
+                        &lt;em&gt; &lt;/em&gt;: Sirve para hacer enfásis en un texto.
+                        <br>
+                        &lt;strong&gt;enfasis&lt;/strong&gt;= <strong>enfasis</strong>
+                    </li>
+                    <li>
+                        &lt;blockquote&gt; &lt;/blockquote&gt;: Sirve para definir una cita larga.
+                        <br>
+                        &lt;blockquote&gt;La inteligencia de una persona no solo se mide a nivel cognitivo.&lt;/blockquote&gt; = <blockquote>La inteligencia de una persona no solo se mide a nivel congnitivo.</blockquote>
+                    </li>
+                    <li>
+                        &lt;cite&gt; &lt;/cite&gt;: Sirve para definir la fuente de cierta aclaración.
+                        <br>
+                        &lt;cite&gt;César Patiño&lt;/cite&gt; = <blockquote>La inteligencia de una persona no solo se mide a nivel cognitivo</blockquote>
+                        <cite>César Patiño</cite>
+                    </li>
+                </ol>
+                <hr>
+                <li>
+                    <h3>Etiquetas de salto: </h3>
+                </li>
+                <p>
+                    Son utilizadas para hacer saltos, como dar un enter en word. Estos son algunos de ellos;
+                </p>
+                    <ol type="A">
+                        <li>
+                            &lt;br&gt;: Sirve para dar un salto de linea, puedes hacer más de un salto de linea, abajo vemos el uso.
+                            <br>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. <b>&lt;br&gt;</b>
+                                <br>
+                                 Porro eius vitae cupiditate architecto hic sapiente veniam, assumenda dolorum ut deleniti, asperiores obcaecati maiores aliquam laborum ab voluptate est modi vel!
+                            </p>
+                        </li>
+                    </ol>
+                <hr>
+            <li>
+                <h3>Etiquetas de Formateo: </h3>
+            </li>
+                <p>
+                    Se utilizan para presentar y formatear texto de una manera específica que refleje su significado o propósito dentro del contenido de la página web. Estos son algunos de ellos;
+                </p>
+                <ol type="A">
+                    <li>
+                        &lt;pre&gt; &lt/pre&gt;: Esta etiqueta se utiliza para mostrar texto preformateado, conservando espacios en blanco y saltos de línea tal como están escritos en el código HTML.
+                        <br>
+                        <pre>
+&lt;pre&gt;
+aquí no dejo espacios
+    aquí hice una tabulación
+            aquí hice dos tabulaciones
+&lt;/pre&gt;
+                        </pre>
+                    </li>
+                    <li>
+                        &lt;code&gt; &lt;/code&gt;: Se utiliza para representar código fuente o fragmentos de código dentro de un párrafo de texto.
+                        <br>
+                        &lt;code&gt;console.log("Hello, world!");&lt;/code&gt; = <code>console.log("Hello, world!");</code>
+                    </li>
+                </ol>
+                <hr>
+                <li>
+                    <h3>Etiquetas de semánticas estructurales: </h3>
+                </li>
+                <p>
+                    Son etiquetas para definir el tipo de maquetación que tendrá el sitio web, estas etiquetas pueden ir una dentro de otra. Estas son algunas de ellas:
+                </p>
+                <ol type="A">
+                    <li>
+                        &lt;header&gt; &lt;/header&gt;: Es el encabezado de una página web, generalmente va información acorde al tema general como el titulo de la pagina o tambien menús interactivos, infos de contacto, etc.
+                        <pre>
+                            <code>
+&lt;header&gt;
+    &lt;h1&gt;HTML&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;a&gt;Inicio&lt;/a&gt;   
+        &lt;a&gt;Acerca De&lt;/a&gt;   
+        &lt;a&gt;Contacto&lt;/a&gt;   
+    &lt;/nav&gt;
+&lt;/header&gt;
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        &lt;div&gt; &lt;/div&gt;: Es una etiqueta contenedora que no tiene semántica.
+                    </li>
+                    <li>
+                        &lt;main&gt; &lt;/main&gt;: Define la sección principal del documento, aquí va el contenido que quieres mostrar en la web, sólo puede existir una etiqueta main por documento.
+                        <pre>
+                            <code>
+&lt;main&gt;
+    &lt;h1&gt;¿Qué es HTML?&lt;/h1&gt;
+    &lt;p&gt;
+    HTML es un lenguaje de marcado que posibilita definir la estructura de nuestro documento mediante etiquetas
+    &lt;/p&gt;
+    
+&lt;/main&gt;
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        &lt;footer&gt; &lt/footer&gt;: Pie de página de un sitio web o de una seccion.
+                        <pre>
+                            <code>
+&lt;footer&gt;
+    &lt;p&gt;2024 MI PRIMERA PAGINA WEB&lt;/p&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="/terms"&gt;Terminos de Servicio&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/privacy"&gt;Politicas de Privacidad&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="/sitemap"&gt;Mapa del Sitio&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+        &lt;div&gt;
+            &lt;a href="https://www.instagram.com/cesarpatino__?igsh=MTJ5ZGUyN3p3YnBtZQ=="&gt;Instagram&lt;/a&gt;
+            &lt;a href="https://www.facebook.com/uamericana/?locale=es_LA"&gt;Facebook&lt;/a&gt;
+        &lt;/div&gt;    
+&lt;/footer&gt;
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        &lt;nav&gt; &lt/nav&gt;: Sirve para representar una navegación.
+                        <pre>
+                            <code>
+&lt;nav&gt;
+    &lt;ul&gt;
+    &lt;li&gt;&lt;a href="/terms"&gt;Terminos de Servicio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/privacy"&gt;Politicas de Privacidad&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/sitemap"&gt;Mapa del Sitio&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        &lt;article&gt; &lt;/article&gt;: Sirve para representar una sección de autocontenido (se explica por si sola).
+                        <pre>
+                            <code>
+&lt;article&gt;
+    &lt;h2&gt;El futuro de la Inteligencia Artificial&lt;/h2&gt;
+    &lt;p&gt;La Inteligencia Artificial <strong>IA</strong> está transformando rapidamente diversos sectores...
+    &lt;a href="article1"&gt;Leer más&lt;/a&gt;
+&lt;/article&gt;
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        &lt;aside&gt; &lt;/aside&gt;: Sirve para representar un contenido complementario o secundario.
+                        <pre>
+                            <code>
+&lt;aside&gt;
+    &lt;h4&gt;Enlaces Relacionados&lt;/h4&gt;
+    &lt;ul&gt;
+        &lt;a href="article1"&gt;Articulo 1&lt;/a&gt;
+        &lt;a href="article2"&gt;Articulo 2&lt;/a&gt;
+        &lt;a href="article3"&gt;Articulo 3&lt;/a&gt;
+    &lt;/ul&gt;
+&lt;/aside&gt;
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        &lt;section&gt; &lt;/section&gt: Representa una sección de contenido generico.
+                        <pre>
+                            <code>
+&lt;section&gt;
+    &lt;h3&gt;Sección 1&lt;/h3&gt;
+    &lt;article&gt;
+        &lt;p&gt;Contenido del articulo...&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/section&gt;
+&lt;section&gt;
+    &lt;h3&gt;Sección 2&lt;/h3&gt;
+    &lt;article&gt;
+        &lt;p&gt;Contenido del articulo...&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/section&gt;
+                            </code>
+                        </pre>
+                    </li>
+                    <li>
+                        &lt;adress&gt; &lt;/adress&gt;: Respresenta una dirección fisica.
+                        <pre>
+                            <code>
+&lt;footer&gt;
+    &lt;adress&gt;
+        &lt;div&gt;
+            Contacto: &lt;a href="cesardavidpatinovera@gmail.com"&gt;cesardavidpatinovera@gmail.com&lt/a&gt;
+            Telefono: 0981645262
+            Dirección: Gral elizardo aquino km 25, Limpio, Paraguay
+        &lt;/div&gt;
+    &lt;/adress&gt;
+&lt;/footer&gt;
+                            </code>
+                        </pre>
+                    </li>
+                </ol>
+                <hr>
+                <li>
+                    <h3>Etiquetas de bloque VS Etiquetas de linea</h3>
+                </li>
+                <p>
+                    La etiqueta de bloque por preferencia es la &lt;div&gt;, una etiqueta de bloque es aquella que genera un salto de linea automaticamente luego de cerrarse.
+                </p> 
+                <p>
+                    Y la etiqueta de linea por excelencia es la &lt;span&gt;, una etiqueta de linea sólo ocupa el espacio necesario que tiene su contenido.
+                </p>  
+                <hr>
+                <li>
+                    <h3>Imágenes</h3>
+                </li>
+                    <p>
+                        Esta etiqueta no contiene una de cierre, sirve para adjuntar una imagen dentro de la página web, lleva atributos como: "src" y "alt". La manera de usar es &lt;img src="ruta de la imagen" alt="nombre de la imagen"&gt;
+                    </p>
+                        <img src="img/periodic-table-of-html-elements.png" alt="tabla periodica de elementos HTML">
+                        <img src="img/giphy.gif" alt="pedro pedro pedro">
+                        <img src="img/gato.gif" alt="gato dando beso">
+                <hr>
+                <li>
+                    <h3>Figuras</h3>
+                </li>
+                <p>
+                    Es una etiqueta de tipo semántica, sirve para adjuntar generalmente imagenes que hacen referencia al contenido del que se está hablando. Esta es la manera de uso: 
+                </p>
+                <pre>
+                    <code>
+&lt;figure&gt;
+    &lt;img src="ruta de la imagen" alt="nombre descriptivo"&gt;
+    &lt;figcaption&gt;nombre descriptivo&lt;/figcaption&gt;
+&lt;/figure&gt;
+                    </code>
+                </pre>
+                <figure>
+                    <img src="img/periodic-table-of-html-elements.png" alt="tabla periodica de los etiquetas HTML">
+                    <figure>tabla periodica de las etiquetas HTML</figure>
+                </figure>
+                <hr>
+                <li>
+                    <h3>Listas</h3>
+                    <p>
+                        Existen dos tipos de listas en HTML:
+                    </p>
+                    <ol type="A">
+                        <li>
+                            Listas Ordenadas: Se expresan de esta manera &lt;ol&gt; &lt;/ol&gt;, esta etiqueta ordena de manera predeterminada del 1 hasta N el cual es la cantidad de elementos que vas a citar, pueden tener atributos como type="A" (ordenar De A hasta indefinido), reversed(se ordena de mayor a menor), etc. <br>
+                            <p>
+                                Como ejemplo podemos tener:
+                                <pre>
+                                    <code>
+&lt;ol&gt;
+    &lt;li&gt;Tema 1&lt;/li&gt;
+    &lt;li&gt;Tema 2&lt;/li&gt;
+    &lt;li&gt;Tema 3&lt;/li&gt;
+    &lt;li&gt;Tema 4&lt;/li&gt;
+&lt;/ol&gt;                                        
+                                    </code>
+                                </pre>
+                            </p>
+                        </li>
+                        <li>
+                            Listas Desordenadas: Se expresan de esta manera &lt;ul&gt; &lt;/ul&gt;, esta etiqueta ordena de manera predeterminada con una viñeta, puede tener atributos como type="disc" (viñeta), type="square" (viñeta cuadrada), type="circle" (viñeta circulo sin relleno en negro), etc.
+                            <p>
+                                Como ejemplo podemos tener:
+                                <pre>
+                                    <code>
+&lt;ul&gt;
+    &lt;li&gt;Tema &lt;/li&gt;
+    &lt;li&gt;Tema &lt;/li&gt;
+    &lt;li&gt;Tema &lt;/li&gt;
+    &lt;li&gt;Tema &lt;/li&gt;
+&lt;/ul&gt;                                                                               
+                                    </code>
+                                </pre>
+                            </p>
+                        </li>
+                    </ol>
+                </li>
+                <hr>
+                <li>
+                    <h3>videos</h3>
+                    <p>
+                        Los videos en una página web funcionan casi como la etiqueta img, se coloca de esta manera &lt;video src="ruta del video"&gt;
+                    </p>
+                    <p>
+                        podemos utilizar atributos como autoplay (para que se reproduzca de manera automatica), muted (para que no se reproduzca con audio), controls (para acceder a los controles del video como play, volumen o pantalla completa), loop (para que al terminar el video se reproduzca de nuevo), etc.
+                    </p>
+                    <video src="video/content_warning_9c134357.webm" autoplay muted controls loop alt="video viral"></video>
+                </li>
+                <hr>
+                <li>
+                    <h3>audios</h3>
+                    <p>
+                        Los videos en html también funcionan similar a un video o una img, de esta manera podemos invocarlo &lt;audio src="ruta del audio"&gt;
+                    </p>
+                    <p>
+                        Los audios por defecto no se ven dentro de la página web, solo se escucha, si queremos ver el audio o acceder a los controles lo hacemos también con el atributo control. Probamos con pistas de audios.
+                    </p>
+                    <audio src="audio/Bass.mp3" autoplay muted loop controls preload></audio>
+                    <audio src="audio/Cymbals.mp3" controls autoplay muted loop></audio>
+                    <audio src="audio/Guitar.mp3" controls muted loop autoplay></audio>
+                    <audio src="audio/Extras.mp3" controls muted loop autoplay></audio>
+                    <audio src="audio/Kick.mp3" controls muted loop autoplay></audio>
+                    <audio src="audio/Snare.mp3" controls muted loop autoplay ></audio>
+                    <audio src="audio/Vocals.mp3" controls muted loop autoplay></audio>
+                </li>
+                <hr>
+                <li>
+                    <h3>Vectores</h3>
+                        <pre>
+                            <code>
+&lt;img src="ruta de la imagen con terminacion .svg"&gt;
+                            </code>
+                        </pre>
+                    <p>
+                        Las imagenes vectoriales son imagenes que no pierden calidad, es decir que no llegan a ser pixeles. Estas páginas son algunas páginas web para acceder a imagenes vectoriales de libre uso:
+                    </p>
+                    <dl>
+                        <dt>css.gg</dt>
+                            <dd>
+                            Aquí podemos encontrar algunas imagenes populares en formato css (codigo), o svg (vectorial).
+                            </dd>
+                        <dt>svg repo</dt>
+                            <dd>
+                                Aquí tambien encontramos algunas imagenes populares en formato css (codigo), svg(vectorial).
+                            </dd>
+                    </dl>
+                </li>
+                <hr>
+                <li>
+                    <h3>Tablas</h3>
+                    <p>
+                        Las tablas sirven para clasificar ciertas cosas en filas y columnas como en un excel.
+                    </p>
+                </li>
+                <hr>
+        </ol>
+    </main>
+    <footer>
+        <p>contacto: cesardavidpatinovera@gmail.com</p>
+        <p>&copy;2024 MI PRIMERA PAGINA WEB</p>
+        <nav>
+            <ul>
+                <li><a href="/terms">Terminos de Servicio</a></li>
+                <li><a href="/privacy">Politicas de Privacidad</a></li>
+                <li><a href="/moreinfo">Más Informacion</a></li>
+            </ul>
+        </nav>
+        <adress>
+            <div>
+                Contacto: <a href="cesardavidpatinovera@gmail.com">cesardavidpatinovera@gmail.com</a>
+                <img src="img/instagram.svg" alt="instagram">
+                Instagram: <a href="https://www.instagram.com/cesarpatino__?igsh=MTJ5ZGUyN3p3YnBtZQ==">cesarpatino__</a>
+                Telefono: 0981645262
+                Dirección: Gral elizardo aquino km 25, Limpio, Paraguay
+            </div>
+        </adress>
+    </footer>
+    <script src="assets/codigos.js"></script>
+</body>
+</html> 
