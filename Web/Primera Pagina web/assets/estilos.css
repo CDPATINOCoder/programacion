@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 h1{
     color: red;
 }
@@ -6,7 +9,11 @@ h3{
     color: orange;
 }
 
-img{
+img, video{
     max-width: 100%;
     height: auto;
+}
+iframe{
+    width: 100%;
+    height: 400px;
 }

@@ -18,7 +18,25 @@
     </header>
     <hr>
     <main>
-        <h1>HTML</h1>
+        <h2 id="temario">Temario HTML</h2>
+        <ul>
+            <li><a href="index.html#html">Concepto</a></li>
+            <li><a href="index.html#tiposetiqueta">Tipos de Etiquetas</a></li>
+            <ol>
+                <li><a href="index.html#textobasica">Etiquetas de texto básicas </a></li>
+                <li><a href="index.html#textosemantica">Etiquetas de texto semántica</a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+            </ol>
+        </ul>
+        <h1 id="html">HTML</h1>
         <p>
             HTML, que significa "Lenguaje de marcado de Hipertexto" en inglés (Hypertext Markup Language), es el
             lenguaje estándar utilizado para crear y diseñar páginas web. Es un lenguaje de marcado que define la
@@ -39,10 +57,10 @@
             interactivas y multimedia para los usuarios en la web.
         </p>
         <hr>
-        <h2>Tipos de etiqueta HTML</h2>
+        <h2 id="tiposetiqueta">Tipos de etiqueta HTML</h2>
         <ol>
             <li>
-                <h3>Etiquetas de texto básica:</h3>
+                <h3 id="textobasica">Etiquetas de texto básica:</h3>
             </li>
             <p>
                 Son utlizadas para resaltar textos de manera visible, estos son algunos de ellos;
@@ -89,9 +107,10 @@
                     &lt;small&gt;Este texto se verá pequeño&lt;/small&gt; = <small>Este texto se verá pequeño</small>
                 </li>
             </ol>
+            <a href="index.html#temario">👆</a>
             <hr>
             <li>
-                <h3>Etiquetas de texto semántica: </h3>
+                <h3 id="textosemantica">Etiquetas de texto semántica: </h3>
             </li>
             <p>
                 Son utilizadas para resaltar palabras o textos que son importantes también de manera visual, estos son
@@ -416,7 +435,7 @@ aquí no dejo espacios
                     que no se reproduzca con audio), controls (para acceder a los controles del video como play, volumen
                     o pantalla completa), loop (para que al terminar el video se reproduzca de nuevo), etc.
                 </p>
-                <video src="video/content_warning_9c134357.webm" autoplay muted controls loop alt="video viral"></video>
+                <video src="video/content_warning_9c134357.webm" muted controls poster="img/content-warning-image.avif" alt="video viral"></video>
             </li>
             <hr>
             <li>
@@ -471,6 +490,7 @@ aquí no dejo espacios
                 </p>
                 <pre>
                         <code>
+&lt;table&gt;
 &lt;tr&gt;
     &lt;td&gt;Nombre&lt;/td&gt;
     &lt;td&gt;Recompensa&lt;/td&gt;
@@ -491,8 +511,67 @@ aquí no dejo espacios
     &lt;td&gt;1.700.000&lt;/td&gt;
     &lt;td&gt;Mera Mera&lt;/td&gt;        
 &lt;/tr&gt;
+&lt;/table&gt;
                         </code>
                     </pre>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="3">Los Hermanos Pirata</th>
+                            </tr>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Recompensa</th>
+                                <th>Fruta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Monkey D. Luffy</td>
+                                <td>3.000.000</td>
+                                <td>Gomu Gomu</td>
+                            </tr>
+                            <tr>
+                                <td>Portgas D. Ace</td>
+                                <td>500.000</td>
+                                <td>Mera Mera</td>
+                            </tr>
+                            <tr>
+                                <td>Sabo</td>
+                                <td>1.700.000</td>
+                                <td>Mera Mera</td>        
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <td colspan="3"><small>datos completamente actualizados</small></td>
+                        </tfoot>
+                    </table>
+            </li>
+            <hr>
+            <li>
+                <h3>Enlaces</h3>
+                <p>
+                    Los enlaces sirven para redireccionar a cierto vinculo web que se desea ingresar, se representa con la etiqueta &lt;a&gt; junto al atributo href="", si quieres abrir un enlace externo usaremos el atributo target="_blank"  y si el enlace no tiene mucha relación con nuestra pagina usamos el atributo rel="nofollow"
+                </p>
+                <p>
+                    si queremos poner inforamción de contacto y que la web nos lo abra con nuestra aplicacion predeterminada como por ejemplo con whatsapp usaremos esto:
+                    &lt;a href="https://wa.me/595981645262?&text=Hola cómo estás"&gt;whatsapp&lt;/a&gt; el simbolo de pregunta quiere decir que podemos agregar otro valor.
+                </p>
+                <p>
+                    Para un correo podemos colocar &lt;a href="mailto:cesardavidpatinovera@gmail.com"&gt;correo&lt;/a&gt;
+                </p>
+                <a href="enlaces.html" target="_blank">ir al enlace</a>
+                <br> <br>
+                <a href="https://www.instagram.com/cesarpatino__/" target="_blank"><img src="img/instagram.svg" alt="ir a mi instagram"></a>
+            </li>
+            <hr>
+            <li>
+                <h3>Elementos Interactivos</h3>
+
+            </li>
+            <hr>
+            <li>
+                <h3>Inputs</h3>
             </li>
             <hr>
         </ol>
@@ -509,10 +588,9 @@ aquí no dejo espacios
         </nav>
         <adress>
             <div>
-                Contacto: <a href="cesardavidpatinovera@gmail.com">cesardavidpatinovera@gmail.com</a>
-                <img src="img/instagram.svg" alt="instagram">
-                Instagram: <a href="https://www.instagram.com/cesarpatino__?igsh=MTJ5ZGUyN3p3YnBtZQ==">cesarpatino__</a>
-                Telefono: 0981645262
+                Contacto: <a href="mailto:cesardavidpatinovera@gmail.com" target="_blank">cesardavidpatinovera@gmail.com</a>
+                Instagram: <a href="https://www.instagram.com/cesarpatino__?igsh=MTJ5ZGUyN3p3YnBtZQ==" target="_blank"><img src="img/instagram.svg" alt="instagram">cesarpatino__</a>
+                Telefono: <a href="tel:595981645262">0981645262</a> <a href="https://wa.me/595981645262?&text=Buenas, me interesa esta página web" target="_blank">whatsapp</a>
                 Dirección: Gral elizardo aquino km 25, Limpio, Paraguay
             </div>
         </adress>
