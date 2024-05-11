@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Ejercicio de Formularios</h1>
+    </header>
+    <main>
+        <form action="https://formsubmit.co/cesardavidpatinovera@gmail.com" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre" placeholder="ingrese su nombre" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$" title="usar solo letras" required>
+            <br>
+            <label for="apellido">Apellido:</label>
+            <input type="text" name="last_name" id="apellido" placeholder="ingrese su apellido" required>
+            <br>
+            <label for="telefono">Telefono:</label>
+            <input type="tel" name="telefono" id="telefono" placeholder="ingrese su numero de telefono" required>
+            <br>
+            <label for="correo">Correo:</label>
+            <input type="email" name="email" id="correo" placeholder="correo electronico" pattern="^(\w+[/./-]?){1,}@[a-z]+[/.]\w{2,}$" title="formato invalido" required>
+            <br>
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" name="city" id="ciudad" placeholder="ingrese su ciudad" required>
+            <br>
+            <label for="usuario">Nombre de usuario:</label>
+            <input type="text" name="username" id="usuario" placeholder="ingrese su nuevo usuario" required>
+            <br>
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" name="password" id="contraseña" placeholder="ingrese su nueva contraseña" required>
+            <br>
+            <label for="contraseña">Confirmar Contraseña:</label>
+            <input type="password" name="password" id="contraseña" placeholder="ingreselo de nuevo" required>
+            <p>Marcar algunos intereses:</p>
+            <label>
+                <input type="checkbox" name="intereses" value="deportes">
+                Deportes
+            </label>
+            <label>
+                <input type="checkbox" name="intereses" value="politica">
+                Politica
+            </label>
+            <label>
+             <input type="checkbox" name="intereses" value="matematicas">
+                Matemáticas
+            </label>
+            <label>
+                <input type="checkbox" name="intereses" value="Ecologia">
+                Ecologia
+            </label>
+            <label>
+                <input type="checkbox" name="intereses" value="Ciencia">
+                Ciencia
+            </label>
+            <label>
+                <input type="checkbox" name="intereses" value="otros">
+                Otros...
+            </label>
+            <p>Rango de edad:</p>
+            <label>
+                <input type="radio" name="edad" value="mayor" required>
+                Menor de edad
+            </label>
+            <label>
+                <input type="radio" name="edad" value="menor">
+                Mayor de edad
+            </label>
+            <p>Color favorito:</p>
+            <input type="color" name="color">
+            <p>Idioma nativo:</p>
+            <select name="idioma" required>
+                <option value="">Elige una opción</option>
+                <option value="español">Español</option>
+                <option value="ingles">Ingles</option>
+                <option value="portugues">Portugues</option>
+                <option value="frances">frances</option>
+            </select>
+            <p>fecha de nacimiento:</p>
+            <input type="date" name="fecha_nacimiento" required>
+            <br>
+            <p>Qué es lo que espera de esta página web?</p>
+            <textarea name="messege" id="mensaje" cols="80" rows="5"></textarea>
+            <br>
+            <input type="submit" value="enviar registro">
+            <br>
+            <input type="reset">
+        </form>
+    </main>
+    <footer>
+        <p><small>&copf;Formulario hecho por César Patiño</small></p>
+    </footer>
+</body>
+</html>
