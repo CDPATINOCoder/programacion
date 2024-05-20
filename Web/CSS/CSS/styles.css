@@ -1,0 +1,31 @@
+h1{
+    color: brown;
+}
+
+h2{
+    color: burlywood;
+}
+
+.text-20{
+    font-size: 20px;
+}
+
+.text-25{
+    font-size: 25px;
+}
+
+.bg-blue{
+    background-color: blue;
+}
+
+.bg-red{
+    background-color: red;
+}
+
+.text-black{
+    color: black;
+}
+
+.text-white{
+    color: white;
+}
