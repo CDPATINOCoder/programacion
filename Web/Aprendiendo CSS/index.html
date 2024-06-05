@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de CSS</title>
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <main>
+        <section id="temario">
+            <h1>Temario</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html#concepto-css">Aprendiendo CSS</a></li>
+                    <li><a href="index.html#selectores-basicos">Selectores Básicos</a></li>
+                    <li><a href="index.html#selectores-avanzados">Selectores Avanzados</a></li>
+                    <li><a href="index.html#pseudoclases">Pseudoclases</a></li>
+                    <li><a href="index.html#pseudoelementos">Pseudoelementos</a></li>
+                    <li><a href="index.html#agrupacion-de-selectores">Agrupación De Selectores</a></li>
+                    <li><a href="index.html#algoritmo-css">El algoritmo de css</a></li>
+                    <li><a href="index.html#reseteo-y-normalizacion">Reseteo y Normalización de Estilos</a></li>
+                    <li><a href="index.html#prefijos-de-los-navegadores">Prefijos de los Navegadores</a></li>
+                    <li><a href="index.html#modelo-de-caja">Modelo de Caja</a></li>
+                    <li><a href="index.html#cajasdelinea-vs-cajasdebloque">Cajas de Linea vs Cajas de Bloque</a></li>
+                    <li><a href="index.html#propiedad-display">Display</a></li>
+                    <li><a href="index.html#propiedad-visibility">Visibility</a></li>
+                    <li><a href="index.html#propiedad-overflow">Overflow</a></li>
+                    <li><a href="index.html#tamano-de-caja">Propiedad box-sizing</a></li>
+                    <li><a href="index.html#propiedad-float-y-clear">Propiedad Float y Clear</a></li>
+                    <li><a href="index.html#colapso-de-margenes">Colapso de margenes</a></li>
+                    <li><a href="index.html#centrado-de-cajas">Centrado de Cajas</a></li>
+                </ul>
+            </nav>
+            <hr>
+        </section>
+        <section id="concepto-css">
+            <article>
+                <header>
+                    <h2>Aprendiendo CSS</h2>
+                </header>
+                    <p class="text-20 bg-blue text-white">
+                        CSS (Cascading Style Sheets) es un lenguaje de diseño utilizado para describir la presentación de un documento escrito en HTML o XML. Mientras que HTML estructura el contenido y define los elementos que componen una página web, CSS se encarga de la apariencia visual de esos elementos, como colores, fuentes, espaciamiento, y disposición en la pantalla.
+                    </p>
+                    <p class="text-20 bg-blue text-white">
+                        Algo muy importante que debemos de saber es que una regla CSS consta de dos partes el <strong>"selector"</strong> y el <strong>"bloque de declaraciones"</strong>.
+                    </p>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="selectores-basicos">
+            <article class="selectores-basicos">
+                <header>
+                    <h2>Selectores Básicos</h2>
+                </header>
+                    <p class="text-25 bg-red text-black">
+                        Los selectores básicos son los que se utilizan para seleccionar elementos HTML. Estos son 3 de los selectores más comunes:
+                    </p>
+                    <section>
+                        <h3>Selector De Tipo</h3>
+                        <p>
+                            Este selector se utiliza para seleccionar todos los elementos de un tipo específico. Por ejemplo, si queremos seleccionar todos los elementos de tipo <strong>&lt;p&gt;</strong> en nuestro documento, podemos utilizar el siguiente selector:
+                        </p>
+                        <pre>
+                            <code>
+                                p {
+                                    color: red;
+                                }
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>Selector De Clase</h3>
+                        <p>
+                            Este selector se utiliza para seleccionar todos los elementos que tienen una clase específica. Por ejemplo, si queremos seleccionar todos los elementos con la clase <strong>"texto-rojo"</strong> en nuestro documento, podemos utilizar el siguiente selector:
+                        </p>
+                        <pre>
+                            <code>
+                                .texto-rojo {
+                                    color: red;
+                                }
+                            </code>
+                        </pre>
+                    </section>
+                    <section>
+                        <h3>Selector De ID</h3>
+                        <p>
+                            Este selector se utiliza para seleccionar un único elemento que tiene un ID específico. Por ejemplo, si queremos seleccionar el elemento con el ID <strong>"titulo"</strong> en nuestro documento, podemos utilizar el siguiente selector:
+                        </p>
+                        <p>
+                            <pre>
+                                <code>
+                                    #titulo {
+                                        font-size: 24px;
+                                    }
+                                </code>
+                            </pre>
+                        </p>
+                    </section>
+                </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="selectores-avanzados">
+            <article class="selectores-avanzados">
+                <header>
+                    <h2>Selectores Avanzados</h2>
+                </header>
+                <p>
+                    Los selectores avanzados son los que se utilizan para seleccionar elementos HTML de manera más específica. Algunos de los selectores avanzados más comunes son:
+                </p>
+                <section>
+                    <h3>Selector De Hijos Directos</h3>
+                    <p>
+                        Este selector se utiliza para seleccionar los elementos que son hijos directos de otro elemento. Por ejemplo, si queremos seleccionar todos los elementos <strong>&lt;p&gt;</strong> que son hijos directos de un elemento <strong>&lt;div&gt;</strong>, podemos utilizar el siguiente selector:
+                    </p>
+                    <pre>
+                        <code>
+                            div &gt; p {
+                                color: blue;
+                            }
+                        </code>
+                    </pre>
+                    <p>
+                        Otro ejemplo tenemos esta lista:
+                        <ul class="selector-hijo-directo">
+                            <li><b>Elemento 1</b></li>
+                            <li><b>Elemento 2</b></li>
+                            <li><b>Elemento 3</b></li>
+                            <li><b>Elemento 4</b></li>
+                        </ul>
+                    </p>
+                    <p>
+                        Si queremos seleccionar todos los elementos que son hijos directos de la lista &lt;ul&gt;, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .selector-hijo-directo &gt; li {
+                                    color: azure;
+                                    background-color: red;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Para decir que un elemento o varios elementos son hijos directos de un elemento este debe de estar inmediatamente después del elemento padre.
+                    </p>
+                </section>
+                <section>
+                    <h3>Selector De Hijos Descendientes</h3>
+                    <p>
+                        Este selector se utiliza para seleccionar los elementos que son descendientes de otro elemento. Por ejemplo, si queremos seleccionar todos los elementos <strong>&lt;p&gt;</strong> que son descendientes de un elemento <strong>&lt;div&gt;</strong>, podemos utilizar el siguiente selector:
+                    </p>
+                    <pre>
+                        <code>
+                            div p {
+                                color: green;
+                            }
+                        </code>
+                    </pre>
+                    <p>
+                        Otro ejemplo tenemos esta lista:
+                        <ul class="selector-hijo-descendiente">
+                            <li><b>Elemento 1</b></li>
+                            <li><b>Elemento 2</b></li>
+                            <li><b>Elemento 3</b></li>
+                            <li><b>Elemento 4</b></li>
+                        </ul>
+                    </p>
+                    <p>
+                        Si queremos seleccionar todos los elementos que son descendientes de la lista &lt;ul&gt;, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .selector-hijo-descendiente li {
+                                    color: yellow;
+                                    background-color: blue;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Para decir que un elemento o varios elementos son descendientes de un elemento este puede estar en cualquier parte del documento.
+                    </p>
+                </section>
+                <section>
+                    <h3>Selector De Hermanos General</h3>
+                    <p>
+                        Este selector se utiliza para seleccionar los elementos que son hermanos de otro elemento. Por ejemplo tenemos esta lista:
+                        <ul>
+                            <li><b>Elemento 1</b></li>
+                            <li class="selector-hermano-general"><b>Elemento 2</b></li>
+                            <li><b>Elemento 3</b></li>
+                            <li><b>Elemento 4</b></li>
+                        </ul>
+                    </p>
+                    <p>
+                        Si queremos seleccionar todos los elementos que son hermanos del elemento 2 &lt;li&gt;, podemos utilizar el siguiente selector:
+                    </p>
+                    <pre>
+                        <code>
+                            .selector-hermano-general ~ li {
+                                color: aqua;
+                            }
+                        </code>
+                    </pre>
+                    <p>
+                        Para decir que un elemento o varios elementos son hermanos de un elemento este debe de estar después del elemento padre.
+                    </p>
+                    <h3>Selector De Hermanos Adyacentes</h3>
+                    <p>
+                        Este selector se utiliza para seleccionar los elementos que son hermanos adyacentes de otro elemento. Por ejemplo tenemos esta lista:
+                        <ul>
+                            <li><b>Elemento 1</b></li>
+                            <li class="selector-hermano-adyacente"><b>Elemento 2</b></li>
+                            <li><b>Elemento 3</b></li>
+                            <li><b>Elemento 4</b></li>
+                        </ul>
+                    </p>
+                    <p>
+                        Si queremos seleccionar todos los elementos que son hermanos adyacentes del elemento 2 &lt;li&gt;, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .selector-hermano-adyacente + li {
+                                    color: fuchsia;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Para decir que un elemento o varios elementos son hermanos adyacentes de un elemento este debe de estar inmediatamente después del elemento padre. 
+                    </p>
+                </section>
+                <section>
+                    <h3>Selector De Atributos</h3>
+                    <p>
+                        Este selector se utiliza para seleccionar los elementos que tienen un atributo específico. Por ejemplo, si queremos seleccionar todos los elementos con el atributo <strong>"href"</strong> en nuestro documento, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                [href] {
+                                    color: purple;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Otro ejemplo, tenemos este menú de navegación:
+                    </p>
+                    <p>
+                        <nav class="selector-de-atributos">
+                            <ul>
+                                <li><a href="https://www.whatsapp.com" target="_blank">Home</a></li>
+                                <li><a class="sobre-mi anterior siguiente" href="https://www.whatsapp.com/about" target="_blank">About</a></li>
+                                <li><a class="servicios servicios-activos servicios-terminados" href="https://faq.whatsapp.com/?locale=es_LA">Services</a></li>
+                                <li><a href="https://www.whatsapp.com/contact" target="_blank">Contact</a></li>
+                                <li><a href="index.html#temario">Regresar al temario</a></li>
+                            </ul>
+                        </nav>
+                    </p>
+                    <p>
+                       Si queremos seleccionar todos los elementos que tengan el atributo <strong>"target"</strong> en nuestro menú de navegación, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .selectores-atributos a[target] {
+                                    color: orange;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <P>
+                        Si queremos seleccionar todos los elementos que tengan el atributo <strong>"target"</strong> con el valor <strong>"_blank"</strong> en nuestro menú de navegación, podemos utilizar el siguiente selector:
+                    </P>
+                    <p>
+                        <pre>
+                            <code>
+                                .selectores-atributos a[target="_blank"] {
+                                    color: pink;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Si queremos seleccionar todos los elementos que tengan el atributo <strong>href</strong> con la palabra <strong>"contact"</strong> en nuestro menú de navegación, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .selectores-atributos a[href*="contact"] {
+                                    color: brown;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Si queremos todos los elementos que tengan el atributo <strong>href</strong> y que empiece con la palabra <strong>http</strong> en nuestro menú de navegación, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .selectores-atributos a[href^="http"] {
+                                    color: gray;
+                                }
+                            </code>
+                        </pre>
+                        <p>
+                            Si queremos todos los elementos que tengan el atributo <strong>href</strong> y que termine con la palabra <strong>LA</strong> en nuestro menú de navegación, podemos utilizar el siguiente selector:
+                        </p>
+                        <p>
+                            <pre>
+                                <code>
+                                    .selectores-atributos a[href$="LA"] {
+                                        color: black;
+                                    }
+                                </code>
+                            </pre>
+                        </p>
+                        <p>
+                            Supongamos que en esta lista de navegación vista anteriormente, el hipervinculo llamado <strong>services</strong> tiene atributos de clase llamados class="servicios servicios-activos servicios-terminados" para aplicar estilos a un atributo que como valor contiene espacios usamos el comodin ~ ahora seleccionamos todos los elementos que tengan el atributo class con el valor servicios-activos en nuestro menú de navegación, podemos utilizar el siguiente selector:
+                        </p>
+                        <p>
+                            <pre>
+                                <code>
+                                    .selectores-atributos a[class~="servicios-activos"] {
+                                        color: white;
+                                        background-color: black;
+                                    }
+                                </code>
+                            </pre>
+                        </p>
+                        <p>
+                            Si queremos buscar una palabra en concreto en un atributo que tenga varios valores y que la palabra buscada esté antes de un guion medio usamos el comodin | ahora seleccionamos todos los elementos que tengan el atributo class con el valor sobre en nuestro menú de navegación, podemos utilizar el siguiente selector:
+                        </p>
+                        <p>
+                            <pre>
+                                <code>
+                                    .selectores-atributos a[class|="sobre"] {
+                                        color: white;
+                                        background-color: black;
+                                    }
+                                </code>
+                            </pre>
+                        </p>
+                </section>
+                <section>
+                    <h3>Selector Universal</h3>
+                    <p>
+                        Este selector se utiliza para seleccionar todos los elementos en un documento. Por ejemplo, si queremos aplicar un estilo de fuente a todos los elementos en nuestro documento, podemos utilizar el siguiente selector:
+                    </p>
+                    <pre>
+                        <code>
+                            * {
+                                font-family: Arial, sans-serif;
+                            }
+                        </code>
+                    </pre>
+                    <p>
+                        Otro ejemplo, tenemos esta lista donde la ul tiene una clase llamada selector-universal:
+                        <ul class="selector-universal">
+                            <li><b>Elemento 1</b></li>
+                            <li><b>Elemento 2</b></li>
+                            <li><b>Elemento 3</b></li>
+                            <li><b>Elemento 4</b></li>
+                        </ul>
+                    </p>
+                    <p>
+                        Si queremos aplicar un estilo de fuente a todos los elementos de la lista &lt;ul&gt;, podemos utilizar el siguiente selector:
+                    </p>
+                    <pre>
+                        <code>
+                            .selector-universal * {
+                                font-family: Arial, sans-serif;
+                            }
+                        </code>
+                    </pre>
+                    <p>
+                        Recuerda que el selector universal se utiliza para seleccionar todos los elementos en un documento, por lo que es importante tener cuidado al utilizarlo, ya que puede afectar a todos los elementos en la página.
+                    </p>
+                </section>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="pseudoclases">
+            <article>
+                <header>
+                    <h2>Pseudoclases</h2>
+                </header>
+                <p>
+                    Las pseudoclases son palabras clave que se añaden a los selectores para especificar un estado especial del elemento seleccionado. Algunas de las pseudoclases más comunes son:
+                </p>
+                <section>
+                    <h3>Pseudoclase required</h3>
+                    <p>
+                        <form class="form-pseudoclases1">
+                            <input type="text" name="nombre" placeholder="Escriba su nombre" required>
+                            <br>
+                            <input type="email" name="correo" placeholder="Escriba su correo" required>
+                            <br>
+                            <input type="submit" value="Enviar">
+                        </form>
+                    </p>
+                    <p>
+                        Si queremos aplicar un estilo a los campos de texto que son requeridos en nuestro formulario, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .form-pseudoclases1 *:required {
+                                    border: 2px solid red;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                </section>
+                <section>
+                    <h3>Pseudoclase Valid</h3>
+                    <p>
+                        <form class="form-pseudoclases2">
+                            <input type="text" name="nombre" placeholder="Escriba su nombre" required>
+                            <br>
+                            <input type="email" name="correo" placeholder="Escriba su correo" required>
+                            <br>
+                            <input type="submit" value="Enviar">
+                        </form>
+                    </p>
+                    <p>
+                        Si queremos aplicar un estilo a los campos de texto que son válidos en nuestro formulario, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .form-pseudoclases2 *:valid {
+                                    border: 2px solid green;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                </section>
+                <section>
+                    <h3>Pseudoclase Invalid</h3>
+                    <p>
+                        <form class="form-pseudoclases3">
+                            <input type="text" name="nombre" placeholder="Escriba su nombre" required>
+                            <br>
+                            <input type="email" name="correo" placeholder="Escriba su correo" required>
+                            <br>
+                            <input type="submit" value="Enviar">
+                        </form>
+                    </p>
+                    <p>
+                        Si queremos aplicar un estilo a los campos de texto que son inválidos en nuestro formulario, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .form-pseudoclases3 *:invalid {
+                                    border: 2px solid red;
+                                }
+                            </code>
+                        </pre>
+                </section>
+                <section>
+                    <h3>Pseudoclase Focus</h3>
+                    <p>
+                        <form class="form-pseudoclases4">
+                            <input type="text" name="nombre" placeholder="Escriba su nombre" required>
+                            <br>
+                            <input type="email" name="correo" placeholder="Escriba su correo" required>
+                            <br>
+                            <input type="submit" value="Enviar">
+                        </form>
+                    </p>
+                    <p>
+                        Si queremos aplicar un estilo a los campos de texto que tienen el foco en nuestro formulario, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .form-pseudoclases4 *:focus {
+                                    background-color: gray;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                </section>
+                <section>
+                    <h3>Pseudoclase Disabled</h3>
+                    <p>
+                        <form class="form-pseudoclases5">
+                            <input type="text" name="nombre" placeholder="Escriba su nombre" required>
+                            <br>
+                            <input type="email" name="correo" placeholder="Escriba su correo" required>
+                            <br>
+                            <input type="submit" value="Enviar" disabled>
+                            <input type="submit" value="Enviar">
+                        </form>
+                    </p>
+                    <p>
+                        Si queremos aplicar un estilo a los campos de texto que están deshabilitados en nuestro formulario, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .form-pseudoclases5 *:disabled {
+                                    background-color: skyeblue;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                </section>
+                <section>
+                    <h3>Pseudoclase Hover</h3>
+                    <p>
+                        <nav class="menu-pseudoclases1">
+                            <ul>
+                                <li><a href="#seccion1">seccion1</a></li>
+                                <li><a href="#seccion2">seccion2</a></li>
+                                <li><a href="#seccion3">seccion3</a></li>
+                                <li><a href="#seccion4">seccion4</a></li>
+                            </ul>
+                        </nav>
+                    </p>
+                    <p>
+                        Si queremos aplicar un estilo a los elementos de un menú de navegación cuando el cursor del ratón está sobre ellos, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .menu-pseudoclases a:hover {
+                                    color: white;
+                                    background-color: black;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                </section>
+                <section>
+                    <h3>Pseudoclase Visited</h3>
+                    <p>
+                        <nav class="menu-pseudoclases2">
+                            <ul>
+                                <li><a href="#seccion1">seccion1</a></li>
+                                <li><a href="#seccion2">seccion2</a></li>
+                                <li><a href="#seccion3">seccion3</a></li>
+                                <li><a href="#seccion4">seccion4</a></li>
+                            </ul>
+                    </p>
+                    <p>
+                        Si queremos aplicar un estilo a los elementos de un menú de navegación que ya han sido visitados, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .menu-pseudoclases2 a:visited {
+                                    color: gray;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Todos los elementos Html tienen el estado hover. Asi que esta pseudoclase no solo es usado con links.
+                    </p>
+                </section>
+                <section>
+                    <h3>Pseudoclase Target</h3>
+                    <p>
+                        Sirve para seleccionar un elemento que tiene un id específico en la URL. Para ejemplificar su uso en este documento HTML hay una sección con una id llamada concepto-css y un enlace que lleva a esa sección.
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                #concepto-css:target {
+                                    background-color: black;
+                                    color: white;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Lo que estamos haciendo es que cuando el enlace que lleva a la sección con id concepto-css sea clickeado, el fondo de la sección se pone de color negro.
+                    </p>
+                </section>
+                <section>
+                    <h3>Pseudoclase first-child</h3>
+                    <p>
+                        Esta pseudoclase aplica los estilos dependiendo de si la posicion del elemento repecto al elemento padre es primero. Usaremos esta lista para el ejemplo:
+                        <ol class="first-child-pseudoclass">
+                            <li>Elemento 1</li>
+                            <li>Elemento 2</li>
+                            <li>Elemento 3</li>
+                            <li>Elemento 4</li>
+                            <li>Elemento 5</li>
+                            <li>Elemento 6</li>
+                            <li>Elemento 7</li>
+                            <li>Elemento 8</li>
+                            <li>Elemento 9</li>
+                            <li>Elemento 10</li>
+                        </ol>
+                    </p>
+                    <p>
+                        Para seleccionar el elemento 1 de la lista anterior usamos el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .first-child-pseudoclass li:first-child {
+                                    color: red;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                </section>
+                <section>
+                    <h3>Pseudoclase last-child</h3>
+                    <p>
+                        Esta pseudoclase aplica los estilos dependiendo de si la posicion del elemento repecto al elemento padre es último.
+                        <ol class="last-child-pseudoclass">
+                            <li>Elemento 1</li>
+                            <li>Elemento 2</li>
+                            <li>Elemento 3</li>
+                            <li>Elemento 4</li>
+                            <li>Elemento 5</li>
+                            <li>Elemento 6</li>
+                            <li>Elemento 7</li>
+                            <li>Elemento 8</li>
+                            <li>Elemento 9</li>
+                            <li>Elemento 10</li>
+                        </ol>
+                    </p>
+                    <p>
+                        Para seleccionar el elemento 10 de la lista anterior usamos el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .last-child-pseudoclass li:last-child {
+                                    color: blue;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                </section>
+                <section>
+                    <h3>Pseudoclase nth-child(n)</h3>
+                    <p>
+                        Esta pseudo clase depende de la especificacion del programador, entre los parentesis () especificamos a cual elemento descendiente del elemento padre aplicaremos los estilos. Usaremos esta lista para el ejemplo:
+                        <ol class="nth-child-pseudoclass">
+                            <li>Elemento 1</li>
+                            <li>Elemento 2</li>
+                            <li>Elemento 3</li>
+                            <li>Elemento 4</li>
+                            <li>Elemento 5</li>
+                            <li>Elemento 6</li>
+                            <li>Elemento 7</li>
+                            <li>Elemento 8</li>
+                            <li>Elemento 9</li>
+                            <li>Elemento 10</li>
+                        </ol>
+                    </p>
+                    <p>
+                        Para seleccionar el elemento 3 de la lista anterior usamos el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .nth-child-pseudoclass li:nth-child(3) {
+                                    color: green;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Tambien podemos usar formulas como: 2n+1, 2n, 2n-1, 3n+1, 3n, 3n-1, etc.
+                    </p>
+                    <p>
+                        Para seleccionar los elementos impares de la lista anterior usamos el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .nth-child-pseudoclass li:nth-child(odd) {
+                                    color: purple;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Para seleccionar los elementos pares de la lista anterior usamos el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .nth-child-pseudoclass li:nth-child(even) {
+                                    color: orange;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Para seleccionar los elementos que son multiplos de 3 de la lista anterior usamos el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .nth-child-pseudoclass li:nth-child(3n) {
+                                    color: pink;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Para seleccionar los elementos que son multiplos de 3 y que empiezan en 1 de la lista anterior usamos el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .nth-child-pseudoclass li:nth-child(3n+1) {
+                                    color: brown;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                </section>
+                <section>
+                    <h3>Pseudoclase first-of-type</h3>
+                    <p>
+                        Esta pseudoclase aplica los estilos sin importar la posicion de los elementos, el unico requisito es que sean hijos descendientes del elemento padre. tomemos este ejemplo:
+                        <article class="first-of-type">
+                            <header>esto es un header</header>
+                            <p>esto es un parrafo</p>
+                            <h5>esto es un encabezado</h5>
+                            <p>esto es otro parrafo</p>
+                            <footer>esto es un footer</footer>
+                            <p>esto es otro parrafo</p>
+                        </article>
+                    </p>
+                    <p>
+                        Sabemos que el primer elemento hijo del elemento padre article es el header,entonces podriamos usar simplemente el first-child, pero para acceder a cualquier elemento sin importar su posicion usamos first-of-type.
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .first-of-type p:first-of-type {
+                                    color: yellow;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Basicamente lo que hicimos es seleccionar el primer elemento de tipo parrafo que sea hijo descendiente del elemento padre article.
+                    </p>
+                    <p>
+                        También podemos acceder al ultimo elemento de su tipo con last-of-type.
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .first-of-type p:last-of-type {
+                                    color: pink;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        La otra opción es seleccionar un elemento en concreto de su tipo con nth-of-type(n).
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .first-of-type p:nth-of-type(2) {
+                                    color: orange;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Tambien podemos usar formulas como: 2n+1, 2n, 2n-1, 3n+1, 3n, 3n-1, etc. Los cuales ya los vimos anteriormente con los nth-child.
+                    </p>
+                </section>
+                <section>
+                    <h3>Pseudoclase de negación</h3>
+                    <p>
+                        Esta pseudoclase sirve para restringir la aplicacion de estilos a los elementos que no cumplan con la condición especificada. Usaremos el ejemplo anterior de arriba sabiendo que ya todas los elementos de parrafo están seleccionados y no queremos tocarlos.
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .first-of-type *:not(p){
+                                    color: white;
+                                    background-color: black;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Aquí estamos restringiendo los estilos para los elementos de tipo parrafo descendientes .firs-of-type. Si queremos seleccionar más de un elemento restringido lo separamos por comas.
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .first-of-type *:not(p, h5){
+                                    color: white;
+                                    background-color: black;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                </section>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="pseudoelementos">
+            <article>
+                <h2>Pseudoelementos</h2>
+                <p>
+                    Los pseudoelementos son palabras clave que se añaden a los selectores para especificar una parte especial del elemento seleccionado. A continuación vermeos algunas de ellas.
+                </p>
+                <section>
+                    <h3>Before y After</h3>
+                    <p>
+                        Los pseudoelementos <strong>::before</strong> y <strong>::after</strong> se utilizan para insertar contenido antes y después del contenido de un elemento, respectivamente. Supongamos que tenemos un producto que tiene nombre, texto y precio.
+                    </p>
+                    <p>
+                        <i class="product-name">Cámara</i> <span class="product-model">Sony alpha 7 III</span> <span class="product-price">300</span>
+                    </p>
+                    <p>
+                        Si queremos añadir un guion antes del nombre del producto, el modelo en negrita y un signo de dolar después del precio, podemos utilizar los pseudoelementos <strong>::before</strong> y <strong>::after</strong> de la siguiente manera:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .product-name::before {
+                                    content: "-";
+                                }
+                                .product-model::before {
+                                    content: "Modelo: ";
+                                    font-weight: bold;
+                                }
+                                .product-price::after {
+                                    content: "$";
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                </section>
+                <section>
+                    <h3>First-letter, First-line y selection</h3>
+                    <p>
+                        Los pseudoelementos <strong>::first-letter</strong> y <strong>::first-line</strong> se utilizan para aplicar estilos al primer carácter y a la primera línea de un elemento, respectivamente. Por otro lado, el pseudoelemento <strong>::selection</strong> se utiliza para aplicar estilos al texto seleccionado por el usuario. Usaremos un parrafo de ejemplo.
+                    </p>
+                    <p class="p-pseudoelementos">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod harum vel quisquam. Quia, velit? Commodi laborum veritatis nihil, quam aliquid ratione saepe, asperiores doloribus libero ipsum odio aut cum consequatur.
+                    </p>
+                    <p>
+                        Si queremos aplicar un estilo como la letra capital al primer carácter del parrafo anterior, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .p-pseudoelementos::first-letter {
+                                    font-weight: bold;
+                                    font-size: 32px;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Si queremos aplicar un estilo a la primera línea del parrafo anterior, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .p-pseudoelementos::first-line {
+                                    font-style: italic;
+                                    color: blue;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Si queremos aplicar un estilo al texto seleccionado por el usuario en el parrafo anterior, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .p-pseudoelementos::selection {
+                                    background-color: black;
+                                    color: white;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                </section>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="agrupacion-de-selectores">
+            <article>
+                <h2>Agrupación de Selectores</h2>
+                <p>
+                    Cuando queremos aplicar estilos a varios elementos con las mismas propiedades, podemos agrupar los selectores en una sola regla CSS. supongamos que tenemos un formulario de comentarios siguiente:
+                </p>
+                <p>
+                    <form class="form-selector-agrupado">
+                        <input type="text" name="nombre" placeholder="Escriba su nombre">
+                        <input type="email" name="correo" placeholder="Escriba su correo">
+                        <textarea name="comentario" placeholder="Escriba su comentario" cols="30" rows="10"></textarea>
+                    </form>
+                </p>
+                <p>
+                    Si queremos aplicar algunos estilos a los campos de texto y al área de texto del formulario anterior, podemos agrupar los selectores en una sola regla CSS de la siguiente manera:
+                </p>
+                <p>
+                    <pre>
+                        <code>
+                            .form-selector-agrupado input[type="text"],
+                            .form-selector-agrupado input[type="email"],
+                            .form-selector-agrupado textarea {
+                                border-width: 2px;
+                                border-color: yellow;
+                                background-color: black;
+                                color: white;
+                                display: block;
+                                width: 400px;
+                                padding: 10px;
+                            }
+                        </code>
+                    </pre>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="algoritmo-css">
+            <article>
+                <h2>El Algoritmo De CSS</h2>
+                <p>
+                    Cuando un navegador renderiza una página web, sigue un algoritmo para determinar qué estilos aplicar a cada elemento. Este algoritmo podríamos decir que se subdivide en 3 partes:
+                </p>
+                <section>
+                    <h3>La Cascada</h3>
+                    <p>
+                        La cascada es el orden en el que el navegador aplica los estilos. Y toma en cuenta lo siguiente en este orden:
+                        <ol>
+                            <li>
+                                <strong>El origen del códido:</strong>
+                                <ul>
+                                    <li>El user agent (los estilos aplicados por defecto del navegador)</li>
+                                    <li>Personalizaciones del usuario</li>
+                                    <li>Los estilos del autor (nuestras modificaciones)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>La especificidad del selector</strong>
+                            </li>
+                            <li>
+                                <strong>Orden de aparición de los estilos en el código</strong>
+                            </li>
+                        </ol>
+                    </p>
+                    <p>
+                        En simples palabras cuando tienes una hoja de estilos el codigo se lee desde arriba hasta abajo y de izquierda a derecha, si tienes un estilo que se repite el que se lee al final es el que se aplica, ya que se sobreescribe.
+                    </p>
+                </section>
+                <section>
+                    <h3>La Especificidad</h3>
+                    <p>
+                        La especificidad es la forma en la que el navegador determina qué regla CSS tiene prioridad sobre otra. La especificidad se mide en cuatro valores:
+                        <ol>
+                            <li>
+                                <strong>Etiquetas y pseudoelementos:</strong>
+                                <ul>
+                                    <li>1 punto (0,0,0,1)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Clases, atributos y pseudoclases:</strong>
+                                <ul>
+                                    <li>10 puntos (0,0,1,0)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>IDs:</strong>
+                                <ul>
+                                    <li>100 puntos (0,1,0,0)</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Estilos en línea:</strong>
+                                <ul>
+                                    <li>1000 puntos (1,0,0.0) </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>!important:</strong>
+                                <ul>
+                                    <li>
+                                        Rompe la especificidad, no importan los demás valores, se aplica el estilo con !important.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </p>
+                </section>
+                <section>
+                    <h3>La Herencia</h3>
+                    <p>
+                        La herencia es el proceso por el cual los estilos de un elemento ancestro se aplican a sus elementos descendientes si estos no tienen estilos propios. Por ejemplo, si aplicamos un estilo de fuente a un elemento &lt;p&gt;, todos los elementos &lt;p&gt; dentro de ese elemento heredarán ese estilo de fuente. Veamos este párrafo de ejemplo.
+                    </p>
+                    <p class="herencia">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione excepturi repudiandae ipsum praesentium? Totam quasi suscipit nesciunt <strong>officiis</strong> eos repellendus sequi consequuntur quos quam sapiente provident, eveniet quae! Asperiores, <i>dolorem!</i>
+                    </p>
+                    <p>
+                        Si queremos aplicar un estilo de fuente al párrafo anterior, podemos utilizar el siguiente selector:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .herencia {
+                                    font-family: Arial, sans-serif;
+                                    color: green;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Todos los elementos &lt;strong&gt; y &lt;i&gt; dentro del párrafo heredarán el estilo de fuente del párrafo. Pero no pueden heredar cosas como el color de fondo o el color de texto. Si queremos que no hereden el estilo de los elementos ancestros usamos otro valor de la propiedad font-family.
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .herencia {
+                                    font-family: Arial, sans-serif;
+                                    color: green;
+                                }
+                                .herencia strong, .herencia i {
+                                    font-family: sans-serif;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Si queremos que un elemento herede los estilos de su ancestro usamos la propiedad inherit.
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .herencia strong {
+                                    color: inherit;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                </section>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="reseteo-y-normalizacion">
+            <article>
+                <h2>Reseteo y Normalización de Estilos</h2>
+                <p>
+                    Cuando creamos una página web, los navegadores aplican estilos por defecto a los elementos HTML. Estos estilos pueden variar de un navegador a otro, lo que puede causar problemas de compatibilidad. Para evitar estos problemas, es recomendable utilizar un reseteo o normalización de estilos. A continuación veremos en qué consisten estos dos métodos.
+                </p>
+                <p>
+                    <strong>Reseteo de Estilos:</strong>
+                </p>
+                <p>
+                    El reseteo de estilos es una técnica que consiste en eliminar los estilos por defecto de los elementos HTML para empezar desde cero. De esta manera, podemos asegurarnos de que todos los elementos se vean igual en todos los navegadores. A continuación se muestra un ejemplo de un reseteo de estilos:
+                </p>
+                <p>
+                    <pre>
+                        <code>
+                            * {
+                                margin: 0;
+                                padding: 0;
+                                box-sizing: border-box;
+                            }
+                        </code>
+                    </pre>
+                </p>
+                <p>
+                    <strong>Normalización de Estilos:</strong>
+                </p>
+                <p>
+                    La normalización de estilos es una técnica que consiste en establecer estilos por defecto para los elementos HTML para que se vean igual en todos los navegadores. Lo recomendable es importar un archivo CSS que contenga los estilos normalizados como normalize.css o reset.css. A continuación se muestra un ejemplo de un archivo CSS que contiene estilos normalizados:
+                </p>
+                <p>
+                    <pre>
+                        <code>
+                            /* normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+                            /* HTML5 display definitions
+                            ========================================================================== */
+                            /**
+                            * Correct `block` display not defined for any HTML5 element in IE 8/9.
+                            * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+                            * Correct `block` display not defined for `main` in IE 11.
+                            */
+                            article,
+                            aside,
+                            details,
+                            figcaption,
+                            figure,
+                            footer,
+                            header,
+                            hgroup,
+                            main,
+                            menu,
+                            nav,
+                            section,
+                            summary {
+                                display: block;
+                            }
+                            /**
+                            * 1. Correct `inline-block` display not defined in IE 8/9.
+                            * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+                            */
+                            audio,
+                            canvas,
+                            progress,
+                            video {
+                                display: inline-block;
+                                vertical-align: baseline;
+                            }
+                            /**
+                            * Prevent modern browsers from displaying `audio` without controls.
+                            * Remove excess height in iOS 5 devices.
+                            */
+                            audio:not([controls]) {
+                                display: none;
+                                height: 0;
+                            }
+                            /**
+                            * Address `[hidden]` styling not present in IE 8/9/10.
+                            * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+                            */
+                            [hidden],
+                            template {
+                                display: none;
+                            }
+                            /* Links
+                            ========================================================================== */
+                            /**
+                            * Remove the gray background color from active links in IE 10.
+                            */
+                            a {
+                                background-color: transparent;
+                            }
+                            /**
+                            * Improve readability when focused and also mouse hovered in all browsers.
+                            */
+                            a:active,
+                            a:hover {
+                                outline-width: 0;
+                            }
+                        </code>
+                    </pre>
+                </p>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="prefijos-de-los-navegadores">
+            <article>
+                <h2>Prefijos de los Navegadores</h2>
+                <p>
+                    Los prefijos de los navegadores son una técnica que se utiliza para aplicar estilos específicos a un navegador en particular. Esto se hace añadiendo un prefijo al nombre de la propiedad CSS. A continuación veremos algunos de los prefijos más comunes:
+                </p>
+                <p>
+                    <pre>
+                        <code>
+                            -webkit- (Google Chrome, Safari, Opera)
+                            -moz- (Firefox)
+                            -o- (Opera)
+                            -ms- (Internet Explorer)
+                        </code>
+                    </pre>
+                </p>
+                <p>
+                    Por ejemplo, si queremos aplicar un estilo de borde redondeado a un elemento en Google Chrome, Safari y Opera, podemos utilizar el siguiente selector:
+                </p>
+                <p>
+                    <pre>
+                        <code>
+                            .elemento {
+                                -webkit-border-radius: 10px;
+                                border-radius: 10px;
+                            }
+                        </code>
+                    </pre>
+                </p>
+                <p>
+                    Si queremos aplicar un estilo de borde redondeado a un elemento en Firefox, podemos utilizar el siguiente selector:
+                </p>
+                <p>
+                    <pre>
+                        <code>
+                            .elemento {
+                                -moz-border-radius: 10px;
+                                border-radius: 10px;
+                            }
+                        </code>
+                    </pre>
+                </p>
+                <p>
+                    Si queremos aplicar un estilo de borde redondeado a un elemento en Internet Explorer, podemos utilizar el siguiente selector:
+                </p>
+                <p>
+                    <pre>
+                        <code>
+                            .elemento {
+                                -ms-border-radius: 10px;
+                                border-radius: 10px;
+                            }
+                        </code>
+                    </pre>
+                </p>
+                <p>
+                    Es importante tener en cuenta que los prefijos de los navegadores se utilizan para aplicar estilos específicos a un navegador en particular, por lo que es recomendable utilizarlos con moderación y comprobar la compatibilidad con los navegadores antes de utilizarlos.
+                </p>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="modelo-de-caja">
+            <article>
+                <h2>Modelo de Caja</h2>
+                <p>
+                    El modelo de caja es una técnica que se utiliza para aplicar estilos a los elementos HTML. Cada elemento HTML tiene un modelo de caja que consta de cuatro partes: el contenido (content), el borde (border), el relleno (padding) y el margen (margin).
+                </p>
+                <p>
+                    Dentro del modelo de caja hay que considerar que tenemos cuatro lados. El lado superior (top), el lado derecho (right), el lado inferior (bottom) y el lado izquierdo (left). Cada lado tiene un ancho y un color. 
+                </p>
+                <p>
+                    Usaremos este archivo HTML para ejemplificar el modelo de caja: <a href="box-model.html">ir al archivo</a>
+                </p>
+                <section>
+                    <h3>Content</h3>
+                    <p>
+                        El contenido es la parte interna del elemento HTML que contiene el texto, las imágenes, los vídeos, etc. El contenido de un elemento tiene un ancho (width) y un alto (height) que se puede especificar en la hoja de estilos CSS. Utilizando el box-model.html podemos decir que la altura del contenido dentro del h1 es de 200px y el ancho de 400px de esta manera:
+                    </p>
+                    <p>
+                        El contenido de un elemento tiene dos propiedades:
+                    </p>
+                    <p>
+                        <ul>
+                            <li><strong>Altura: </strong>(height)</li>
+                            <li><strong>Ancho: </strong>(width)</li>
+                        </ul>
+                    </p>
+                    <p>
+                        Sabiendo esto utilizando el box-model.html podemos decir que la altura del contenido dentro del h1 es de 200px y el ancho de 400px de esta manera:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                h1 {
+                                    width: 400px;
+                                    height: 200px;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                </section>
+                <section>
+                    <h3>Border</h3>
+                    <p>
+                        El borde es la parte externa del elemento HTML que rodea el contenido. El borde de un elemento tiene algunas propiedades importantes que mencionamos a continuación:
+                    </p>
+                    <p>
+                        <ul>
+                            <li><strong>Ancho: </strong>(border-width)</li>
+                            <li><strong>Estilo: </strong>(border-style)</li>
+                            <li><strong>Color: </strong>(border-color)</li>
+                        </ul>
+                    </p>
+                    <p>
+                        Utilizando el box-model.html podemos decir que el borde del h1 tiene un ancho de 2px, un estilo de sólido y un color de borde rojo.
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                h1 {
+                                    border-width: 2px;
+                                    border-style: solid;
+                                    border-color: red;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        Si queremos aplicar estas mismas propiedades pero de manera más rapida y eficiente podemos usar la propiedad border de la siguiente manera:
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                h1 {
+                                    border: 2px solid red;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        A esto se lo conoce como shorthand property. Para saber más propiedades a profundidad puedes visitiar <a href="https://cssreference.io/" target="_blank">este link</a>
+                    </p>
+                </section>
+                <section id="padding-margin">
+                    <h3>Padding y Margin</h3>
+                    <p>
+                        El relleno (padding) es el espacio entre el contenido y el borde de un elemento HTML. El margen (margin) es el espacio entre el borde de un elemento y los elementos adyacentes. Ambos tienen cuatro lados: superior, derecho, inferior e izquierdo. A continuación veremos cómo aplicar estilos de relleno y margen a un elemento HTML.
+                    </p>
+                    <p>
+                        Siguiendo con el ejemplo del box-model.html en este documento tenemos dos etiquetas div con las clases "caja-uno" y "caja-dos" respectivamente. Si queremos aplicar un padding de 10px y un margin de 20px a las dos cajas podemos hacerlo de la siguiente manera:
+                    </p>
+                    <pre>
+                        <code>
+                            .caja-uno, 
+                            .caja-dos {
+                                padding: 10px;
+                                margin: 20px;
+                            }
+                        </code>
+                    </pre>
+                    <p>
+                        Lo que hicimos aquí es aplicar el padding de 10px y el margin de 20px a todos los lados de las dos  cajas div. Tengamos en cuenta que existen otras maneras de aplicar padding y margin a los elementos HTML.
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>2 valores:</strong>
+                            <p>
+                                Si queremos aplicar un padding de 10px en la parte superior e inferior y un padding de 20px en los lados izquierdo y derecho a las dos cajas, podemos hacerlo de la siguiente manera:
+                            </p>
+                            <pre>
+                                <code>
+                                    .caja-uno, 
+                                    .caja-dos {
+                                        padding: 10px 20px;
+                                    }
+                                </code>
+                            </pre>
+                        </li>
+                        <li>
+                            <strong>3 valores:</strong>
+                            <p>
+                                Si queremos aplicar un padding de 10px en la parte superior, 20px en los lados izquierdo y derecho y 30px en la parte inferior a las dos cajas, podemos hacerlo de la siguiente manera:
+                            </p>
+                            <pre>
+                                <code>
+                                    .caja-uno, 
+                                    .caja-dos {
+                                        padding: 10px 20px 30px;
+                                    }
+                                </code>
+                            </pre>
+                        </li>
+                        <li>
+                            <strong>4 valores:</strong>
+                            <p>
+                                Si queremos aplicar un padding de 10px en la parte superior, 20px en el lado derecho, 30px en la parte inferior y 40px en el lado izquierdo a las dos cajas, podemos hacerlo de la siguiente manera:
+                            </p>
+                            <pre>
+                                <code>
+                                    .caja-uno, 
+                                    .caja-dos {
+                                        padding: 10px 20px 30px 40px;
+                                    }
+                                </code>
+                            </pre>
+                        </li>
+                        <li>
+                            <strong>Lado especifico: </strong>
+                            <p>
+                                Si queremos aplicar cierto valor en un lado especifico de la caja podemos hacerlo de la siguiente manera:
+                            </p>
+                            <pre>
+                                <code>
+                                    .caja-uno,
+                                    .caja-dos {
+                                        padding-top: 10px;
+                                        padding-right: 20px;
+                                        padding-bottom: 30px;
+                                        padding-left: 40px;
+                                    }
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </section>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="cajasdelinea-vs-cajasdebloque">
+            <article>
+                <h2>Cajas de Linea vs Cajas de Bloque</h2>         
+                <p>
+                    En CSS, los elementos HTML se dividen en dos tipos: cajas de línea (inline) y cajas de bloque (block). Las cajas de línea son elementos que se muestran en la misma línea que el contenido que las rodea, mientras que las cajas de bloque son elementos que ocupan toda la anchura disponible y se muestran en una nueva línea. A continuación veremos la diferencia entre las cajas de línea y las cajas de bloque. Usaremos el archivo HTML box-model nuevamente para ejemplificarlo. <a href="box-model.html">ir al archivo</a>
+                </p>
+                <section>
+                    <h3>Cajas de Linea</h3>
+                    <p>
+                        Las cajas de línea son elementos que se muestran en la misma línea que el contenido que las rodea. Algunos ejemplos de cajas de línea son los elementos &lt;span&gt;, &lt;a&gt;, &lt;strong&gt;, &lt;em&gt;, etc.
+                    </p>
+                    <p>
+                        Las cajas de linea al aplicar propiedades como width y height no se ven afectadas, ya que estas propiedades no se aplican a las cajas de linea. Otra cosa es que las cajas de linea no pueden tener padding ni margin en los lados superior e inferior. Estos no generan saltos de Linea, solo empujan el contenido.
+                    </p>
+                </section>
+                <section>
+                    <h3>Cajas de Bloque</h3>
+                    <p>
+                        Las cajas de bloque son elementos que ocupan toda la anchura disponible y se muestran en una nueva línea. Algunos ejemplos de cajas de bloque son los elementos &lt;div&gt;, &lt;p&gt;, &lt;h1&gt;, &lt;ul&gt;, &lt;ol&gt;, etc.
+                    </p>
+                    <p>
+                        Las cajas de bloque al aplicar propiedades como width y height se ven afectadas, ya que estas propiedades se aplican a las cajas de bloque. Otra cosa es que las cajas de bloque pueden tener padding y margin en los lados superior e inferior. Estos generan saltos de Linea.
+                    </p>
+                </section>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="propiedad-display">
+            <article>
+                <h2>Propiedad Display</h2>
+                <p>
+                    La propiedad display se utiliza para especificar cómo se mostrará un elemento HTML en la página. Hay varios valores que se pueden utilizar con la propiedad display, cada uno con un comportamiento diferente. A continuación veremos algunos de los valores más comunes de la propiedad display.
+                </p>
+                <section>
+                    <h3>Inline</h3>
+                    <p>
+                        Permite cambiar una caja de bloque a una caja de línea. Esto sirve para que los elementos se muestren en la misma línea que el contenido que los rodea. 
+                    </p>
+                    <pre>
+                        <code>
+                            .caja-uno {
+                                display: inline;
+                            }
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h3>Block</h3>
+                    <p>
+                        Permite cambiar una caja de línea a una caja de bloque. Esto sirve para que los elementos ocupen toda la anchura disponible y se muestren en una nueva línea.
+                    </p>
+                    <pre>
+                        <code>
+                            .caja-dos {
+                                display: block;
+                            }
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h3>Inline block</h3>
+                    <p>
+                        Permite cambiar una caja de línea o una caja de bloque a una caja de línea en bloque. Esto sirve para poder hacer una combinación de las propiedades de los dos tipos de cajas ya vistos, es decir, que los elementos se muestren en la misma línea que el contenido que los rodea y ocupen toda la anchura disponible. El width y el height se pueden aplicar a los elementos con display: inline-block.
+                    </p>
+                    <pre>
+                        <code>
+                            .caja-tres {
+                                display: inline-block;
+                            }
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h3>None</h3>
+                    <p>
+                        Permite ocultar un elemento HTML de la página. Esto sirve para que los elementos no se muestren en la página. 
+                    </p>
+                    <pre>
+                        <code>
+                            .caja-cuatro {
+                                display: none;
+                            }
+                        </code>
+                    </pre>
+                </section>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="propiedad-visibility">
+            <article>
+                <h2>Propiedad Visibility</h2>
+                <p>
+                    La propiedad visibility se utiliza para especificar si un elemento HTML es visible o no. Hay dos valores que se pueden utilizar con la propiedad visibility: visible y hidden. A continuación veremos cómo se utilizan estos valores en la propiedad visibility.
+                </p>
+                <section>
+                    <h3>visible</h3>
+                    <p>
+                        Permite que un elemento HTML sea visible en la página. Esto sirve para que los elementos se muestren en la página.
+                    </p>
+                    <pre>
+                        <code>
+                            .caja-uno {
+                                visibility: visible;
+                            }
+                        </code>
+                    </pre>  
+                </section>
+                <section>
+                    <h3>hidden</h3>
+                    <p>
+                        Permite ocultar un elemento HTML de la página. Esto sirve para que los elementos no se muestren en la página. A diferencia de none en display, hidden en visibility oculta el elemento pero deja su espacio en la página.
+                    </p>
+                    <pre>
+                        <code>
+                            .caja-dos {
+                                visibility: hidden;
+                            }
+                        </code>
+                    </pre>
+                </section>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="propiedad-overflow">
+            <article>
+                <h2>Propiedad Overflow</h2>
+                <p>
+                    La propiedad overflow se utiliza para especificar qué hacer si el contenido de un elemento HTML es más grande que el tamaño del elemento. Hay varios valores que se pueden utilizar con la propiedad overflow, cada uno con un comportamiento diferente. A continuación veremos algunos de los valores más comunes de la propiedad overflow.
+                </p>
+                <section>
+                    <h3>visible</h3>
+                    <p>
+                        Permite que el contenido de un elemento HTML sea visible fuera del tamaño del elemento. Esto sirve para que el contenido se muestre fuera del tamaño del elemento.
+                    </p>
+                    <pre>
+                        <code>
+                            .caja-uno {
+                                overflow: visible;
+                            }
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h3>hidden</h3>
+                    <p>
+                        Permite ocultar el contenido de un elemento HTML fuera del tamaño del elemento. Esto sirve para que el contenido no se muestre fuera del tamaño del elemento.
+                    </p>
+                    <pre>
+                        <code>
+                            .caja-dos {
+                                overflow: hidden;
+                            }
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h3>scroll</h3>
+                    <p>
+                        Permite agregar barras de desplazamiento al contenido de un elemento HTML si el contenido es más grande que el tamaño del elemento. Esto sirve para que el contenido se muestre con barras de desplazamiento si es más grande que el tamaño del elemento.
+                    </p>
+                    <pre>
+                        <code>
+                            .caja-tres {
+                                overflow: scroll;
+                            }
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h3>auto</h3>
+                    <p>
+                        Permite agregar barras de desplazamiento al contenido de un elemento HTML si el contenido es más grande que el tamaño del elemento. Esto sirve para que el contenido se muestre con barras de desplazamiento si es más grande que el tamaño del elemento. A diferencia de scroll en overflow, auto en overflow solo muestra las barras de desplazamiento si el contenido es más grande que el tamaño del elemento.
+                    </p>
+                    <pre>
+                        <code>
+                            .caja-cuatro {
+                                overflow: auto;
+                            }
+                        </code>
+                    </pre>
+                </section>
+                <p>
+                    Otra manera de aplicar overflow es de manera individual a los lados de la caja. Por ejemplo si queremos aplicar overflow a la parte superior de la caja podemos hacerlo de la siguiente manera:
+                </p>
+                <pre>
+                    <code>
+                        .caja-cinco {
+                            overflow-x: hidden;
+                        }
+                    </code>
+                </pre>
+                <pre>
+                    <code>
+                        .caja-seis {
+                            overflow-y: hidden;
+                        }
+                    </code>
+                </pre>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="tamano-de-caja">
+            <article>
+                <h2>Propiedad box-sizing</h2>
+                <p>
+                    La propiedad box-sizing se utiliza para especificar cómo se calculará el tamaño de un elemento HTML. Hay dos valores que se pueden utilizar con la propiedad box-sizing: content-box y border-box. A continuación veremos cómo se utilizan estos valores en la propiedad box-sizing.
+                </p>
+                <section>
+                    <h3>content-box</h3>
+                    <p>
+                        La propiedad box-sizing: content-box se utiliza para especificar que el tamaño de un elemento HTML se calculará incluyendo el contenido, pero no el relleno, el borde ni el margen. Esto sirve para que el tamaño del elemento se calcule incluyendo solo el contenido. Este es el valor por defecto que tienen los elementos HTML.
+                    </p>
+                    <pre>
+                        <code>
+                            .caja-uno {
+                                box-sizing: content-box;
+                            }
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h3>border-box</h3>
+                    <p>
+                        La propiedad box-sizing: border-box se utiliza para especificar que el tamaño de un elemento HTML se calculará incluyendo el contenido, el relleno y el borde, pero no el margen. Esto sirve para que el tamaño del elemento se calcule incluyendo el contenido, el relleno y el borde. Desde hace tiempo se recomienda utilizar este valor para la propiedad box-sizing reseteando los estilos de los elementos HTML.
+                    </p>
+                    <pre>
+                        <code>
+                            .caja-dos {
+                                box-sizing: border-box;
+                            }
+                        </code>
+                    </pre>
+                </section>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="propiedad-float-y-clear">
+            <article>
+                <h2>Propiedad Float y Clear</h2>
+                <p>
+                    Estas propiedades se utilizan para cambiar la posición de un elemento HTML en la página. La propiedad float se utiliza para cambiar la posición de un elemento a la izquierda o a la derecha de su contenedor, mientras que la propiedad clear se utiliza para cambiar la posición de un elemento por debajo de los elementos flotantes. A continuación veremos cómo se utilizan estas propiedades en CSS.
+                </p>
+                <div class="contenedor-float">
+                    <section class="columna-float1">columna1</section>
+                    <section class="columna-float3">columna3</section>
+                </div>
+                <div class="clear-fix"></div>
+                <section>
+                    <h3>Float</h3>
+                    <p>
+                        La propiedad float se utiliza para cambiar la posición de un elemento a la izquierda o a la derecha de su contenedor. Hay dos valores que se pueden utilizar con la propiedad float: left y right. A continuación veremos cómo se utilizan estos valores en la propiedad float.
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>left:</strong>
+                            <p>
+                                Permite cambiar la posición de un elemento a la izquierda de su contenedor. Esto sirve para que el elemento se muestre a la izquierda de su contenedor.
+                            </p>
+                            <pre>
+                                <code>
+                                    .columna-float1 {
+                                        float: left;
+                                    }
+                                </code>
+                            </pre>
+                        </li>
+                        <li>
+                            <strong>right:</strong>
+                            <p>
+                                Permite cambiar la posición de un elemento a la derecha de su contenedor. Esto sirve para que el elemento se muestre a la derecha de su contenedor.
+                            </p>
+                            <pre>
+                                <code>
+                                    .columna-float2 {
+                                        float: right;
+                                    }
+                                </code>
+                            </pre>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Clear</h3>
+                    <p>
+                        La propiedad clear se utiliza para cambiar la posición de un elemento por debajo de los elementos flotantes. Hay varios valores que se pueden utilizar con la propiedad clear, cada uno con un comportamiento diferente. A continuación veremos algunos de los valores más comunes de la propiedad clear.
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>left:</strong>
+                            <p>
+                                Permite cambiar la posición de un elemento por debajo de los elementos flotantes a la izquierda. Esto sirve para que el elemento se muestre por debajo de los elementos flotantes a la izquierda.
+                            </p>
+                            <pre>
+                                <code>
+                                    .clear-fix {
+                                        clear: left;
+                                    }
+                                </code>
+                            </pre>
+                        </li>
+                        <li>
+                            <strong>right:</strong>
+                            <p>
+                                Permite cambiar la posición de un elemento por debajo de los elementos flotantes a la derecha. Esto sirve para que el elemento se muestre por debajo de los elementos flotantes a la derecha.
+                            </p>
+                            <pre>
+                                <code>
+                                    .clear-fix {
+                                        clear: right;
+                                    }
+                                </code>
+                            </pre>
+                        </li>
+                        <li>
+                            <strong>both:</strong>
+                            <p>
+                                Permite cambiar la posición de un elemento por debajo de los elementos flotantes a la izquierda y a la derecha. Esto sirve para que el elemento se muestre por debajo de los elementos flotantes a la izquierda y a la derecha.
+                            </p>
+                            <pre>
+                                <code>
+                                    .clear-fix {
+                                        clear: both;
+                                    }
+                                </code>
+                            </pre>
+                        </li>
+                </section>
+                <p>
+                    Para evitar problemas con los elementos flotantes se recomienda utilizar la técnica de clear-fix. Esta técnica consiste en añadir un elemento vacío con la propiedad clear: both al final de los elementos flotantes. De esta manera, se evitan problemas de alineación y se asegura que los elementos flotantes se muestren correctamente en la página.
+                </p>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="colapso-de-margenes">
+             <article>
+                <h2>Colapso de Margenes en Vertical</h2>
+                <p>
+                    El colapso de márgenes en vertical es un fenómeno que ocurre cuando dos márgenes verticales se superponen. Esto puede causar problemas de alineación y espaciado en la página. A continuación veremos cómo se produce el colapso de márgenes en vertical y cómo se puede evitar.
+                </p>
+                <section>
+                    <h3>¿Cómo se produce este colapso de margen vertical?</h3>
+                    <p>
+                        Se produce cuando dos márgenes verticales se superponen. Esto puede ocurrir cuando dos elementos se colocan uno encima del otro y tienen márgenes inferiores y superiores respectivamente. En este caso, los márgenes se superponen y se produce el colapso de márgenes en vertical.
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                                .caja-uno {
+                                    margin-bottom: 20px;
+                                }
+                                .caja-dos {
+                                    margin-top: 20px;
+                                }
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                        En este caso, los márgenes de la caja-uno y la caja-dos se superponen y se produce el colapso de márgenes en vertical. El margen entre ellos sería de 20px en lugar de 40px.
+                    </p>
+                </section>
+                <section>
+                    <h3>¿Cómo podemos evitarlo?</h3>
+                    <p>
+                        La mejor opción es simplemente evitando usar los dos margenes simultamente.
+                    </p>
+                </section>
+                <p>
+                    En los casos de los margenes horizontal no se produce el colapso de margenes. Estos se suman entre si.
+                </p>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="centrado-de-cajas">
+            <article>
+                <h2>Centrado de Cajas</h2>
+                <p>
+                    El centrado de cajas es una técnica que se utiliza para alinear un elemento HTML en el centro de su contenido o de la página. Hay varias maneras de centrar un elemento HTML en CSS, cada una con un comportamiento diferente. A continuación veremos algunas de las maneras más comunes de centrar un elemento HTML en CSS.
+                </p>
+                <section>
+                    <h3>Centrado Horizontal</h3>
+                    <p>
+                        Para centrar un elemento horizontalmente en su contenedor, se puede utilizar la propiedad margin con el valor auto. Esto sirve para que el elemento se centre horizontalmente en su contenedor.
+                    </p>
+                    <pre>
+                        <code>
+                            .caja-uno {
+                                margin-left: auto;
+                                margin-right: auto;
+                            }
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h3>Centrado Vertical</h3>
+                    <p>
+                        Para centrar un elemento verticalmente en su contenedor, se puede utilizar la propiedad margin con el valor auto. Esto sirve para que el elemento se centre verticalmente en su contenedor.
+                    </p>
+                    <pre>
+                        <code>
+                            .caja-dos {
+                                margin-top: auto;
+                                margin-bottom: auto;
+                            }
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h3>Centrado Horizontal y Vertical</h3>
+                    <p>
+                        Para centrar un elemento horizontal y verticalmente en su contenedor, se puede utilizar la propiedad margin con el valor auto. Esto sirve para que el elemento se centre horizontal y verticalmente en su contenedor.
+                    </p>
+                    <pre>
+                        <code>
+                            .caja-tres {
+                                margin: auto;
+                            }
+                        </code>
+                    </pre>
+                </section>
+                <article class="sitio-web">
+                    <header class="encabezado">encabezado</header>
+                    <nav class="navegacion">navegación</nav>
+                    <main class="contenido-principal">Contenido Principal</main>
+                    <footer class="pie-de-pagina">Pié de página</footer>
+                </article>
+                <p>Podemos centrar la caja contenedora de ejemplo de esta manera:</p>
+                <pre>
+                    <code>
+                        .sitio-web {
+                            width: 800px;
+                            height: 1000px;
+                            border: medium solid black;
+                            padding: 20px;
+                            text-align: center;
+                            margin-left: auto;
+                            margin-right: auto;
+                        }
+                    </code>
+                </pre>
+            </article>
+            <a href="index.html#temario">🔼</a>
+            <hr>
+        </section>
+        <section id="posicionamiento-css">
+            <h2>Posicionamiento CSS</h2>
+            <p>
+            </p>
+        </section>
+    </main>
+</body>
+</html>

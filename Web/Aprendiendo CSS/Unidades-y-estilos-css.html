@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores, Unidades y Estilos En CSS</title>
+    <link rel="stylesheet" href="CSS/unidades-y-estilos.css">
+</head>
+<body>
+    <main>
+        <h1>Colores, Unidades y Estilos En CSS</h1>
+        <section id="colores-css">
+            <h2>Colores</h2>
+            <p>
+                En <strong>CSS</strong> existen 4 sistemas para definir colores:
+            </p>
+            <ul>
+                <li>
+                    <strong>Palabras Clave:</strong> Son palabras reservadas que representan un color. 
+                    <ul>
+                        <li>red</li>
+                        <li>blue</li>
+                        <li>green</li>
+                        <li>yellow</li>
+                        <li>black</li>
+                        <li>white</li>
+                        <li>gray</li>
+                        <li>purple</li>
+                        <li>orange</li>
+                        <li>pink</li>
+                        <li>...</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>RGB:</strong> Es un sistema de colores que se basa en la mezcla de los colores rojo, verde y azul (Red, Green, Blue). Para definir la opacidad de un color se utiliza el cuarto valor (Alpha). se representa con el prefijo <strong>rgba</strong>.
+                    <ul>
+                        <li>rgb(255, 0, 0)</li>
+                        <li>rgb(0, 255, 0)</li>
+                        <li>rgb(0, 0, 255)</li>
+                        <li>rgb(255, 255, 0)</li>
+                        <li>rgb(0, 255, 255)</li>
+                        <li>rgb(255, 0, 255)</li>
+                        <li>rgb(255, 255, 255)</li>
+                        <li>rgb(0, 0, 0)</li>
+                        <li>rgba(255, 0, 0, 0.5)</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>HEX:</strong> Es un sistema de colores que se basa en la mezcla de los colores rojo, verde y azul (Red, Green, Blue). Se representa con el prefijo <strong>#</strong> seguido de 6 caracteres que representan los valores de los colores en hexadecimal. Para definir la opacidad de un color se utiliza el octavo caracter. Es decir se representa con 8 caracteres (6 para los colores y 2 para la opacidad).
+                    <ul>
+                        <li>#FF0000</li>
+                        <li>#00FF00</li>
+                        <li>#0000FF</li>
+                        <li>#FFFF00</li>
+                        <li>#00FFFF</li>
+                        <li>#FF00FF</li>
+                        <li>#FFFFFF</li>
+                        <li>#000000</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>HSL:</strong> Es un sistema de colores que se basa en la mezcla de los colores tono, saturación y luminosidad (Hue, Saturation, Lightness). Para definir la opacidad de un color se utiliza el cuarto valor (Alpha). Se representa con el prefijo <strong>hsla</strong>.
+                    <ul>
+                        <li>hsl(0, 100%, 50%)</li>
+                        <li>hsl(120, 100%, 50%)</li>
+                        <li>hsl(240, 100%, 50%)</li>
+                        <li>hsl(60, 100%, 50%)</li>
+                        <li>hsl(180, 100%, 50%)</li>
+                        <li>hsl(300, 100%, 50%)</li>
+                        <li>hsl(0, 0%, 0%)</li>
+                        <li>hsla(0, 100%, 50%, 0.5)</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>
+                <strong>Nota:</strong> La opacidad de un color se define con un valor entre 0 y 1. Donde 0 es totalmente transparente y 1 es totalmente opaco.
+            </p>
+        </section>
+        <section id="transparent-y-current-color">
+            <h2>Valores transparent y currentColor</h2>
+            <p>
+                En <strong>CSS</strong> existen dos valores especiales para definir colores:
+            </p>
+            <section class="transparent">
+                <h3>transparent</h3>
+                <p>
+                    El valor <strong>transparent</strong> se utiliza para definir un color transparente. Es decir, un color que no se visualiza.
+                </p>
+                <pre>
+                    <code>
+                        background-color: transparent;
+                    </code>
+                </pre>
+            </section>
+            <section class="current-color">
+                <h3>currentColor</h3>
+                <p>
+                    El valor <strong>currentColor</strong> se utiliza para definir el color del texto. Es decir, el color que se define en la propiedad <strong>color</strong>. Este valor busca el ancestro más cercano que tenga definido un color y lo toma como referencia para definir el color del texto.
+                </p>
+                <pre>
+                    <code>
+                        color: currentColor;
+                    </code>
+                </pre>
+            </section>
+        </section>
+        <section id="propiedad-opacity" class="opacity">
+            <h2>Propiedad Opacity</h2>
+            <p>
+                La propiedad <strong>opacity</strong> se utiliza para definir la opacidad de un elemento y su contenido. Esta propiedad acepta valores entre 0 y 1. Donde 0 es totalmente transparente y 1 es totalmente opaco.
+            </p>
+            <pre>
+                <code>
+                    opacity: 0.5;
+                </code>
+            </pre>
+            <p>
+                <strong>Nota:</strong> La propiedad <strong>opacity</strong> afecta a todos los elementos hijos del elemento al que se le aplica.
+            </p>
+        </section>
+        <section id="unidades-de-medida-css">
+            <h2>Unidades de Medida en CSS</h2>
+        </section>
+    </main>
+</body>
+</html>

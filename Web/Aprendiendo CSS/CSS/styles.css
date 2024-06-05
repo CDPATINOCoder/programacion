@@ -1,0 +1,319 @@
+/* Selector para el elemento h1. Todos los h1 tendrán color marrón */
+h1{
+    color: brown;
+}
+
+/* Selector para el elemento h2. Todos los h2 tendrán color burlywood */
+h2{
+    color: burlywood;
+}
+
+/* Selector de clase .text-20. Todos los elementos con esta clase tendrán un tamaño de fuente de 20px */
+.text-20{
+    font-size: 20px;
+}
+
+/* Selector de clase .text-25. Todos los elementos con esta clase tendrán un tamaño de fuente de 25px */
+.text-25{
+    font-size: 25px;
+}
+
+/* Selector de clase .bg-blue. Todos los elementos con esta clase tendrán un color de fondo azul */
+.bg-blue{
+    background-color: blue;
+}
+
+/* Selector de clase .bg-red. Todos los elementos con esta clase tendrán un color de fondo rojo */
+.bg-red{
+    background-color: red;
+}
+
+/* Selector de clase .text-black. Todos los elementos con esta clase tendrán color de texto negro */
+.text-black{
+    color: black;
+}
+
+/* Selector de clase .text-white. Todos los elementos con esta clase tendrán color de texto blanco */
+.text-white{
+    color: white;
+}
+
+/* Selector de clase .text-center. Todos los elementos con esta clase tendrán su texto alineado al centro */
+.text-center{
+    text-align: center;
+}
+
+/* Selector de clase .text-right. Todos los elementos con esta clase tendrán su texto alineado a la derecha */
+.text-right{
+    text-align: right;
+}
+
+/* Selector para el elemento html. Todo el documento tendrá un comportamiento de desplazamiento suave */
+html{
+    scroll-behavior: smooth;
+}
+
+/* Selector para los elementos li que son hijos directos de .selector-hijo-directo */
+.selector-hijo-directo > li{
+    color: azure;
+    background-color: red;
+}
+
+/* Selector para los elementos b que son descendientes de .selector-hijo-descendiente */
+.selector-hijo-descendiente b{
+    color: black;
+    background-color: green;
+}
+
+/* Selector para los elementos h3 que son descendientes de .selectores-avanzados */
+.selectores-avanzados h3{
+    color: chartreuse;
+    background-color: black;
+}
+
+/* Selector para los elementos li que son hermanos generales de .selector-hermano-general */
+.selector-hermano-general ~ li{
+    color: aqua;
+}
+
+/* Selector para los elementos li que son hermanos adyacentes de .selector-hermano-adyacente */
+.selector-hermano-adyacente + li{
+    color: brown;
+}
+
+/* Selector para los elementos a que tienen el atributo href */
+.selector-de-atributos a[href]{
+    color: grey;
+}
+
+/* Selector para los elementos a que tienen el atributo target con el valor "_blank" */
+.selector-de-atributos a[target="_blank"]{
+    color: red;
+}
+
+/* Selector para los elementos a que tienen el atributo href que contiene la palabra "contact" */
+.selector-de-atributos a[href*="contact"]{
+    color: darkgreen;
+}
+
+/* Selector para los elementos a que tienen el atributo href que comienza con "http" */
+.selector-de-atributos a[href^="http"] {
+    text-decoration: none;
+}
+
+/* Selector para los elementos a que tienen el atributo href que termina con ".com" */
+.selector-de-atributos a[href$=".com"]{
+    background-color: black;
+}
+
+/* Selector para los elementos a que tienen la clase "servicios-activos" */
+.selector-de-atributos a[class~="servicios-activos"]{
+    background-color: brown;
+}
+
+/* Selector para los elementos a que tienen la clase que comienza con "sobre" */
+.selector-de-atributos a[class|="sobre"]{
+    background-color: darkblue;
+}
+
+/* Selector universal que aplica a todos los elementos */
+.selector-universal * {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Selector universal que aplica a todos los elementos */
+* {
+    font-family: serif;
+}
+
+.form-pseudoclases1 *:required {
+    border: 2px solid red;
+}
+
+.form-pseudoclases2 *:valid {
+    border: 2px solid green;
+}
+
+.form-pseudoclases3 *:invalid {
+    border: 2px solid red;
+}
+
+.form-pseudoclases4 *:focus {
+    background-color: gray;
+}
+
+
+.form-pseudoclases5 *:disabled {
+    background-color: skyblue;
+}
+
+.menu-pseudoclases2 a:visited {
+    color: gray;
+}
+
+.menu-pseudoclases1 a:hover {
+    color: rgb(245, 15, 15);
+    background-color: black;
+}
+
+#concepto-css:target {
+    background-color: black;
+    color: white;
+}
+
+.first-child-pseudoclass li:first-child {
+    color: red;
+}
+
+.last-child-pseudoclass li:last-child {
+    color: blue;
+}
+
+.nth-child-pseudoclass li:nth-child(3) {
+    color: green;
+}
+
+.nth-child-pseudoclass li:nth-child(3n+1) {
+    color: brown;
+}
+
+.nth-child-pseudoclass li:nth-child(odd) {
+    font-size: 24px;
+}
+
+.nth-child-pseudoclass li:nth-child(even) {
+    font-size: 18px;
+}
+
+.first-of-type p:first-of-type {
+    background-color: red;
+}
+
+.first-of-type p:last-of-type {
+    color: pink;
+    background-color: aqua;
+}
+
+.first-of-type p:nth-of-type(2) {
+    color: orange;
+    background-color: rgb(51, 40, 151);
+}
+
+
+.first-of-type *:not(p, h5){
+    color: white;
+    background-color: black;
+}
+
+.product-name::before {
+    content: "-";
+    color: red;
+}
+
+.product-model::before {
+    content: "Modelo: ";
+    font-weight: bold;
+}
+
+.product-price::before {
+    content: "$";
+}
+
+.product-price::after {
+    content: " USD";
+}
+
+.p-pseudoelementos::first-letter {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.p-pseudoelementos::first-line {
+    font-style: italic;
+    color: blue;
+}
+
+.p-pseudoelementos::selection {
+    background-color: black;
+    color: white;
+}
+
+.form-selector-agrupado input[type="text"],
+.form-selector-agrupado input[type="email"],
+.form-selector-agrupado textarea
+{
+    border-width: 2px;
+    border-color: yellow;
+    background-color: black;
+    color: white;
+    display: block;
+    width: 400px;
+    padding: 10px;
+}
+
+
+.herencia {
+    font-family: Arial, sans-serif;
+    color: green;
+}
+.herencia strong, .herencia i {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: inherit;
+}
+
+.caja-none {
+    background-color: aqua;
+    border: 2px solid black;
+    color: black;
+    padding: 10px;
+}
+
+.contenedor-float {
+    width: 400px;
+    height: 200px;
+    background-color: yellow;
+}
+
+.columna-float1,
+.columna-float3 {
+    text-align: center;
+    box-sizing: border-box;
+    width: 200px;
+    border: medium solid black;
+    float: left;
+}
+
+.columna-float3{
+    float: right;
+}
+
+
+
+.clear-fix {
+    clear: both;
+}
+
+
+.sitio-web {
+    width: 800px;
+    height: 1000px;
+    border: medium solid black;
+    padding: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+
+
+}
+
+.encabezado,
+.navegacion,
+.contenido-principal,
+.pie-de-pagina {
+    background-color: cyan;
+    border: medium solid black;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 10px;
+}

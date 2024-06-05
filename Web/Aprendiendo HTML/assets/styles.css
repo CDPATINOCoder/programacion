@@ -1,0 +1,44 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer {
+    position: sticky;
+    bottom: 0;
+    background-color: #333;
+    color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+footer a {
+    color: #f4f4f4;
+}
+
+footer div {
+    margin-bottom: 10px;
+}
+
+footer address {
+    font-style: normal;
+}

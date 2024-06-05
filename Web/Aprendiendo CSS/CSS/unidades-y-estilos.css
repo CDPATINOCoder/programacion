@@ -1,0 +1,12 @@
+.opacity {
+    opacity: 0.9;
+}
+
+.transparent {
+    background-color: blue;
+    background-color: transparent;
+}
+
+.current-color {
+    border: thick solid currentColor;
+}
