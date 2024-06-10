@@ -9,6 +9,15 @@
 <body>
     <main>
         <h1>Colores, Unidades y Estilos En CSS</h1>
+        <h2 id="temario">Temario</h2>
+        <ul>
+            <li><a href="Unidades-y-estilos-css.html#colores-css">Colores CSS</a></li>
+            <li><a href="Unidades-y-estilos-css.html#transparent-y-current-color">Valores transparent y currentColor</a></li>
+            <li><a href="Unidades-y-estilos-css.html#propiedad-opacity">Propiedad Opacity</a></li>
+            <li><a href="Unidades-y-estilos-css.html#unidades-de-medida-css">Unidades de Medida CSS</a></li>
+            <li><a href="variables-&-functions.html">Variables y Funciones CSS</a></li>
+
+        </ul>
         <section id="colores-css">
             <h2>Colores</h2>
             <p>
@@ -119,7 +128,127 @@
             </p>
         </section>
         <section id="unidades-de-medida-css">
-            <h2>Unidades de Medida en CSS</h2>
+            <h2>Unidades de Medidas</h2>
+            <p>
+                En <strong>CSS</strong> existen diferentes unidades de medida para definir tamaños y distancias, los cuales se clasifican en absolutos y relativos. 
+            </p>
+            <section>
+                <h3>Absolutas</h3>
+                <p>
+                    Las unidades absolutas son fijas y no cambian su tamaño. En esta sección veremos una unidad absoluta.
+                </p>
+                <section>
+                    <h4>pixeles</h4>
+                    <p>
+                        La unidad de medida <strong>px</strong> se utiliza para definir tamaños y distancias en pixeles. Un pixel es la unidad mínima de una pantalla.
+                    </p>
+                    <pre> 
+                        <code>
+                            width: 100px;
+                        </code>
+                    </pre>
+                </section>
+            </section>
+            <section>
+                <h3>Relativas</h3>
+                <p>
+                    Las unidades relativas son dinámicas y cambian su tamaño en función de un valor de referencia las cuales pueden ser el tamaño de la fuente, el tamaño de la pantalla, el tamaño del contenedor, entre otros. En esta sección veremos algunas unidades relativas.
+                </p>
+                <section>
+                    <h4>em</h4>
+                    <p>
+                        La unidad de medida <strong>em</strong> se utiliza para definir tamaños y distancias en función del tamaño de la fuente del elemento padre. Supongamos que el tamaño de la fuente del elemento padre es de 16px, si definimos un tamaño de 2em, el tamaño del elemento será de 32px.
+                    </p>
+                    <pre>
+                        <code>
+                            font-size: 2em; // 32px
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h4>rem</h4>
+                    <p>
+                        La unidad de medida <strong>rem</strong> se utiliza para definir tamaños y distancias en función del tamaño de la fuente del elemento raíz (root). Por defecto el tamaño de la fuente del elemento raíz es de 16px.
+                    </p>
+                    <pre>
+                        <code>
+                            font-size: 2rem; // 32px
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                  <h4>ex</h4>
+                  <p>
+                        La unidad de medida <strong>ex</strong> se utiliza para definir tamaños y distancias en función de la altura de la fuente del elemento padre. Supongamos que la altura de la fuente del elemento padre es de 16px, si definimos un tamaño de 2ex, el tamaño del elemento será de 32px.
+                  </p>
+                  <pre>
+                        <code>
+                            font-size: 2ex; // 32px
+                        </code>
+                  </pre>
+                  <p>
+                        <strong>Nota:</strong> La altura de la fuente es la distancia entre la línea base y la línea superior de la fuente. Generalmente es la altura de la letra "x".
+                  </p>
+                </section>
+                <section>
+                    <h4>ch</h4>
+                    <p>
+                        La unidad de medida <strong>ch</strong> se utiliza para definir tamaños y distancias en función de la cantidad de caracteres "0" que caben en el espacio de la fuente del elemento padre. Supongamos que la cantidad de caracteres "0" que caben en el espacio de la fuente del elemento padre es de 10 caracteres, si definimos un ancho de 10ch el tamaño se ajusta de acuerdo a la cantidad de caracteres "0" que caben en el espacio de la fuente del elemento padre.
+                    </p>
+                    <pre>
+                        <code>
+                            width: 10ch;
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h4>vw</h4>
+                    <p>
+                        La unidad de medida <strong>vw</strong> se utiliza para definir tamaños y distancias en función del ancho de la pantalla. Un valor de 1vw es igual al 1% del ancho de la pantalla.
+                    </p>
+                    <pre>
+                        <code>
+                            width: 100vw; // 100% del ancho de la pantalla
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h4>vh</h4>
+                    <p>
+                        La unidad de medida <strong>vh</strong> se utiliza para definir tamaños y distancias en función de la altura de la pantalla. Un valor de 1vh es igual al 1% de la altura de la pantalla.
+                    </p>
+                    <pre>
+                        <code>
+                            height: 100vh; // 100% de la altura de la pantalla
+                        </code>
+                    </pre>
+                    <p>
+                        <strong>Nota:</strong> Las unidades <strong>vw</strong> y <strong>vh</strong> son útiles para definir tamaños y distancias en función del tamaño de la pantalla.
+                    </p>
+                </section>
+                <section>
+                    <h4>vmin</h4>
+                    <p>
+                        La unidad de medida <strong>vmin</strong> se utiliza para definir tamaños y distancias en función del tamaño más pequeño entre el ancho y la altura de la pantalla. Un valor de 1vmin es igual al 1% del tamaño más pequeño entre el ancho y la altura de la pantalla.
+                    </p>
+                    <pre>
+                        <code>
+                            width: 100vmin; // 100% del tamaño más pequeño entre el ancho y la altura de la pantalla, si el ancho es menor que la altura, el tamaño será del 100% del ancho, si la altura es menor que el ancho, el tamaño será del 100% de la altura.
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h4>vmax</h4>
+                    <p>
+                        La unidad de medida <strong>vmax</strong> se utiliza para definir tamaños y distancias en función del tamaño más grande entre el ancho y la altura de la pantalla. Un valor de 1vmax es igual al 1% del tamaño más grande entre el ancho y la altura de la pantalla.
+                    </p>
+                    <pre>
+                        <code>
+                            width: 100vmax; // 100% del tamaño más grande entre el ancho y la altura de la pantalla, si el ancho es mayor que la altura, el tamaño será del 100% del ancho, si la altura es mayor que el ancho, el tamaño será del 100% de la altura.
+                        </code>
+                    </pre>
+                </section>
+            </section>
         </section>
     </main>
 </body>

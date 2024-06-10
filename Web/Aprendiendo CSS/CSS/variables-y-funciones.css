@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --font-color: #ff0000;
+    --secondary-color: #00ff00;
+    --primaryborder: medium solid blue;
+    --secondaryborder: 1px solid var(--secondary-color);
+    --font-color: #000000;
+    --default-bg-color: #00ff00;
+}
+
+.section-custom-properties {
+    background-color: var(--secondary-color);
+    border: var(--primaryborder);
+    padding: 1rem;
+    color: var(--font-color)
+}
+
+h1 {
+    color: var(--font-color);
+    background-color:aqua;
+    width: 21ch;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: var(--primaryborder);
+    margin-top: 1rem;
+}
+
+.calc-buttom {
+    
+    --padding-size: 8px;
+    --num-ch: 10ch;
+    background-color: var(--default-bg-color);
+    padding: var(--padding-size);
+    width: calc(var(--num-ch) + var(--padding-size) * 2);
+}

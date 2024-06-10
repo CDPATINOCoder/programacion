@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables y Funciones CSS</title>
+    <link rel="stylesheet" href="CSS/variables-y-funciones.css">
+</head>
+<body>
+    <h1>Variables y Funciones</h1>
+    <section id="custom-properties" class="section-custom-properties">
+        <h2>Variables</h2>
+        <p>
+            Las variables en CSS son conocidas como custom properties, estos sirven para almacenar valores que se pueden reutilizar en cierto elemento, contenedor o en todo el documento. Para declarar una variable se utiliza el prefijo -- y se asigna un valor.
+        </p>
+        <pre>
+            <code>
+                :root {
+                    --color-primary: #ff0000;
+                    --color-secondary: #00ff00;
+                }
+            </code>
+        </pre>
+        <p>
+            Lo que se ve en este ejemplo es una declaración de dos variables en el selector :root, es decir para que la variable creada pueda ser utilizada en todo el documento. Si se quiere utilizar en un contenedor específico se puede hacer de la siguiente manera:
+        </p>
+        <pre>
+            <code>
+                .container {
+                    --color-primary: #ff0000;
+                    --color-secondary: #00ff00;
+                }
+            </code>
+        </pre>
+        <p>
+            En caso de que este contenedor contenga hijos y se quiera que estos hijos hereden las variables se puede hacer de la siguiente manera:
+        </p>
+        <pre>
+            <code>
+                .container {
+                    --color-primary: #ff0000;
+                    --color-secondary: #00ff00;
+                }
+                .container h1 {
+                    color: var(--color-primary);
+                }
+            </code>
+        </pre>
+    </section>
+    <section id="functions">
+        <h2>Funciones</h2>
+        <p>
+            Las funciones en CSS son una forma de reutilizar código, estas funciones se pueden utilizar para realizar cálculos, transformaciones, entre otras cosas. Las funciones más comunes son las siguientes:
+        </p>
+        <section id="url-function">
+            <h3>url()</h3>
+            <p>
+                La función url() se utiliza para especificar la ubicación de un recurso, como una imagen, un archivo de audio, un archivo de video, entre otros.
+            </p>
+            <pre>
+                <code>
+                    .container {
+                        background-image: url('imagen.jpg');
+                    }
+                </code>
+            </pre>
+        </section>
+        <section id="calc-function">
+            <h3>calc()</h3>
+            <p>
+                La función calc() se utiliza para realizar cálculos matemáticos, esta función se puede utilizar en cualquier propiedad que acepte valores numéricos. Supongamos que tenemos una clase de un boton que tiene 10 carácteres con estas variables declaradas:
+            </p>
+            <div class="calc-buttom">1234567890</div>
+            <pre>
+                <code>
+                    .calc-buttom {
+                        box-sizing: border-box;
+                        --padding-size: 8px;
+                        --num-ch: 10ch;
+                        background-color: var(--default-bg-color);
+                        padding: var(--padding-size);
+                        width: calc(var(--num-ch) + var(--padding-size) * 2);
+                    }
+                </code>
+            </pre>
+            <p>
+                Cómo el contenedor tiene la propiedad box-sizing: border-box, pudimos calcular el ancho del contenedor con la función calc() y sumarle el padding que tiene el contenedor.
+            </p>
+        </section>
+        <section id="min-max-function">
+            <h3>min() & max()</h3>
+            <p>
+                Las funciones min() y max() se utilizan para especificar un valor mínimo o máximo de una propiedad. Estas funciones se pueden utilizar en cualquier propiedad que acepte valores numéricos. <br>
+                Cuando usamos la función min () decimos que el valor de la propiedad será el valor mínimo entre los valores que se le pasan como argumento. <br>
+                Cuando usamos la función max () decimos que el valor de la propiedad será el valor máximo entre los valores que se le pasan como argumento.
+            </p>
+            <pre>
+                <code>
+                    .container {
+                        width: min(100%, 500px);
+                        height: max(100%, 500px);
+                    }
+                </code>
+            </pre>
+            <p>
+                En este ejemplo, el ancho del contenedor será el 100% del ancho del viewport si este es menor a 500px, de lo contrario el ancho del contenedor será de 500px. En el caso de la altura del contenedor, esta será el 100% del alto del viewport si este es mayor a 500px, de lo contrario la altura del contenedor será de 500px.
+            </p>
+        </section>
+        <section id="clamp-funcion">
+            <h3>clamp()</h3>
+            <p>
+                La función clamp() se utiliza para especificar un valor que se encuentra entre un rango de valores. Esta función se puede utilizar en cualquier propiedad que acepte valores numéricos. La función clamp() recibe tres argumentos, el primer argumento es el valor mínimo, el segundo argumento es el valor preferido y el tercer argumento es el valor máximo. Se utiliza bastante en el responsive design.
+            </p>
+            <pre>
+                <code>  
+                    h1 {
+                        font-size: clamp(1rem, 2.5rem, 3rem);
+                    }
+                </code>
+            </pre>
+            <p>
+                En este ejemplo, el tamaño de la fuente del h1 será de 1rem si el viewport es menor a 2.5rem, si el viewport es mayor a 2.5rem y menor a 3rem, el tamaño de la fuente del h1 será de 2.5rem, si el viewport es mayor a 3rem, el tamaño de la fuente del h1 será de 3rem.
+            </p>
+        </section>
+    </section>
+    <a href="Unidades-y-estilos-css.html#temario">volver atrás...</a>
+</body>
+</html>

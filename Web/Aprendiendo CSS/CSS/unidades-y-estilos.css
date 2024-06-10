@@ -10,3 +10,12 @@
 .current-color {
     border: thick solid currentColor;
 }
+
+
+.button {
+    background-color: red;
+    width: 9ch;
+    border: 10px solid black;
+    box-sizing: border-box;
+}
+

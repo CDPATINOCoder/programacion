@@ -19,6 +19,11 @@
                 <li><a href="index.html#objetos">Objetos</a></li>
                 <li><a href="index.html#operadores">Operadores</a></li>
                 <li><a href="index.html#estructuras-de-control">Estructuras de Control</a></li>
+                <li><a href="index.html#bucles">Bucles</a></li>
+                <li><a href="index.html#try-catch-finally">Manejo de Errores</a></li>
+                <li><a href="index.html#destructuracion">destructuracion</a></li>
+                <li><a href="index.html#parametros-rest-y-operador-spread">Parametros rest y Operador spread</a></li>
+                <li><a href="index.html#arrow-function">Arrow Functions</a></li>
             </ul>
         </header>
         <section id="javascript-concepto">
@@ -1585,7 +1590,7 @@
             <a href="index.html#temario">⬆️</a>
             <hr>
         </section>
-        <section>
+        <section id="bucles">
             <article>
                 <h2>Bucles (Loops)</h2>
                 <p>
@@ -1712,6 +1717,7 @@
         </section>
         <section id="try-catch-finally">
             <article>
+                <h2>try catch finally</h2>
                 <p>
                     El bloque try catch finally se utiliza para manejar errores en JavaScript. El bloque try se utiliza para probar un bloque de código en busca de errores. El bloque catch se utiliza para manejar los errores que se producen en el bloque try. El bloque finally se utiliza para ejecutar un bloque de código después de que se haya ejecutado el bloque try y el bloque catch. Por ejemplo si el dato que esperamos recibir es un número y el usuario ingresa un texto podemos tirar nuestro error personalizado.
                 </p>
@@ -1750,7 +1756,8 @@
             <hr>
         </section>
         <section id="destructuracion">
-            <h3>Destructuracion</h3>
+            <article>
+                <h2>destructuracion</h2>
             <p>
                 La destructuración es una característica de JavaScript que permite extraer valores de arreglos y objetos y asignarlos a variables. La destructuración se puede utilizar con arreglos y objetos en JavaScript. 
             </p>
@@ -1792,6 +1799,356 @@
                 console.log(modelo); // Sentra
                 console.log(año); // 2021 */
             </script>
+            </article>
+            <a href="index.html#temario">⬆️</a>
+        </section>
+        <section id="parametros-rest-y-operador-spread">
+            <article>
+                <h2>Parametro rest y Operador spread</h2>
+                <p>
+                    El parámetro rest y el operador spread son características de JavaScript que se utilizan para trabajar con arreglos y objetos. 
+                </p>
+                <section>
+                    <h3>rest</h3>
+                    <p>
+                        El párametro rest se utiliza cuando no sabemos el numero de argumentos que se van a pasar a una función. Este se declara con tres puntos antes del nombre del parámetro. Por ejemplo si queremos sumar varios números.
+                    </p>
+                    <pre>
+                        <code>
+                            function sumar(...numeros) {
+                                let resultado = 0;
+                                for (let numero of numeros) {
+                                    resultado += numero;
+                                }
+                                return resultado;
+                            }
+                            console.log(sumar(1, 2, 3, 4, 5)); // 15
+                        </code>
+                    </pre>
+                    <p>
+                        Este parametro se utiliza mucho en React para pasar propiedades a los componentes.
+                    </p>
+                    <script>
+                     /*    function sumar(...numeros) {
+                            let resultado = 0;
+                            for (let numero of numeros) {
+                                resultado += numero;
+                            }
+                            return resultado;
+                        }
+                        console.log(sumar(1, 2, 3, 4, 5));  */
+                    </script>
+                </section>
+                <section>
+                    <h3>spread</h3>
+                    <p>
+                        El operador spread se utiliza para combinar arreglos y objetos en JavaScript. El operador spread se declara con tres puntos antes del nombre del arreglo u objeto. Por ejemplo si queremos combinar dos arreglos.
+                    </p>
+                    <pre>
+                        <code>  
+                            let colores1 = ['rojo', 'verde', 'azul'];
+                            let colores2 = ['amarillo', 'naranja', 'morado'];
+                            let colores = [...colores1, ...colores2];
+                            console.log(colores); // ['rojo', 'verde', 'azul', 'amarillo', 'naranja', 'morado']
+                        </code>
+                    </pre>
+                    <p>
+                        Este operador se utiliza mucho en React para pasar propiedades a los componentes.
+                    </p>
+                    <script>
+                        /* let colores1 = ['rojo', 'verde', 'azul'];
+                        let colores2 = ['amarillo', 'naranja', 'morado'];
+                        let colores = [...colores1, ...colores2];
+                        console.log(colores); */
+                    </script>
+                </section>
+            </article>
+            <a href="index.html#temario">⬆️</a>
+        </section>
+        <section id="arrow-function">
+            <article>
+                <h2>Arrow Function</h2>
+                <p>
+                    Las funciones de flecha (arrow functions) son una característica de JavaScript que se utilizan para crear funciones de forma más concisa. Las funciones de flecha se declaran con una flecha (=>) entre los paréntesis y el cuerpo de la función. 
+                </p>
+                <p>
+                    Para declarar una funcion flecha podemos hacerlo sin la necesidad de los corchetes en caso de que la funcion solo tenga una linea de codigo.
+                </p>
+                <pre>
+                    <code>
+                        let sumar = (a, b) => a + b;
+                        console.log(sumar(2, 3)); // 5
+                    </code>
+                </pre>
+                <p>
+                    O si la funcion tiene mas de una linea de codigo podemos hacerlo de la siguiente manera.
+                </p>
+                <pre>
+                    <code>
+                        let sumar = (a, b) => {
+                            let resultado = a + b;
+                        };
+                        console.log(sumar(2, 3)); // 5
+                    </code>
+                </pre>
+                <p>
+                    Las funciones flecha retornan un valor implicitamente, por lo que no es necesario utilizar la palabra reservada return.
+                </p>
+                <p>
+                    Otra cosa que debemos de saber es que si declaramos una función flecha en un objeto y utilizamos la palabra this en la funcion creada esta ignorara el objeto y tomara el valor de this del objeto padre, es decir el objeto global.
+                </p>
+            </article>
+            <a href="index.html#temario">⬆️</a>
+        </section>
+        <section id="prototypes">
+            <article>
+                <h2>Prototipos</h2>
+                <p>
+                    Los prototipos son una característica de JavaScript que se utiliza para compartir propiedades y métodos entre objetos. Los prototipos se utilizan para crear objetos en JavaScript. Para entender mejor los prototipos en JavaScript, primero debemos entender estos puntos:
+                </p>
+                <h3>Función constructora</h3>
+                <p>
+                    Una función constructora es una función que se utiliza para crear objetos en JavaScript. Las funciones constructoras se utilizan para crear objetos con propiedades y métodos. Por ejemplo si queremos crear un objeto persona con propiedades y métodos.
+                </p>
+                <pre>
+                    <code>
+                        function Persona(nombre, apellido, edad) {
+                            this.nombre = nombre;
+                            this.apellido = apellido;
+                            this.edad = edad;
+                        }
+                          
+                    </code>
+                </pre>
+                    <h3>prototipo</h3>
+                    <p>
+                        Cuando ya tenemos una función constructora definida podemos agregarle propiedades y métodos a esta función constructora utilizando el prototipo. Por ejemplo si queremos agregar un método saludar a la función constructora Persona.
+                    </p>
+                    <pre>
+                        <code>
+                            function Persona(nombre, apellido, edad) {
+                                this.nombre = nombre;
+                                this.apellido = apellido;
+                                this.edad = edad;
+                            }
+                            Persona.prototype.saludar = function(){
+                                console.log(`Hola mi nombre es ${this.nombre} ${this.apellido}, tengo ${this.edad} años.`)
+                            }
+                        </code>
+                    </pre>
+                    <p>
+                        El metodo saludar creado es accesible para todos las instancias de la función constructora Persona.
+                    </p>
+                        <h3>instancias</h3>
+                        <p>
+                            Una instancia es un objeto que se crea a partir de una función constructora en JavaScript. Por ejemplo si queremos crear una instancia de la función constructora Persona.
+                        </p>
+                        <pre>
+                            <code>
+                                const persona1 = new Persona('Juan', 'Pérez', 30);
+                                const persona2 = new Persona('Pedro', 'Gómez', 25);
+                                persona1.saludar(); // Hola mi nombre es Juan Pérez, tengo 30 años.
+                            </code>
+                        </pre>
+                        <p>
+                            En este caso persona1 y persona2 son instancias de la función constructora Persona.
+                        </p>
+                    </section>
+            </article>
+            <a href="index.html#temario">⬆️</a>
+            <hr>
+        </section>
+        <section id="herencia-prototipica">
+            <article>
+                <p>
+                    La herencia prototípica es una característica de JavaScript que se utiliza para compartir propiedades y métodos entre objetos. La herencia prototípica se utiliza para crear objetos en JavaScript. 
+                </p>
+                <pre>
+                    <code>
+                        function Animal(nombre, genero){
+                            this.nombre = nombre
+                            this.genero = genero
+                        }
+                        
+                        Animal.prototype.saludar = function () {
+                            console.log(`Hola yo soy ${this.nombre} y soy ${this.genero}`)
+                        }
+                        
+                        
+                        
+                        function Perro(nombre, genero, raza){
+                            this.raza = raza
+                            this.llamar = Animal
+                            this.llamar(nombre,genero)
+                        }
+                        
+                        Perro.prototype = new Animal()
+                        Perro.prototype.constructor = Perro
+                        
+                        Perro.prototype.ladrar = function (){
+                            console.log("guau guau")
+                        }
+                        
+                        const maylo = new Perro("maylo", "macho", "mestizo")
+                        const lulu = new Perro("lulu", "macho", "chihuahua")
+                        
+                        function Gato (nombre, genero, color){
+                            this.color = color
+                            this.llamar = Animal
+                            this.llamar(nombre,genero)
+                        }
+                        
+                        Gato.prototype = new Animal()
+                        Gato.prototype.constructor = Gato
+                        
+                        Gato.prototype.maullar = function (){
+                            console.log("miauu")
+                        }
+                        
+                        const michi = new Gato("michi", "macho", "blanco")
+                        
+                        console.log(lulu.nombre)
+                        console.log(lulu.genero)   
+                        console.log(lulu.raza) 
+                        lulu.saludar()
+                        lulu.ladrar()  
+                        console.log(maylo.nombre)
+                        console.log(maylo.genero) 
+                        console.log(maylo.raza)   
+                        maylo.saludar()
+                        maylo.ladrar()
+                        console.log(michi.nombre)
+                        console.log(michi.genero)   
+                        console.log(michi.color) 
+                        michi.saludar()
+                        michi.maullar()
+                                                
+                    </code>
+                </pre>
+                <p>
+                    En este caso se crearon dos funciones constructoras, una para la clase Animal y otra para la clase Perro. La clase Perro hereda de la clase Animal y se le agrega un método ladrar. Las instancias de las clases Perro y Gato tienen acceso a los métodos de la clase Animal y de la clase Perro y Gato respectivamente.
+                </p>
+            </article>
+            <a href="index.html#temario">⬆️</a>
+            <hr>
+        </section>
+        <section id="clases-y-herencia">
+            <article>
+                <h2>Clases y herencia</h2>
+                <p>
+                    Las clases son una característica de JavaScript que se utiliza para crear objetos. Las clases se utilizan para crear objetos con propiedades y métodos. La herencia es una característica de JavaScript que se utiliza para compartir propiedades y métodos entre clases. La herencia se utiliza para crear clases que heredan propiedades y métodos de otras clases. Traduciendo el codigo anterior a clases tenemos lo siguiente:
+                </p>
+                <pre>
+                    <code>
+                        class Animal {
+                            constructor(nombre, genero) {
+                                this.nombre = nombre;
+                                this.genero = genero;
+                            }
+                            saludar() {
+                                console.log(`Hola yo soy ${this.nombre} y soy ${this.genero}`);
+                            }
+                        }
+                        
+                        class Perro extends Animal {
+                            constructor(nombre, genero, raza) {
+                                super(nombre, genero);
+                                this.raza = raza;
+                            }
+                            ladrar() {
+                                console.log("guau guau");
+                            }
+                        }
+                        
+                        const maylo = new Perro("maylo", "macho", "mestizo");
+                        const lulu = new Perro("lulu", "macho", "chihuahua");
+                        
+                        class Gato extends Animal {
+                            constructor(nombre, genero, color) {
+                                super(nombre, genero);
+                                this.color = color;
+                            }
+                            maullar() {
+                                console.log("miauu");
+                            }
+                        }
+                        
+                        const michi = new Gato("michi", "macho", "blanco");
+                        
+                        console.log(lulu.nombre);
+                        console.log(lulu.genero);
+                        console.log(lulu.raza);
+                        lulu.saludar();
+                        lulu.ladrar();
+                        console.log(maylo.nombre);
+                        console.log(maylo.genero);
+                        console.log(maylo.raza);
+                        maylo.saludar();
+                        maylo.ladrar();
+                        console.log(michi.nombre);
+                        console.log(michi.genero);
+                        console.log(michi.color);
+                        michi.saludar();
+                        michi.maullar();
+                    </code>
+                </pre>
+                <p>
+                    En este caso se crearon 3 clases Animal, Perro y Gato. La clase Perro hereda de la clase Animal y se le agrega un método ladrar. La clase Gato hereda de la clase Animal y se le agrega un método maullar. Las instancias de las clases Perro y Gato tienen acceso a los métodos de la clase Animal y de la clase Perro y Gato respectivamente.
+                </p>
+            </article>
+            <a href="index.html#temario">⬆️</a>
+            <hr>
+        </section>
+        <section id="getters-setters-y-static">
+            <article>
+                <h2>
+                    Getters, Setters y Static
+                </h2>
+                <p>
+                    Los getters y setters son una característica de JavaScript que se utiliza para acceder y modificar propiedades de un objeto. Los getters se utilizan para acceder a propiedades de un objeto. Los setters se utilizan para modificar propiedades de un objeto. Los métodos estáticos son una característica de JavaScript que se utiliza para crear métodos que se pueden llamar sin instanciar un objeto.
+                </p>                <pre>
+                    <code>
+                        class Gato extends Animal {
+                            constructor(nombre, genero, color, edad){
+                                super(nombre,genero)
+                                this.color = color
+                                this.edad = null
+                            }
+                        
+                            static maullar(){
+                                console.log("Miauuuuuuuuuu")
+                            }
+                        
+                            get getEdad(){
+                                return this.edad
+                            }
+                        
+                            set setEdad(edad){
+                                this.edad = edad
+                            }
+                        
+                        
+                        
+                        }
+                        
+                        const michi = new Gato("michi", "hembra", "blanco")
+                        
+                        Gato.maullar()
+                        
+                        console.log(michi.getEdad)
+                        
+                        michi.setEdad = "2"
+                        console.log(michi.getEdad)
+                        
+                        console.log(michi.nombre, michi.genero, michi.color, michi.edad)
+                    </code>
+                </pre>
+                <p>
+                    En este caso se creó una clase Gato que hereda de la clase Animal. La clase Gato tiene un método estático maullar que se puede llamar sin instanciar un objeto. La clase Gato tiene un getter getEdad que se utiliza para acceder a la propiedad edad de un objeto. La clase Gato tiene un setter setEdad que se utiliza para modificar la propiedad edad de un objeto. La instancia de la clase Gato tiene acceso a los métodos de la clase Animal.
+                </p>
+            </article>
+            <a href="index.html#temario">⬆️</a>
+            <hr>
         </section>
     </main>
 </body>
