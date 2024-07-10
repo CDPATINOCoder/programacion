@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modulos en JavaScript</title>
+  </head>
+  <body>
+    <h1>Modulos en JavaScript</h1>
+    <p>
+      Los módulos en JavaScript son una forma de dividir nuestro código en
+      archivos separados, de tal forma que podamos importar y exportar
+      funciones, variables, clases, etc. de un archivo a otro.
+    </p>
+    <p>
+      Para poder utilizar módulos en JavaScript, debemos de utilizar la
+      directiva <code>type="module"</code> en la etiqueta <code>script</code>.
+    </p>
+    <section>
+      <h2>Modulo 1</h2>
+      <p>
+        <code>js/modulos.js</code>
+        <pre>
+          <code>
+            export const PI = Math.PI;
+            export function sumar(a, b) {
+              return a + b;
+            }
+            export function restar(a, b) {
+              return a - b;
+            }
+          </code>
+        </pre>
+      </p>
+    </section>
+    <section>
+      <h2>Modulo 2</h2>
+      <p>
+        <code>js/no-module.js</code>
+        <pre>
+          <code>
+            import { PI, sumar, restar } from "./modulos.js";
+            console.log(PI);
+            console.log(sumar(5, 3));
+            console.log(restar(5, 3));
+          </code>
+        </pre>
+      </p>
+    </section>
+    <section>
+      <h2>Resultado</h2>
+      <p>
+        <code>Resultado en consola</code>
+        <pre>
+          <code>
+            3.141592653589793
+            8
+            2
+          </code>
+        </pre>
+      </p>
+    </section>
+    <section>
+      <h2>Usar alias</h2>
+      <p>
+        <code>js/no-module.js</code>
+        <pre>
+          <code>
+            import { PI as PI2, sumar as sumar2, restar as restar2 } from "./modulos.js";
+            console.log(PI2);
+            console.log(sumar2(5, 3));
+            console.log(restar2(5, 3));
+          </code>
+        </pre>
+      </p>
+    </section>
+      <script src="js/modulos.js" type="module"></script>
+      <script src="js/no-module.js" nomodule></script>
+    </p>
+  </body>
+</html>

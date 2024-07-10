@@ -1,0 +1,82 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card {
+  background-color: aqua;
+  border: medium solid black;
+  width: 400px;
+  height: 400px;
+}
+
+.img1 {
+  height: 300px;
+  background-color: brown;
+  object-fit: fill;
+}
+
+.img2 {
+  height: 300px;
+  background-color: brown;
+  object-fit: cover;
+}
+.img3 {
+  height: 300px;
+  background-color: brown;
+  object-fit: contain;
+}
+
+.img4 {
+  height: 300px;
+  background-color: brown;
+  object-fit: none;
+}
+
+.img5 {
+  height: 300px;
+  background-color: brown;
+  object-fit: scale-down;
+}
+
+.img6 {
+  height: 300px;
+  background-color: brown;
+  object-fit: contain;
+  object-position: top;
+}
+
+.img7 {
+  height: 300px;
+  background-color: brown;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+.img8 {
+  height: 300px;
+  background-color: brown;
+  object-fit: contain;
+  object-position: left;
+}
+
+.img9 {
+  height: 300px;
+  background-color: brown;
+  object-fit: contain;
+  object-position: right;
+}
+
+.img10 {
+  height: 300px;
+  background-color: brown;
+  object-fit: contain;
+  object-position: center;
+}
+
+.img11 {
+  height: 300px;
+  background-color: brown;
+  object-fit: contain;
+  object-position: -50px;
+}

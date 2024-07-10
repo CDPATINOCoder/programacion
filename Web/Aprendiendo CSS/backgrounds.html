@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fondos en CSS</title>
+    <link rel="stylesheet" href="CSS/backgrounds.css" />
+  </head>
+  <body>
+    <h1>Estilos del Fondo</h1>
+    <p>
+      Los fondos en CSS son una forma de darle estilo a los elementos de una
+      página web. Los fondos se utilizan para darle color o textura a los
+      elementos de la página. En esta seccion veremos las propiedades que
+      podemos utilizar para darle estilo a los fondos de los elementos de una
+      página web.
+    </p>
+    <section>
+      <h2>background-color</h2>
+      <p>
+        La propiedad background-color se utiliza para darle color de fondo a un
+        elemento. El valor de esta propiedad puede ser un color en formato
+        hexadecimal, RGB o nombre de color.
+      </p>
+      <div class="box bg-color"></div>
+      <pre>
+        <code>
+          .bg-color {
+            background-color: green;
+          }
+        </code>
+      </pre>
+    </section>
+    <section>
+      <h2>background-image</h2>
+      <p>
+        La propiedad background-image se utiliza para darle una imagen de fondo
+        a un elemento. El valor de esta propiedad puede ser la URL de la imagen
+        que se quiere utilizar.
+      </p>
+      <div class="box bg-image"></div>
+      <pre>
+        <code>
+          .bg-image{
+            background-image: url("../assets/puesta-sol.jpg")
+          }
+        </code> 
+      </pre>
+    </section>
+    <section>
+      <h2>background-size</h2>
+      <p>
+        La propiedad background-size se utiliza para especificar el tamaño de la
+        imagen de fondo. Estos son los valores que puede tomar esta propiedad:
+      </p>
+      <ul>
+        <li>
+          cover: La imagen se ajusta al tamaño del elemento y se recorta si es
+          necesario.
+        </li>
+        <li>
+          contain: La imagen se ajusta al tamaño del elemento y se muestra
+          completa.
+        </li>
+      </ul>
+      <div class="box bg-size"></div>
+      <pre>
+        <code>
+          .bg-size {
+            background-image: url("../assets/puesta-sol.jpg");
+            background-size: cover;
+          }
+        </code>
+      </pre>
+    </section>
+    <section>
+      <h2>background-repeat</h2>
+      <p>
+        La propiedad background-repeat se utiliza para especificar si la imagen
+        de fondo se repite o no. Estos son los valores que puede tomar esta
+        propiedad:
+      </p>
+      <ul>
+        <li>
+          repeat: La imagen se repite en ambas direcciones (horizontal y
+          vertical).
+        </li>
+        <li>repeat-x: La imagen se repite solo en la dirección horizontal.</li>
+        <li>repeat-y: La imagen se repite solo en la dirección vertical.</li>
+        <li>no-repeat: La imagen no se repite.</li>
+      </ul>
+      <div class="box bg-repeat"></div>
+      <pre>
+        <code>
+          .bg-repeat {
+            background-color: green;
+            background-image: url("../assets/puesta-sol.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+        </code>
+      </pre>
+    </section>
+    <section>
+      <h2>background-position</h2>
+      <p>
+        La propiedad background-position se utiliza para especificar la posición
+        de la imagen de fondo. Estos son los valores que puede tomar esta
+        propiedad:
+      </p>
+      <ul>
+        <li>top: La imagen se posiciona en la parte superior del elemento.</li>
+        <li>
+          bottom: La imagen se posiciona en la parte inferior del elemento.
+        </li>
+        <li>
+          left: La imagen se posiciona en la parte izquierda del elemento.
+        </li>
+        <li>right: La imagen se posiciona en la parte derecha del elemento.</li>
+        <li>
+          center: La imagen se posiciona en el centro del elemento (horizontal y
+          vertical).
+        </li>
+        <li>
+          x% y%: La imagen se posiciona en la posición especificada en
+          porcentaje del elemento.
+        </li>
+        <li>
+          xpx ypx: La imagen se posiciona en la posición especificada en píxeles
+          del elemento.
+        </li>
+      </ul>
+      <div class="box bg-position"></div>
+      <pre>
+        <code>
+          .bg-position {
+            background-color: green;
+            background-image: url("../assets/puesta-sol.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+          }
+        </code>
+      </pre>
+    </section>
+    <section>
+      <h2>background-clip</h2>
+      <p>
+        La propiedad background-clip se utiliza para especificar la zona del
+        elemento en la que se va a aplicar el fondo (imagen y color). Estos son
+        los valores que puede tomar esta propiedad:
+      </p>
+      <ul>
+        <li>
+          border-box: El fondo se aplica en toda la caja del elemento,
+          incluyendo el borde.
+        </li>
+        <li>
+          padding-box: El fondo se aplica en la zona de relleno del elemento,
+          excluyendo el borde.
+        </li>
+        <li>
+          content-box: El fondo se aplica en la zona de contenido del elemento,
+          excluyendo el relleno y el borde.
+        </li>
+      </ul>
+      <div class="box bg-clip"></div>
+      <pre>
+        <code>
+          .bg-clip {
+            background-color: green;
+            background-image: url("../assets/puesta-sol.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-clip: padding-box;
+          }
+        </code>
+      </pre>
+    </section>
+    <section>
+      <h2>background-origin</h2>
+      <p>
+        La propiedad background-origin se utiliza para especificar el origen del
+        fondo (imagen) en el elemento. Estos son los valores que puede tomar
+        esta propiedad:
+      </p>
+      <ul>
+        <li>
+          border-box: El fondo se aplica en toda la caja del elemento,
+          incluyendo el borde.
+        </li>
+        <li>
+          padding-box: El fondo se aplica en la zona de relleno del elemento,
+          excluyendo el borde.
+        </li>
+        <li>
+          content-box: El fondo se aplica en la zona de contenido del elemento,
+          excluyendo el relleno y el borde.
+        </li>
+      </ul>
+      <div class="box bg-origin"></div>
+      <pre>
+        <code>
+          .bg-origin {
+            background-color: green;
+            background-image: url("../assets/puesta-sol.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 1rem;
+            background-origin: content-box;
+          }
+        </code>
+      </pre>
+    </section>
+    <section>
+      <h2>background attachment</h2>
+      <p>
+        La propiedad background-attachment se utiliza para especificar si la
+        imagen de fondo se desplaza con el contenido o se mantiene fija en su
+        posición. Estos son los valores que puede tomar esta propiedad:
+      </p>
+      <ul>
+        <li>
+          scroll: La imagen de fondo se desplaza con el contenido del elemento.
+        </li>
+        <li>
+          fixed: La imagen de fondo se mantiene fija en su posición mientras se
+          desplaza el contenido del elemento.
+        </li>
+        <li>
+          local: La imagen de fondo se desplaza con el contenido del elemento,
+          pero no se desplaza con el contenido de los elementos secundarios.
+        </li>
+      </ul>
+      <div class="box bg-attachment"></div>
+      <pre>
+        <code>
+          width: 100%;
+          height: 100vh;
+          background-color: green;
+          background-image: url("../assets/puesta-sol.jpg");
+          background-size: cover;
+          background-repeat: no-repeat;
+          padding: 1rem;
+          background-attachment: fixed;
+        </code>
+      </pre>
+    </section>
+    <section>
+      <h2>background</h2>
+      <p>
+        La propiedad background es una propiedad abreviada que se utiliza para
+        especificar todas las propiedades de fondo en una sola declaración. Los
+        valores que puede tomar esta propiedad son los mismos que los de las
+        propiedades individuales.
+      </p>
+      <div class="box bg"></div>
+      <pre>
+        <code>
+          .bg {
+            width: 100%;
+            height: 100vh;
+            background: green url("../assets/puesta-sol.jpg") no-repeat center
+              / cover fixed;
+          }
+        </code>
+      </pre>
+      <p>
+        <strong>Nota:</strong>: Con el shorthand background se pueden importar
+        varias imagenes de fondo, separandolas por comas.
+      </p>
+    </section>
+    <a href="Unidades-y-estilos-css.html">volver atras...</a>
+  </body>
+</html>
