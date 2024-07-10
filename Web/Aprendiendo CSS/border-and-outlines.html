@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bordes y Outlines</title>
+    <link rel="stylesheet" href="CSS/border-and-outlines.css" />
+  </head>
+  <body>
+    <h1>Bordes y Outlines</h1>
+    <p>
+      Los bordes y contornos son una forma de darle estilo a los elementos de
+      una página web. Los bordes se utilizan para rodear los elementos de la
+      página, mientras que los contornos se utilizan para rodear los elementos
+      de la página sin afectar el diseño de la página.
+    </p>
+    <section id="border-radius">
+      <h2>border-radius</h2>
+      <p>
+        La propiedad border-radius se utiliza para redondear las esquinas de un
+        elemento. A continuación se muestra las distintas formas de redondear
+        las esquinas de un elemento.
+      </p>
+      <section>
+        <h3>Todos las esquinas</h3>
+        <p>
+          Para redondear todos los bordes de un elemento se utiliza un solo
+          valor con el short hand de la propiedad border-radius.
+        </p>
+        <div class="box border-radius-all"></div>
+        <pre>
+          <code>
+            .border-radius-all {
+              border-radius: 2rem;
+            }
+          </code>
+        </pre>
+      </section>
+      <section>
+        <h3>Diagonales</h3>
+        <p>
+          Para redondear las esquinas de un elemento de forma diagonal se
+          utilizan dos valores con el short hand de la propiedad border-radius.
+        </p>
+        <div class="box border-radius-diagonal"></div>
+        <pre>
+          <code>
+            .border-radius-diagonal {
+              border-radius: 2rem 4rem;
+            }
+          </code>
+        </pre>
+      </section>
+      <section>
+        <h3>Esquinas independientes</h3>
+        <p>
+          Para redondear las esquinas de un elemento de forma independiente se
+          utilizan cuatro valores.
+        </p>
+        <div class="box border-radius-independent"></div>
+        <pre>
+          <code>
+            .border-radius-independent {
+              border-radius: 2rem 4rem 6rem 8rem;
+            }
+          </code>
+        </pre>
+      </section>
+      <p>
+        No solamente podemos redondear de manera circular las esquinas de un
+        elemento sino que también podemos redondear de manera elíptica. Cómo lo
+        hacemos? Pues simplemente añadiendo un slash (/) entre los valores de la
+        propiedad border-radius.
+      </p>
+      <section>
+        <h3>Todos las esquinas</h3>
+        <p>
+          Para redondear todos los bordes de un elemento de forma elíptica se
+          utiliza un solo valor con el short hand de la propiedad border-radius.
+        </p>
+        <div class="box border-radius-all-elliptical"></div>
+        <pre>
+          <code>
+            .border-radius-all-elliptical {
+              border-radius: 2rem / 4rem;
+            }
+          </code>
+        </pre>
+      </section>
+      <section>
+        <h3>Diagonales</h3>
+        <p>
+          Para redondear las esquinas de un elemento de forma diagonal de forma
+          elíptica se utilizan dos valores con el short hand de la propiedad
+          border-radius.
+        </p>
+        <div class="box border-radius-diagonal-elliptical"></div>
+        <pre>
+          <code>
+            .border-radius-diagonal-elliptical {
+              border-radius: 2rem 4rem / 6rem 8rem;
+            }
+          </code>
+        </pre>
+      </section>
+      <section>
+        <h3>Esquinas independientes</h3>
+        <p>
+          Para redondear las esquinas de un elemento de forma independiente de
+          forma elíptica se utilizan cuatro valores.
+        </p>
+        <div class="box border-radius-independent-elliptical"></div>
+        <pre>
+          <code>
+            .border-radius-independent-elliptical {
+              border-radius: 2rem 4rem 6rem 8rem / 10rem 12rem 14rem 16rem;
+            }
+          </code>
+        </pre>
+      </section>
+    </section>
+    <section id="outline">
+      <h2>outline</h2>
+      <p>
+        La propiedad outline se utiliza para rodear los elementos de la página
+        sin afectar el diseño de la página. A diferencia de la propiedad border,
+        la propiedad outline no afecta el tamaño del elemento. Estos son las
+        propiedades que se pueden utilizar con la propiedad outline.
+      </p>
+      <ul>
+        <li>
+          <strong>outline-color</strong>:Define el color del outline o contorno
+        </li>
+        <li>
+          <strong>outline-style</strong>: Define el estilo del outline o
+          contorno
+        </li>
+        <ul>
+          <li><strong>none</strong>: No se muestra el outline o contorno</li>
+          <li>
+            <strong>hidden</strong>: Se muestra el outline o contorno pero no se
+            muestra
+          </li>
+          <li>
+            <strong>dotted</strong>: Se muestra el outline o contorno con puntos
+          </li>
+          <li>
+            <strong>dashed</strong>: Se muestra el outline o contorno con líneas
+            discontinuas
+          </li>
+          <li>
+            <strong>solid</strong>: Se muestra el outline o contorno con líneas
+            continuas
+          </li>
+          <li>
+            <strong>double</strong>: Se muestra el outline o contorno con dos
+            líneas continuas
+          </li>
+          <li>
+            <strong>groove</strong>: Se muestra el outline o contorno con un
+            efecto de hendidura
+          </li>
+          <li>
+            <strong>ridge</strong>: Se muestra el outline o contorno con un
+            efecto de cresta
+          </li>
+          <li>
+            <strong>inset</strong>: Se muestra el outline o contorno con un
+            efecto de hundimiento
+          </li>
+          <li>
+            <strong>outset</strong>: Se muestra el outline o contorno con un
+            efecto de sobresalir
+          </li>
+        </ul>
+        <li>
+          <strong>outline-width</strong>: Define el ancho del outline o contorno
+        </li>
+        <li>
+          <strong>outline-offset</strong>: Define la distancia entre el outline
+          o contorno y el elemento
+        </li>
+      </ul>
+      <div class="box outline"></div>
+      <pre>
+        <code>
+          .outline {
+            outline-color: blue;
+            outline-style: solid;
+            outline-width: 2px;
+            outline-offset: 10px;
+          }
+        </code>
+      </pre>
+      <p>
+        <strong>Nota</strong>: Podemos utilizar simplemente el short hand
+        ouline: width style color; para definir el outline de un elemento.
+      </p>
+    </section>
+    <a href="Unidades-y-estilos-css.html">volver atras...</a>
+  </body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ejercicios</title>
+  </head>
+  <body>
+    <h1>Ejercicios</h1>
+    <p>
+      En este apartado encontrarás ejercicios para practicar los conceptos
+      aprendidos en los temas anteriores.
+    </p>
+    <h2>
+      Programa una función que cuente el número de caracteres de una cadena de
+      texto, pe. miFuncion("Hola Mundo") devolverá 10.
+    </h2>
+    <pre>
+      <code>
+        const contarCaracteres = (cadena = "") => {
+        try {
+          if (typeof cadena !== "string") {
+            throw new Error("El dato ingresado no es una cadena");
+          } else {
+            if (!cadena) {
+              console.warn("La cadena está vacia");
+            } else {
+              console.info(
+                `La cadena ${cadena} tiene ${cadena.length} caracteres`
+              );
+            }
+          }
+        } catch (error) {
+          console.error(`Se generaron problemas: ${error}`);
+        }
+      };
+      contarCaracteres();
+      </code>
+    </pre>
+    <!-- <script>
+      const contarCaracteres = (cadena = "") => {
+        try {
+          if (typeof cadena !== "string") {
+            throw new Error("El dato ingresado no es una cadena");
+          } else {
+            if (!cadena) {
+              console.warn("La cadena está vacia");
+            } else {
+              console.info(
+                `La cadena ${cadena} tiene ${cadena.length} caracteres`
+              );
+            }
+          }
+        } catch (error) {
+          console.error(`Se generaron problemas: ${error}`);
+        }
+      };
+      contarCaracteres("324");
+    </script> -->
+    <h2>
+      Programa una función que te devuelva el texto recortado según el número de
+      caracteres indicados, pe. miFuncion("Hola Mundo", 4) devolverá "Hola".
+    </h2>
+    <pre>
+      <code>
+     const textRecortado = (cadena = " ", num) => {
+        if (typeof cadena !== "string") {
+          console.error("El dato ingresado no es una cadena");
+          return;
+        }
+        if (!cadena) {
+          console.warn("La cadena recibida está vacía");
+          return;
+        }
+        console.log(
+          `El texto recortado hasta el caracter ${num} es ${cadena.slice(
+            0,
+            num
+          )}`
+        );
+      };
+      textRecortado("Hola mundo", 4);
+      </code>
+    </pre>
+    <!-- <script>
+      const textRecortado = (cadena = " ", num) => {
+        if (num === undefined || typeof num !== "number") {
+          console.warn(
+            "Verificar si el dato ingresado a recortar es de tipo 'number' y esté definido."
+          );
+          return;
+        }
+        if (typeof cadena !== "string") {
+          console.error("El dato ingresado no es una cadena");
+          return;
+        }
+        if (!cadena) {
+          console.warn("La cadena recibida está vacía");
+          cadena = null;
+          return;
+        }
+        console.log(
+          `El texto recortado hasta el caracter ${num} es ${cadena.slice(
+            0,
+            num
+          )}`
+        );
+      };
+      textRecortado("akjdgfalg", "2");
+    </script> -->
+    <h2>
+      Programa una función que dada una String te devuelva un Array de textos
+      separados por cierto caracter, pe. miFuncion('hola que tal', ' ')
+      devolverá ['hola', 'que', 'tal'].
+    </h2>
+    <pre>
+      <code>
+        const stringToArray = (cadena = " ", caracter) => {
+        if (typeof cadena !== "string") {
+          console.error("El dato recibido no es una cadena");
+          return;
+        }
+        if (!cadena) {
+          console.warn("La cadena recibida está vacía");
+          cadena = null;
+          console.log(cadena);
+          return;
+        }
+        console.log(cadena.split(caracter));
+      };
+      stringToArray("Hola Amigos del youtube como andamos", " ");
+      </code>
+    </pre>
+    <!-- <script>
+      const stringToArray = (cadena = " ", caracter) => {
+        if (typeof caracter !== "string" || caracter === undefined) {
+          console.error(
+            "Verificar caracter ingresado para separar la cadena, puede que esté vacía o indefinida."
+          );
+          return;
+        }
+        if (typeof cadena !== "string") {
+          console.error("El dato recibido no es una cadena");
+          return;
+        }
+        if (!cadena) {
+          console.warn("La cadena recibida está vacía");
+          cadena = null;
+          console.log(cadena);
+          return;
+        }
+        console.log(cadena.split(caracter));
+      };
+      stringToArray("Hola Amigos del youtube como andamos");
+    </script> -->
+    <h2>
+      Programa una función que repita un texto X veces, pe. miFuncion('Hola
+      Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.
+    </h2>
+    <pre>
+      <code>
+        const repeatString = (cadena = " ", num) => {
+        if (typeof cadena !== "string") {
+          console.error("El dato recibido no es una cadena");
+          return;
+        }
+        if (!cadena) {
+          console.warn("La cadena recibida está vacía");
+          cadena = null;
+          console.log(cadena);
+          return;
+        }
+        console.log(cadena.repeat(num));
+      };
+      repeatString("hola mundo ", 5);
+      </code>
+    </pre>
+  <!--   <script>
+      const repeatString = (cadena = " ", num = undefined) => {
+        if (num === undefined || typeof num !== "number") {
+          console.error(
+            "Verificar si la repeticion recibida esté definida y sea de tipo 'number'.");
+          return;
+        }
+        if (num <= 0) {
+          console.error("La repetición no puede ser negativo o igual a 0")
+          return;
+        }
+        if (typeof cadena !== "string") {
+          console.error("El dato recibido no es una cadena");
+          return;
+        }
+        if (!cadena) {
+          console.warn("La cadena recibida está vacía");
+          return;
+        }
+        console.log(cadena.repeat(num));
+      };
+      repeatString("hola mundo ", 0);
+    </script> -->
+    <h2>Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".</h2>
+    <pre>
+      <code>
+        const invertirPalabras = (cadena = "") => {
+        if (!cadena) {
+          console.error("La cadena está vacía")
+          return;
+        }
+        if (typeof cadena !== 'string') {
+          console.error("El dato recibido no es una cadena")
+          return;
+        }
+        let cadenaInversa = cadena.split("")
+        cadenaInversa.reverse()
+        cadena = cadenaInversa.join("")
+        console.log(cadena)
+      }
+      invertirPalabras("Hola Mundo")
+      </code>
+    </pre>
+    <!-- <script>
+      const invertirPalabras = (cadena = "") => {
+        if (!cadena) {
+          console.error("La cadena está vacía")
+          return;
+        }
+        if (typeof cadena !== 'string') {
+          console.error("El dato recibido no es una cadena")
+          return;
+        }
+        let cadenaInversa = cadena.split("")
+        cadenaInversa.reverse()
+        cadena = cadenaInversa.join("")
+        console.log(cadena)
+      }
+      invertirPalabras("Hola Mundo")
+    </script> -->
+    <h2>Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe. miFuncion("hola mundo adios mundo", "mundo") 
+      devolverá 2.</h2>
+    <pre>
+      <code>
+        contarPalabra = (cadena = "", palabra = undefined) => {
+        if (!cadena) {
+          return console.error("La cadena está vacía")
+        }
+        if (typeof cadena !== 'string') {
+          return console.error("El dato ingresado no es una cadena")
+        }
+        if (palabra === undefined || typeof palabra !== 'string' || palabra === "") {
+          return console.error("Asegurate de que la palabra a buscar esté definida y sea de tipo string.")
+        }
+        cadena = cadena.toLowerCase();
+        palabra = palabra.toLowerCase();
+        if (cadena.includes(palabra) === true ) {
+          let palabrasRepetidas = cadena.split(" ")
+          palabrasRepetidas.forEach(function(elemento) {
+            if (elemento === palabra)  {
+              conteo += 1
+            }
+          })
+          return console.log(`La palabra '${palabra}' se repitió ${conteo} veces`)
+        }
+        else {
+          return console.warn("La palabra ingresada no fue encontrada")
+        }
+      }
+      contarPalabra("Hola amigos Como están hola holaaaaaa hola", "hola")
+      </code>
+    </pre>
+    <!-- <script>
+      let conteo = 0
+      contarPalabra = (cadena = "", palabra = undefined) => {
+        if (!cadena) {
+          return console.error("La cadena está vacía")
+        }
+        if (typeof cadena !== 'string') {
+          return console.error("El dato ingresado no es una cadena")
+        }
+        if (palabra === undefined || typeof palabra !== 'string' || palabra === "") {
+          return console.error("Asegurate de que la palabra a buscar esté definida y sea de tipo string.")
+        }
+        cadena = cadena.toLowerCase();
+        palabra = palabra.toLowerCase();
+        if (cadena.includes(palabra) === true ) {
+          let palabrasRepetidas = cadena.split(" ")
+          palabrasRepetidas.forEach(function(elemento) {
+            if (elemento === palabra)  {
+              conteo += 1
+            }
+          })
+          return console.log(`La palabra '${palabra}' se repitió ${conteo} veces`)
+        }
+        else {
+          return console.warn("La palabra ingresada no fue encontrada")
+        }
+      }
+      contarPalabra("Hola amigos Como están hola holaaaaaa hola", "hola")
+    </script> -->
+    <h2>Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") 
+      devolverá true.</h2>
+      <pre>
+        <code>
+             const palabraPalindroma = (cadena = "") => {
+          if (!cadena) {
+            return console.error("La cadena está vacía")
+          }
+          if (typeof cadena !== 'string') {
+            return console.error("El dato ingresado no es una cadena")
+          }
+          if (expresion.test(cadena) === true) {
+            return console.error("El texto ingresado no debe de tener espacios en blanco")
+          }
+          cadena = cadena.toLowerCase()
+          let palabraInvertida = cadena.split("")
+          palabraInvertida = palabraInvertida.reverse()
+          palabraInvertida = palabraInvertida.join("")
+          palabraInvertida === cadena
+          ? console.log(true)
+          : console.log(false)
+        }
+        palabraPalindroma("salas")
+        </code>
+      </pre>
+     <!--  <script>
+        let expresion = /\s/
+        const palabraPalindroma = (cadena = "") => {
+          if (!cadena) {
+            return console.error("La cadena está vacía")
+          }
+          if (typeof cadena !== 'string') {
+            return console.error("El dato ingresado no es una cadena")
+          }
+          if (expresion.test(cadena) === true) {
+            return console.error("El texto ingresado no debe de tener espacios en blanco")
+          }
+          cadena = cadena.toLowerCase()
+          let palabraInvertida = cadena.split("")
+          palabraInvertida = palabraInvertida.reverse()
+          palabraInvertida = palabraInvertida.join("")
+          palabraInvertida === cadena
+          ? console.log(true)
+          : console.log(false)
+        }
+        palabraPalindroma("salas")
+      </script> -->
+      <h2>Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá
+         "1, 2, 3, 4 y 5.</h2>
+         <pre>
+          <code></code>
+         </pre>
+         <script>
+          const eliminarPatron = (cadena = "", patron = undefined) => {
+            let expresion = new RegExp(patron, "g")
+            if (!cadena) {
+              return console.error("La cadena está vacía")
+            }
+            if (typeof cadena !== 'string') {
+              return console.error("El dato recibido no es de tipo string") 
+            }
+            if (patron === undefined || typeof patron !== 'string' || !patron) {
+              return console.error("Asegurate de que el patron a borrar esté definido y sea de tipo string")
+            }
+            if (expresion.test(cadena) === true) {
+              let nuevaCadena = cadena.replace(expresion, "")   
+              return console.log(nuevaCadena);           
+            }
+            else {
+              console.error("El patrón a eliminar no fue encontrado")
+            }
+          }
+          eliminarPatron("xyz1, xyz2, xyz3", "hola")
+         </script>
+    <a href="index.html">volver...</a>
+  </body>
+</html>

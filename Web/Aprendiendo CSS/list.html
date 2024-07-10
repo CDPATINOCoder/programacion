@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listas en CSS</title>
+    <link rel="stylesheet" href="CSS/list.css" />
+  </head>
+  <body>
+    <h1>Listas En CSS</h1>
+    <p>
+      En esta sección estaremos viendo algunas de las propiedades y valores que
+      podemos aplicar a las listas en CSS.
+    </p>
+    <section>
+      <h2>list-style-type</h2>
+      <p>
+        Esta propiedad nos permite cambiar el tipo de marcador que se muestra en
+        la lista. Los valores que podemos utilizar son:
+      </p>
+      <ul>
+        <!--  valores con la descripcion  -->
+        <li>disc: Círculo</li>
+        <li>circle: Círculo vacío</li>
+        <li>square: Cuadrado</li>
+        <li>decimal: Números decimales</li>
+        <li>decimal-leading-zero: Números decimales con cero al inicio</li>
+        <li>lower-roman: Números romanos en minúsculas</li>
+        <li>upper-roman: Números romanos en mayúsculas</li>
+        <li>lower-alpha: Letras en minúsculas</li>
+        <li>upper-alpha: Letras en mayúsculas</li>
+        <li>none: Sin marcador</li>
+      </ul>
+      <h3>Ejemplo:</h3>
+      <ul class="list1">
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+      </ul>
+      <pre>
+        <code>
+          .list1 {
+            list-style-type: square;
+          }
+        </code>
+      </pre>
+      <p>
+        En el ejemplo anterior hemos cambiado el tipo de marcador de la lista a
+        cuadrado.
+      </p>
+    </section>
+    <section>
+      <h2>list-style-image</h2>
+      <p>
+        Esta propiedad nos permite utilizar una imagen como marcador de la
+        lista. Para ello, debemos especificar la ruta de la imagen que queremos
+        utilizar.
+      </p>
+      <p>
+        Para utilizar esta propiedad necesitamos que la imagen sea lo
+        suficientemente pequeña para que no se vea distorsionada. Como de unos
+        16px x 16px.
+      </p>
+      <ul class="list2">
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+      </ul>
+      <pre>
+        <code>
+          .list2 {
+            list-style-image: url('../assests/icon.png')
+          }
+        </code>
+      </pre>
+      <p>
+        como se aprecia en el ejemplo la imagen se deformó completamente, la
+        mejor manera de hacer marcadores con imagenes es trabajando con los
+        elementos li de la lista, utilizando la pseudoclase before.
+      </p>
+      <h3>Ejemplo:</h3>
+      <ul class="list3">
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+      </ul>
+      <pre>
+        <code>
+          .list3 li::before {
+          width: 1rem;
+          height: 1rem;
+          display: inline-block;
+          content: "";
+          background-image: url("../assets/avatar.png");
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          }
+
+          .list3 {
+          list-style-type: none;
+          }
+        </code>
+      </pre>
+      <p>
+        Lo que estamos haciendo aquí es agregar un marcador a cada elemento li
+        de la lista, utilizando la pseudoclase before. En este caso, estamos
+        utilizando una imagen como marcador, pero también podríamos utilizar un
+        icono de una fuente como FontAwesome.
+      </p>
+    </section>
+    <section>
+      <h2>list-style-position</h2>
+      <p>
+        Esta propiedad nos permite cambiar la posición del marcador de la lista.
+        Los valores que podemos utilizar son:
+      </p>
+      <ul>
+        <li>inside: Dentro del contenedor del elemento li</li>
+        <li>outside: Fuera del contenedor del elemento li</li>
+      </ul>
+      <h3>Ejemplo:</h3>
+      <ul class="list4">
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+      </ul>
+      <pre>
+        <code>
+          .list4 {
+            list-style-position: inside;
+          }
+        </code>
+      </pre>
+      <p>
+        En el ejemplo anterior hemos cambiado la posición del marcador de la
+        lista a dentro del contenedor del elemento li.
+      </p>
+    </section>
+    <section>
+      <h2>list-style</h2>
+      <p>
+        Esta propiedad nos permite establecer todas las propiedades de la lista
+        en una sola declaración. Los valores que podemos utilizar son:
+      </p>
+      <ul>
+        <li>list-style-type</li>
+        <li>list-style-position</li>
+        <li>list-style-image</li>
+      </ul>
+      <h3>Ejemplo:</h3>
+      <ul class="list5">
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+      </ul>
+      <pre>
+          <code>
+            .list5 {
+              list-style: square inside 
+            }
+          </code>
+        </pre>
+      <p>
+        En el ejemplo anterior hemos cambiado el tipo de marcador de la lista a
+        cuadrado y la posición del marcador a dentro del contenedor del elemento
+        li.
+      </p>
+    </section>
+    <section>
+      <h2>Listas y Textos en Columnas</h2>
+      <p>En CSS podemos dividir el contenido de un elemento en columnas.</p>
+    </section>
+
+    <section>
+      <h3>column-count</h3>
+      <p>
+        Esta propiedad nos permite dividir el contenido de un elemento en un
+        número determinado de columnas.
+      </p>
+      <h3>Ejemplo:</h3>
+      <ul class="list6">
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+      </ul>
+      <pre>
+        <code>
+          .list6 {
+            column-count: 3;
+          }
+        </code>
+      </pre>
+    </section>
+    <section>
+      <h3>column-gap</h3>
+      <p>
+        Esta propiedad nos permite establecer el espacio entre las columnas.
+      </p>
+      <h3>Ejemplo:</h3>
+      <ul class="list7">
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+      </ul>
+      <pre>
+        <code>
+          .list7 {
+            column-count: 3;
+            column-gap: 1rem;
+          }
+        </code>
+      </pre>
+    </section>
+    <section>
+      <h3>column-rule</h3>
+      <p>Esta propiedad nos permite establecer una línea entre las columnas.</p>
+      <h3>Ejemplo:</h3>
+      <ul class="list8">
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+      </ul>
+      <pre>
+        <code>
+          .list8 {
+            list-style-position: inside;
+            column-count: 3;
+            column-gap: 1rem;
+            column-rule: 1px solid #333;
+          }
+        </code>
+      </pre>
+    </section>
+    <section>
+      <h3>column-width</h3>
+      <p>
+        Esta propiedad nos permite establecer el ancho máximo de las columnas.
+        Si utilizamos esta propiedad, no podemos utilizar column-count.
+      </p>
+      <h3>Ejemplo:</h3>
+      <ul class="list9">
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+        <li>primavera</li>
+        <li>verano</li>
+        <li>otoño</li>
+        <li>invierno</li>
+      </ul>
+      <pre>
+        <code>
+          .list9 {
+            column-count: auto;
+            column-width: 10rem;
+          }
+        </code>
+      </pre>
+    </section>
+    <a href="Unidades-y-estilos-css.html">volver atras...</a>
+  </body>
+</html>

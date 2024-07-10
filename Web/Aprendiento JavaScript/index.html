@@ -6,7 +6,6 @@
     <title>Aprendiendo JavaScript</title>
 </head>
 <body>
-    <main>
         <header id="temario">
             <h1>Aprendiendo JavaScript</h1>
             <ul>
@@ -24,6 +23,18 @@
                 <li><a href="index.html#destructuracion">destructuracion</a></li>
                 <li><a href="index.html#parametros-rest-y-operador-spread">Parametros rest y Operador spread</a></li>
                 <li><a href="index.html#arrow-function">Arrow Functions</a></li>
+                <li><a href="index.html#prototypes">Prototipos</a></li>
+                <li><a href="index.html#herencia-prototipica">Herencia Prototipica</a></li>
+                <li><a href="index.html#clases-y-herencia">Clases y Herencia</a></li>
+                <li><a href="index.html#getters-setters-y-static">Metodos getter, setter y static</a></li>
+                <li><a href="index.html#console-object">Objeto Consola</a></li>
+                <li><a href="index.html#date-object">Objeto Date</a></li>
+                <li><a href="index.html#math-object">Objeto Math</a></li>
+                <li><a href="index.html#cortocircuito">Operador Cortocircuito</a></li>
+                <li><a href="index.html#alert-confirm-prompt">alert, confirm y prompt</a></li>
+                <li><a href="index.html#reg-expresions">Expresiones Regulares</a></li>
+                <li><a href="modulos.html">Módulos</a></li>    
+                <li><a href="ejercicios.html">Ejercicios</a></li>            
             </ul>
         </header>
         <section id="javascript-concepto">
@@ -2150,6 +2161,824 @@
             <a href="index.html#temario">⬆️</a>
             <hr>
         </section>
-    </main>
+        <section id="console-object">
+          <h2>Objeto Console</h2>
+          <p>
+              El objeto console es un objeto global en JavaScript que se utiliza para imprimir mensajes en la consola del navegador. El objeto console se utiliza para imprimir mensajes de depuración, advertencias, errores, etc. A continuación veremos algunos métodos del objeto console.
+          </p>
+          <section>
+            <h3>console.log()</h3>
+            <p>
+                El método console.log() se utiliza para imprimir mensajes en la consola del navegador.
+            </p>
+            <pre>
+              <code>
+                console.log('Hola mundo')
+              </code>
+            </pre>
+            <p>
+              Si queremos imprimir un mensaje con varias variables podemos hacerlo de la siguiente manera.
+            </p>
+            <pre>
+              <code>
+                let nombre = 'Juan';
+                let edad = 30;
+                console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años.`)
+              </code>
+            </pre>
+            <p>
+              O también:
+            </p>
+            <pre>
+              <code>
+                let nombre = 'Juan';
+                let edad = 30;
+                console.log('Hola mi nombre es %s y tengo %d años.', nombre, edad)
+              </code>
+            </pre>
+            <script>
+/*               let nombre = 'Juan';
+              let edad = 30
+              console.log('hola mi nombre es %s y tengo %d años.', nombre, edad) */
+            </script>
+          </section>
+          <section>
+            <h3>console.error()</h3>
+            <p>
+                El método console.error() se utiliza para imprimir mensajes de error en la consola del navegador.
+            </p>
+            <pre>
+              <code>
+                console.error('Se ha producido un error')
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h3>console.warn()</h3>
+            <p>
+                El método console.warn() se utiliza para imprimir mensajes de advertencia en la consola del navegador.
+            </p>
+            <pre>
+              <code>
+                console.warn('Esto es una advertencia')
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h3>console.info()</h3>
+            <p>
+                El método console.info() se utiliza para imprimir mensajes de información en la consola del navegador.
+            </p>
+            <pre>
+              <code>
+                console.info('Esto es un mensaje de información')
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h3>console.clear()</h3>
+            <p>
+                El método console.clear() se utiliza para limpiar la consola del navegador.
+            </p>
+            <pre>
+              <code>
+                console.clear()//limpia la consola
+              </code>
+            </pre>
+          </section>
+          <section>
+            <h3>console.dir()</h3>
+            <p>
+                El método console.dir() se utiliza para imprimir una representación de un objeto en la consola del navegador.
+            </p>
+            <pre>
+              <code>
+                let persona = {
+                  nombre: 'Juan',
+                  apellido: 'Pérez',
+                  edad: 30
+                };
+                console.dir(persona)
+              </code>
+            </pre>
+            <script>
+            /*   let persona = {
+                nombre: 'Juan',
+                apellido: 'Pérez',
+                edad: 30
+              };
+              console.dir(persona) */
+            </script>
+          </section>
+          <section>
+            <h3>console.group()</h3>
+            <p>
+                El método console.group() se utiliza para agrupar mensajes en la consola del navegador.
+            </p>
+            <pre>
+              <code>
+                console.group('Grupo 1');
+                console.log('Mensaje 1');
+                console.log('Mensaje 2');
+                console.groupEnd();
+                console.group('Grupo 2');
+                console.log('Mensaje 3');
+                console.log('Mensaje 4');
+                console.groupEnd();
+              </code>
+            </pre>
+            <script>
+              /* console.group('Grupo 1');
+              console.log('Mensaje 1');
+              console.log('Mensaje 2');
+              console.groupEnd();
+              console.group('Grupo 2');
+              console.log('Mensaje 3');
+              console.log('Mensaje 4');
+              console.groupEnd(); */
+            </script>
+          </section>
+          <section>
+            <h3>console.table()</h3>
+            <p>
+                El método console.table() se utiliza para imprimir una tabla en la consola del navegador.
+            </p>
+            <pre>
+              <code>
+                let personas = [
+                  {nombre: 'Juan', apellido: 'Pérez', edad: 30},
+                  {nombre: 'Pedro', apellido: 'Gómez', edad: 25},
+                  {nombre: 'María', apellido: 'López', edad: 35}
+                ];
+                console.table(personas);
+              </code>
+            </pre>
+            <script>
+               /* et personas = [
+                {nombre: 'Juan', apellido: 'Pérez', edad: 30},
+                {nombre: 'Pedro', apellido: 'Gómez', edad: 25},
+                {nombre: 'María', apellido: 'López', edad: 35}
+              ];
+              console.table(personas); */ 
+            </script>
+          </section>
+          <section>
+            <h3>console.time()</h3>
+            <p>
+                El método console.time() se utiliza para medir el tiempo que tarda en ejecutarse un bloque de código.
+            </p>
+            <pre>
+              <code>
+                console.time('Tiempo de ejecución');
+                for (let i = 0; i < 1000000; i++) {
+                  // código
+                }
+                console.timeEnd('Tiempo de ejecución');
+              </code>
+            </pre>
+            <script>
+               console.time('Tiempo de ejecución');
+              /* for (let i = 0; i < 1000000; i++) {
+                // código
+              }
+              console.log('Hola mundo')
+              console.timeEnd('Tiempo de ejecución');  */
+            </script>
+          </section>
+          <section>
+           <h3>console.count()</h3>
+           <p>
+              El método console.count() se utiliza para contar el número de veces que se ha llamado a un mensaje en la consola del navegador.
+           </p>
+           <pre>
+            <code>
+              for (let i = 0; i < 10; i++) {
+                console.count('Mensaje');
+              }
+            </code>
+           </pre>
+            <script>
+                /*  for (let i = 0; i < 10; i++) {
+                  console.count('Mensaje');
+                } */
+            </script> 
+          </section>
+          <section>
+            <h3>console.assert()</h3>
+            <p>
+                El método console.assert() se utiliza para imprimir un mensaje de error en la consola del navegador si una condición es falsa.
+            </p>
+            <pre>
+              <code>
+                let edad = 16;
+                console.assert(edad >= 18, 'Eres menor de edad');
+              </code>
+            </pre>
+            <script>
+               /* let edad = 16;
+              console.assert(edad >= 18, 'Eres menor de edad');  */
+            </script>
+          </section>
+          <a href="index.html#temario">⬆️</a>
+        </section>
+        <section id="date-object">
+          <article>
+            <h2>Objeto Date</h2>
+            <p>
+              El objeto Date es un objeto global en JavaScript que se utiliza para trabajar con fechas y horas. El objeto Date se utiliza para crear fechas y horas en JavaScript. A continuación veremos algunos métodos del objeto Date.
+            </p>
+            <pre>
+              <code>
+                let fecha = new Date();
+                console.log(fecha); // Fecha y hora actual
+              </code>
+            </pre>
+            <section>
+              <h3>getDate()</h3>
+              <p>
+                El método getDate() se utiliza para obtener el día del mes de una fecha.
+              </p>
+              <pre>
+                <code>
+                  let fecha = new Date();
+                  console.log(fecha.getDate()); // Día del mes
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>getDay()</h3>
+              <p>
+                El método getDay() se utiliza para obtener el día de la semana de una fecha.
+              </p>
+              <pre>
+                <code>
+                  let fecha = new Date();
+                  console.log(fecha.getDay()); // Día de la semana
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>getMonth()</h3>
+              <p>
+                El método getMonth() se utiliza para obtener el mes de una fecha.
+              </p>
+              <pre>
+                <code>
+                  let fecha = new Date();
+                  console.log(fecha.getMonth()); // Mes
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>getFullYear()</h3>
+              <p>
+                El método getFullYear() se utiliza para obtener el año de una fecha.
+              </p>
+              <pre>
+                <code>
+                  let fecha = new Date();
+                  console.log(fecha.getFullYear()); // Año
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>getYear()</h3>
+              <p>
+                El método getYear() a diferencia del método getFullYear() se utiliza para obtener el año de una fecha pero solo devuelve los dos últimos dígitos del año.
+              </p>
+              <pre>
+                <code>
+                  let fecha = new Date();
+                  console.log(fecha.getYear()); // Año
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>getHours()</h3>
+              <p>
+                El método getHours() se utiliza para obtener la hora de una fecha.
+              </p>
+              <pre>
+                <code>
+                  let fecha = new Date();
+                  console.log(fecha.getHours()); // Hora
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>getMinutes()</h3>
+              <p>
+                El método getMinutes() se utiliza para obtener los minutos de una hora.
+              </p>
+              <pre>
+                <code>
+                  let fecha = new Date();
+                  console.log(fecha.getMinutes()); // Minutos
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>getSeconds()</h3>
+              <p>
+                El método getSeconds() se utiliza para obtener los segundos de una hora.
+              </p>
+              <pre>
+                <code>
+                  let fecha = new Date();
+                  console.log(fecha.getSeconds()); // Segundos
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>getMilliseconds()</h3>
+              <p>
+                El método getMilliseconds() se utiliza para obtener los milisegundos de una hora.
+              </p>
+              <pre>
+                <code>
+                  let fecha = new Date();
+                  console.log(fecha.getMilliseconds()); // Milisegundos
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>toString</h3>
+              <p>
+                El método toString() se utiliza para convertir una fecha a una cadena de texto.
+              </p>
+              <pre>
+                <code>
+                  let fecha = new Date();
+                  console.log(fecha.toString()); // Fecha en formato de cadena de texto
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>toDateString()</h3>
+              <p>
+                El método toDateString() se utiliza para convertir una fecha a una cadena de texto en formato de fecha.
+              </p>
+              <pre>
+                <code>
+                  let fecha = new Date();
+                  console.log(fecha.toDateString()); // Fecha en formato de fecha
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>toLocaleString()</h3>
+              <p>
+                El método toLocaleString() se utiliza para convertir una fecha y hora a una cadena de texto en formato local.
+              </p>
+              <pre>
+                <code>
+                  let fecha = new Date();
+                  console.log(fecha.toLocaleString()); // Fecha en formato local
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>toLocaleDateString()</h3>
+              <p>
+                El método toLocaleDateString() se utiliza para convertir una fecha a una cadena de texto en formato de fecha local.
+              </p>
+              <pre>
+                <code>
+                  let fecha = new Date();
+                  console.log(fecha.toLocaleDateString()); // Fecha en formato de fecha local
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>toLocaleTimeString()</h3>
+              <p>
+                El método toLocaleTimeString() se utiliza para convertir una hora a una cadena de texto en formato de hora local.
+              </p>
+              <pre>
+                <code>
+                  let fecha = new Date();
+                  console.log(fecha.toLocaleTimeString()); // Hora en formato de hora local
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>getTimezoneOffset()</h3>
+                <p>
+                  El método getTimezoneOffset() se utiliza para obtener la diferencia de minutos entre la hora local y la hora UTC.
+                </p>
+                <pre>
+                  <code>
+                    let fecha = new Date();
+                    console.log(fecha.getTimezoneOffset()); // Diferencia de minutos
+                  </code>
+                </pre>
+            </section>
+            <section>
+              <h3>getUTCDate()</h3>
+              <p>
+                El método getUTCDate() se utiliza para obtener el día del mes de una fecha en formato UTC.
+              </p>
+              <pre>
+                <code>
+                  let fecha = new Date();
+                  console.log(fecha.getUTCDate()); // Día del mes en formato UTC
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>getUTCHours()</h3>
+              <p>
+                El método getUTCHours() se utiliza para obtener la hora de una fecha en formato UTC.
+              </p>
+              <pre>
+                <code>
+                  let fecha = new Date();
+                  console.log(fecha.getUTCHours()); // Hora en formato UTC
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>now()</h3>
+              <p>
+                El método now() se utiliza para obtener la fecha y hora actual en milisegundos (time stamp).
+              </p>
+              <pre>
+                <code>
+                  let fecha = Date.now();
+                  console.log(fecha); // Fecha y hora actual en milisegundos
+                </code>
+              </pre>
+            </section>
+          </article>
+          <a href="index.html#temario">⬆️</a>
+        </section>
+        <section id="math-object">
+          <article>
+            <h2>Objeto Math</h2>
+            <p>
+              El objeto Math es un objeto global en JavaScript que se utiliza para realizar operaciones matemáticas. El objeto Math se utiliza para realizar operaciones matemáticas como redondear, elevar a una potencia, obtener el valor absoluto, etc. A continuación veremos algunos métodos del objeto Math.
+            </p>
+            <section>
+              <h3>Math.abs()</h3>
+              <p>
+                El método Math.abs() se utiliza para obtener el valor absoluto de un número.
+              </p>
+              <pre>
+                <code>
+                  console.log(Math.abs(-5)); // 5
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>Math.ceil()</h3>
+              <p>
+                El método Math.ceil() se utiliza para redondear un número hacia arriba.
+              </p>
+              <pre>
+                <code>
+                  console.log(Math.ceil(5.1)); // 6
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>Math.floor()</h3>
+              <p>
+                El método Math.floor() se utiliza para redondear un número hacia abajo.
+              </p>
+              <pre>
+                <code>
+                  console.log(Math.floor(5.9)); // 5
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>Math.round()</h3>
+              <p>
+                El método Math.round() se utiliza para redondear un número al entero más cercano.
+              </p>
+              <pre>
+                <code>
+                  console.log(Math.round(5.5)); // 6
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>Math.pow()</h3>
+              <p>
+                El método Math.pow() se utiliza para elevar un número a una potencia.
+              </p>
+              <pre>
+                <code>
+                  console.log(Math.pow(2, 3)); // 8
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>Math.sqrt()</h3>
+              <p>
+                El método Math.sqrt() se utiliza para obtener la raíz cuadrada de un número.
+              </p>
+              <pre>
+                <code>
+                  console.log(Math.sqrt(25)); // 5
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>Math.min()</h3>
+              <p>
+                El método Math.min() se utiliza para obtener el número más pequeño de una lista de números.
+              </p>
+              <pre>
+                <code>
+                  console.log(Math.min(2, 3, 4, 5)); // 2
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>Math.max()</h3>
+              <p>
+                El método Math.max() se utiliza para obtener el número más grande de una lista de números.
+              </p>
+              <pre>
+                <code>
+                  console.log(Math.max(2, 3, 4, 5)); // 5
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>Math.random()</h3>
+              <p>
+                El método Math.random() se utiliza para obtener un número aleatorio entre 0 y 1.
+              </p>
+              <pre>
+                <code>
+                  console.log(Math.random()); // Número aleatorio entre 0 y 1
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>Math.PI</h3>
+              <p>
+                La propiedad Math.PI se utiliza para obtener el valor de PI.
+              </p>
+              <pre>
+                <code>
+                  console.log(Math.PI); // 3.141592653589793
+                </code>
+              </pre>
+            </section>
+            <section>
+              <h3>Math.E</h3>
+              <p>
+                La propiedad Math.E se utiliza para obtener el valor de E.
+              </p>
+              <pre>
+                <code>
+                  console.log(Math.E); // 2.718281828459045
+                </code>
+              </pre>
+            </section>
+          </article>
+          <a href="index.html#temario">⬆️</a>
+        </section>
+        <section id="cortocircuito">
+          <article>
+            <h2>Operador de Cortocircuito</h2>
+            <p>
+              El operador de cortocircuito es una característica de JavaScript que se utiliza para evaluar expresiones lógicas. El operador de cortocircuito se utiliza para evaluar una expresión lógica y devolver un valor basado en el resultado de la evaluación. A continuación veremos los operadores de cortocircuito en JavaScript.
+            </p>
+            <section>
+              <h3>Operador OR (||)</h3>
+              <p>
+                El operador OR (||) se utiliza para evaluar dos expresiones lógicas y devolver el valor de la primera expresión si es verdadera, de lo contrario devuelve el valor de la segunda expresión.
+              </p>
+              <pre>
+                <code>
+                  let nombre = '';
+                  let nombreCompleto = nombre || 'Juan Pérez';
+                  console.log(nombreCompleto); // Juan Pérez
+                </code>
+              </pre>
+              <p>
+                En este caso la variable nombre es una cadena vacía, por lo que la expresión lógica nombre || 'Juan Pérez' devuelve el valor de la segunda expresión 'Juan Pérez'. Ya que cadena vacía es falsa en JavaScript.
+              </p>
+              <section>
+                <h3>Operador AND (&&)</h3>
+                <p>
+                  El operador AND (&&) se utiliza para evaluar dos expresiones lógicas y devolver el valor de la primera expresión si es falsa, de lo contrario devuelve el valor de la segunda expresión.
+                </p>
+                <pre>
+                  <code>
+                    let nombre = 'Juan';
+                    let nombreCompleto = nombre && 'Juan Pérez';
+                    console.log(nombreCompleto); // Juan Pérez
+                  </code>
+                </pre>
+                <p>
+                  En este caso la variable nombre es verdadera, por lo que la expresión lógica nombre && 'Juan Pérez' devuelve el valor de la segunda expresión 'Juan Pérez'.
+                </p>
+              </section>
+          </article>
+          <a href="index.html#temario">⬆️</a>
+        </section>
+        <section id="alert-confirm-prompt">
+          <article>
+            <h2>alert, confirm y prompt</h2>
+            <p>
+              Los métodos alert(), confirm() y prompt() son métodos globales en JavaScript que se utilizan para mostrar mensajes en el navegador. A continuación veremos cómo utilizar estos métodos.
+            </p>
+            <section>
+              <h3>alert()</h3>
+              <p>
+                El método alert() se utiliza para mostrar un mensaje en una ventana emergente en el navegador.
+              </p>
+              <pre>
+                <code>
+                  alert('Hola mundo');
+                </code>
+              </pre>
+              <p>
+                Esto se utiliza mucho para mostrar mensajes de error, advertencia, información, etc.
+              </p>
+            </section>
+            <section>
+              <h3>confirm()</h3>
+              <p>
+                El método confirm() se utiliza para mostrar un mensaje en una ventana emergente en el navegador con un botón de aceptar y cancelar.
+              </p>
+              <pre>
+                <code>
+                  let respuesta = confirm('¿Estás seguro de que quieres continuar?');
+                  console.log(respuesta); // true o false
+                </code>
+              </pre>
+              <p>
+                Esto se utiliza mucho para confirmar si el usuario quiere realizar una acción.
+              </p>
+            </section>
+            <section>
+              <h3>prompt()</h3>
+              <p>
+                El método prompt() se utiliza para mostrar un mensaje en una ventana emergente en el navegador con un campo de entrada de texto.
+              </p>
+              <pre>
+                <code>
+                  let nombre = prompt('Introduce tu nombre');
+                  console.log(nombre);
+                </code>
+              </pre>
+              <p>
+                Esto se utiliza mucho para solicitar información al usuario.
+              </p>
+            </section>
+          </article>
+          <a href="index.html#temario">⬆️</a>
+        </section>
+        <section id="reg-expresions">
+          <article>
+            <h2>Expresiones Regulares</h2>
+            <p>
+              Las expresiones regulares son una característica de cualquier lenguaje de programación que se utiliza para buscar y reemplazar texto o validar cadenas de texto. 
+            </p>
+            <section>
+              <h3>Declaración</h3>
+              <p>
+                Las expresiones regulares se declaran utilizando el objeto RegExp o utilizando el literal /expresión/. A continuación veremos cómo declarar una expresión regular.
+              </p>
+              <pre>
+                <code>
+                  let expresion = /hola/;
+                  let expresion = new RegExp('hola');
+                </code>
+              </pre>
+              <p>
+                En este caso se declaró una expresión regular que busca la palabra 'hola'.
+              </p>
+              <p>
+                Este constructor puede recibir dos argumentos, el primero es la expresión regular y el segundo son las banderas que se pueden utilizar con las expresiones regulares. Las banderas más comunes son:
+                <ul>
+                  <li>i: Ignora mayúsculas y minúsculas.</li>
+                  <li>g: Encuentra todas las coincidencias.</li>
+                  <li>m: Encuentra todas las coincidencias en múltiples líneas.</li>
+                </ul>
+              </p>
+            </section>
+            <section>
+              <h3>Métodos</h3>
+              <p>
+                Las expresiones regulares tienen varios métodos que se pueden utilizar, en este caso veremos especificamente dos métodos muy utilizados.
+              </p>
+              <section>
+                <h4>test()</h4>
+                <p>
+                  El metodo test() lo que hace es buscar una coincidencia en una cadena de texto y devuelve true si encuentra la coincidencia y false si no la encuentra.
+                </p>
+                <pre>
+                  <code>
+                    let expresion = /hola/;
+                    let texto = 'Hola mundo';
+                    console.log(expresion.test(texto)); // true
+                  </code>
+                </pre>
+                <p>
+                  En este caso la expresión regular busca la palabra 'hola' en la cadena de texto 'Hola mundo' y devuelve true porque la encontró.
+                </p>
+              </section>
+              <section>
+                <h4>exec()</h4>
+                <p>
+                  El metodo exec() lo que hace es buscar una coincidencia en una cadena de texto y devuelve un array con la coincidencia si la encuentra y null si no la encuentra.
+                </p>
+                <pre>
+                  <code>
+                    let expresion = /hola/;
+                    let texto = 'Hola mundo';
+                    console.log(expresion.exec(texto)); // ['hola']
+                  </code>
+                </pre>
+                <p>
+                  En este caso la expresión regular busca la palabra 'hola' en la cadena de texto 'Hola mundo' y devuelve un array con la coincidencia ['hola'] porque la encontró.
+                </p>
+              </section>
+            </section>
+            <section>
+              <h3>Caracteres Especiales</h3>
+              <p>
+                Las expresiones regulares tienen varios caracteres especiales que se pueden utilizar para buscar patrones en una cadena de texto. A continuación veremos algunos de los caracteres especiales más comunes.
+              </p>
+              <ul>
+                <li>
+                  <strong>.</strong>: El punto se utiliza para buscar cualquier carácter excepto el salto de línea.
+                </li>
+                <li>
+                  <strong>\d</strong>: Se utiliza para buscar un dígito.
+                </li>
+                <li>
+                  <strong>\D</strong>: Se utiliza para buscar un carácter que no sea un dígito.
+                </li>
+                <li>
+                  <strong>\w</strong>: Se utiliza para buscar un carácter alfanumérico o un guión bajo.
+                </li>
+                <li>
+                  <strong>\W</strong>: Se utiliza para buscar un carácter que no sea alfanumérico o un guión bajo.
+                </li>
+                <li>
+                  <strong>\s</strong>: Se utiliza para buscar un espacio en blanco.
+                </li>
+                <li>
+                  <strong>\S</strong>: Se utiliza para buscar un carácter que no sea un espacio en blanco.
+                </li>
+                <li>
+                  <strong>^</strong>: Se utiliza para buscar un patrón al principio de una cadena de texto.
+                </li>
+                <li>
+                  <strong>$</strong>: Se utiliza para buscar un patrón al final de una cadena de texto.
+                </li>
+                <li>
+                  <strong>+</strong>: Se utiliza para buscar uno o más repeticiones de un patrón.
+                </li>
+                <li>
+                  <strong>*</strong>: Se utiliza para buscar cero o más repeticiones de un patrón.
+                </li>
+                <li>
+                  <strong>?</strong>: Se utiliza para buscar cero o una repetición de un patrón.
+                </li>
+                <li>
+                  <strong>{n}</strong>: Se utiliza para buscar exactamente n repeticiones de un patrón.
+                </li>
+                <li>
+                  <strong>{n,}</strong>: Se utiliza para buscar al menos n repeticiones de un patrón.
+                </li>
+                <li>
+                  <strong>{n,m}</strong>: Se utiliza para buscar entre n y m repeticiones de un patrón.
+                </li>
+                <li>
+                  <strong>[abc]</strong>: Se utiliza para buscar cualquier carácter dentro de los corchet
+              </ul>
+             <pre>
+              <code>
+                let expresion = /\d/;
+                let texto = 'Hola mundo 123';
+                console.log(expresion.test(texto)); // true
+              </code>
+             </pre>
+            </section>
+          </article>
+          <a href="index.html#temario">⬆️</a>
+        </section>
+        <section>
+          <h2>Funciones Anonimas Autoejecutables</h2>
+          <p>
+            Las funciones anónimas autoejecutables son funciones que se ejecutan inmediatamente después de ser definidas. Las funciones anónimas autoejecutables se utilizan para encapsular código y evitar conflictos con otras funciones o variables. A continuación veremos cómo declarar una función anónima autoejecutable.
+          </p>
+          <pre>
+            <code>
+              (function() {
+                console.log('Hola mundo');
+              })();
+            </code>
+          </pre>
+        </section>
 </body>
 </html>
