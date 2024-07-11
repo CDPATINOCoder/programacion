@@ -17,7 +17,7 @@
     </h2>
     <pre>
       <code>
-        const contarCaracteres = (cadena = "") => {
+       const contarCaracteres = (cadena = "") => {
         try {
           if (typeof cadena !== "string") {
             throw new Error("El dato ingresado no es una cadena");
@@ -34,7 +34,7 @@
           console.error(`Se generaron problemas: ${error}`);
         }
       };
-      contarCaracteres();
+      contarCaracteres("324");
       </code>
     </pre>
     <!-- <script>
@@ -64,6 +64,12 @@
     <pre>
       <code>
      const textRecortado = (cadena = " ", num) => {
+        if (num === undefined || typeof num !== "number") {
+          console.warn(
+            "Verificar si el dato ingresado a recortar es de tipo 'number' y esté definido."
+          );
+          return;
+        }
         if (typeof cadena !== "string") {
           console.error("El dato ingresado no es una cadena");
           return;
@@ -73,13 +79,9 @@
           return;
         }
         console.log(
-          `El texto recortado hasta el caracter ${num} es ${cadena.slice(
-            0,
-            num
-          )}`
-        );
+          `El texto recortado hasta el caracter ${num} es ${cadena.slice(0,num)}`);
       };
-      textRecortado("Hola mundo", 4);
+      textRecortado("akjdgfalg", "2");
       </code>
     </pre>
     <!-- <script>
@@ -96,15 +98,10 @@
         }
         if (!cadena) {
           console.warn("La cadena recibida está vacía");
-          cadena = null;
           return;
         }
         console.log(
-          `El texto recortado hasta el caracter ${num} es ${cadena.slice(
-            0,
-            num
-          )}`
-        );
+          `El texto recortado hasta el caracter ${num} es ${cadena.slice(0,num)}`);
       };
       textRecortado("akjdgfalg", "2");
     </script> -->
@@ -116,6 +113,12 @@
     <pre>
       <code>
         const stringToArray = (cadena = " ", caracter) => {
+        if (typeof caracter !== "string" || caracter === undefined) {
+          console.error(
+            "Verificar caracter ingresado para separar la cadena, puede que esté vacía o indefinida."
+          );
+          return;
+        }
         if (typeof cadena !== "string") {
           console.error("El dato recibido no es una cadena");
           return;
@@ -128,7 +131,7 @@
         }
         console.log(cadena.split(caracter));
       };
-      stringToArray("Hola Amigos del youtube como andamos", " ");
+      stringToArray("Hola Amigos del youtube como andamos");
       </code>
     </pre>
     <!-- <script>
@@ -159,20 +162,27 @@
     </h2>
     <pre>
       <code>
-        const repeatString = (cadena = " ", num) => {
+      const repeatString = (cadena = " ", num = undefined) => {
+        if (num === undefined || typeof num !== "number") {
+          console.error(
+            "Verificar si la repeticion recibida esté definida y sea de tipo 'number'.");
+          return;
+        }
+        if (num <= 0) {
+          console.error("La repetición no puede ser negativo o igual a 0")
+          return;
+        }
         if (typeof cadena !== "string") {
           console.error("El dato recibido no es una cadena");
           return;
         }
         if (!cadena) {
           console.warn("La cadena recibida está vacía");
-          cadena = null;
-          console.log(cadena);
           return;
         }
-        console.log(cadena.repeat(num));
+        console.log(cadena.repeat(num + " "));
       };
-      repeatString("hola mundo ", 5);
+      repeatString("hola mundo ", 0);
       </code>
     </pre>
   <!--   <script>
@@ -194,14 +204,14 @@
           console.warn("La cadena recibida está vacía");
           return;
         }
-        console.log(cadena.repeat(num));
+        console.log(cadena.repeat(num + " "));
       };
       repeatString("hola mundo ", 0);
     </script> -->
     <h2>Programa una función que invierta las palabras de una cadena de texto, pe. miFuncion("Hola Mundo") devolverá "odnuM aloH".</h2>
     <pre>
       <code>
-        const invertirPalabras = (cadena = "") => {
+         const invertirPalabras = (cadena = "") => {
         if (!cadena) {
           console.error("La cadena está vacía")
           return;
@@ -239,7 +249,8 @@
       devolverá 2.</h2>
     <pre>
       <code>
-        contarPalabra = (cadena = "", palabra = undefined) => {
+       let conteo = 0
+      contarPalabra = (cadena = "", palabra = undefined) => {
         if (!cadena) {
           return console.error("La cadena está vacía")
         }
@@ -260,14 +271,12 @@
           })
           return console.log(`La palabra '${palabra}' se repitió ${conteo} veces`)
         }
-        else {
           return console.warn("La palabra ingresada no fue encontrada")
-        }
       }
-      contarPalabra("Hola amigos Como están hola holaaaaaa hola", "hola")
+      contarPalabra("Hola amigos Como están hola holaaaaaa hola", "penbe")
       </code>
     </pre>
-    <!-- <script>
+   <!--  <script>
       let conteo = 0
       contarPalabra = (cadena = "", palabra = undefined) => {
         if (!cadena) {
@@ -290,39 +299,41 @@
           })
           return console.log(`La palabra '${palabra}' se repitió ${conteo} veces`)
         }
-        else {
           return console.warn("La palabra ingresada no fue encontrada")
-        }
       }
-      contarPalabra("Hola amigos Como están hola holaaaaaa hola", "hola")
+      contarPalabra("Hola amigos Como están hola holaaaaaa hola", "penbe")
     </script> -->
     <h2>Programa una función que valide si una palabra o frase dada, es un palíndromo (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") 
       devolverá true.</h2>
       <pre>
         <code>
-             const palabraPalindroma = (cadena = "") => {
+          const palabraPalindroma = (cadena = "") => {
           if (!cadena) {
             return console.error("La cadena está vacía")
           }
           if (typeof cadena !== 'string') {
             return console.error("El dato ingresado no es una cadena")
           }
-          if (expresion.test(cadena) === true) {
-            return console.error("El texto ingresado no debe de tener espacios en blanco")
-          }
           cadena = cadena.toLowerCase()
-          let palabraInvertida = cadena.split("")
+          cadena = cadena.split("")
+          for (let i = 0; i < cadena.length; i++) {
+            if (cadena[i] === " ") {
+              cadena.splice(i, 1)
+            }
+          }
+          let cadenaOriginal = cadena
+          cadenaOriginal = cadenaOriginal.join("")
+          let palabraInvertida = cadena
           palabraInvertida = palabraInvertida.reverse()
           palabraInvertida = palabraInvertida.join("")
-          palabraInvertida === cadena
+          palabraInvertida === cadenaOriginal
           ? console.log(true)
           : console.log(false)
         }
         palabraPalindroma("salas")
         </code>
       </pre>
-     <!--  <script>
-        let expresion = /\s/
+      <!-- <script>
         const palabraPalindroma = (cadena = "") => {
           if (!cadena) {
             return console.error("La cadena está vacía")
@@ -330,14 +341,19 @@
           if (typeof cadena !== 'string') {
             return console.error("El dato ingresado no es una cadena")
           }
-          if (expresion.test(cadena) === true) {
-            return console.error("El texto ingresado no debe de tener espacios en blanco")
-          }
           cadena = cadena.toLowerCase()
-          let palabraInvertida = cadena.split("")
+          cadena = cadena.split("")
+          for (let i = 0; i < cadena.length; i++) {
+            if (cadena[i] === " ") {
+              cadena.splice(i, 1)
+            }
+          }
+          let cadenaOriginal = cadena
+          cadenaOriginal = cadenaOriginal.join("")
+          let palabraInvertida = cadena
           palabraInvertida = palabraInvertida.reverse()
           palabraInvertida = palabraInvertida.join("")
-          palabraInvertida === cadena
+          palabraInvertida === cadenaOriginal
           ? console.log(true)
           : console.log(false)
         }
@@ -346,9 +362,28 @@
       <h2>Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá
          "1, 2, 3, 4 y 5.</h2>
          <pre>
-          <code></code>
+          <code>
+            const eliminarPatron = (cadena = "", patron = undefined) => {
+            let expresion = new RegExp(patron, "g")
+            if (!cadena) {
+              return console.error("La cadena está vacía")
+            }
+            if (typeof cadena !== 'string') {
+              return console.error("El dato recibido no es de tipo string") 
+            }
+            if (patron === undefined || typeof patron !== 'string' || !patron) {
+              return console.error("Asegurate de que el patron a borrar esté definido y sea de tipo string")
+            }
+            if (expresion.test(cadena)) {
+              let nuevaCadena = cadena.replace(expresion, "")   
+              return console.log(nuevaCadena);           
+            }
+              console.error("El patrón a eliminar no fue encontrado")
+          }
+          eliminarPatron("Mi perro se llama juan, a juan le gusta jugar la pelota, pero juan es muy travieso", "juan")  
+          </code>
          </pre>
-         <script>
+         <!-- <script>
           const eliminarPatron = (cadena = "", patron = undefined) => {
             let expresion = new RegExp(patron, "g")
             if (!cadena) {
@@ -360,16 +395,270 @@
             if (patron === undefined || typeof patron !== 'string' || !patron) {
               return console.error("Asegurate de que el patron a borrar esté definido y sea de tipo string")
             }
-            if (expresion.test(cadena) === true) {
+            if (expresion.test(cadena)) {
               let nuevaCadena = cadena.replace(expresion, "")   
               return console.log(nuevaCadena);           
             }
-            else {
               console.error("El patrón a eliminar no fue encontrado")
+          }
+          eliminarPatron("Mi perro se llama juan, a juan le gusta jugar la pelota, pero juan es muy travieso", "juan")  
+         </script> -->
+         <h2>Programa una función que obtenga un número aleatorio entre 501 y 600</h2>
+         <pre>
+          <code>
+            const getRandom = () => console.log(Math.floor(Math.random() * (600 - 500 + 1) + 500));
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()  
+          </code>
+         </pre>
+         <!-- <script>
+          const getRandom = () => console.log(Math.floor(Math.random() * (600 - 500 + 1) + 500));
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+          getRandom()
+         </script> -->
+         <h2>
+          Programa una función que reciba un número y evalúe si es capicúa o no(que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true
+         </h2>
+         <pre>
+          <code>
+            const capicuaNum = (num = undefined) => {
+            if (!num) return console.error("Asegurate de ingresar un numero")
+            if (typeof num !== 'number') return console.error("Asegurate de ingresar un dato de tipo number")
+            num = num.toString()
+            let numOriginal = num
+            num = num.split("").reverse().join("")
+            num === numOriginal 
+            ? console.log(true)
+            : console.log(false)
+          }
+          capicuaNum()
+          capicuaNum("2002")
+          capicuaNum("")
+          capicuaNum(2002)
+          capicuaNum(4209)
+          capicuaNum(2222)
+          </code>
+         </pre>
+         <!-- <script>
+          const capicuaNum = (num = undefined) => {
+            if (!num) return console.error("Asegurate de ingresar un numero")
+            if (typeof num !== 'number') return console.error("Asegurate de ingresar un dato de tipo number")
+            num = num.toString()
+            let numOriginal = num
+            num = num.split("").reverse().join("")
+            num === numOriginal 
+            ? console.log(true)
+            : console.log(false)
+          }
+          capicuaNum(0)
+          capicuaNum("2002")
+          capicuaNum("")
+          capicuaNum(2002)
+          capicuaNum(4209)
+          capicuaNum(2222)
+         </script> -->
+         <h2>
+          Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
+         </h2>
+         <pre>
+          <code>
+            const calculoFactorial = (num = undefined) => {
+            if (!num) return console.error("Asegurate de no dejar el campo vacío")
+            if (typeof num !== "number") return console.error("Asegurate de que el tipo de dato ingresado sea 'number'")
+            let factorial = 1
+              for (let i = 0; i < num; i++ ) {
+                factorial = factorial * (i + 1)
+              }
+              console.log(`El factorial del numero ${num} es ${factorial}`)
+            }
+            calculoFactorial()
+            calculoFactorial("hola")
+            calculoFactorial(5)
+          </code>
+         </pre>
+         <!-- <script>
+          const calculoFactorial = (num = undefined) => {
+            if (num === 0) return console.error("No es posible sacar factorial de 0")
+            if (!num) return console.error("Asegurate de no dejar el campo vacío")
+            if (typeof num !== "number") return console.error("Asegurate de que el tipo de dato ingresado sea 'number'")
+            if (num < 0) return console.error("Asegurate de ingresar un numero positivo")
+            let factorial = 1
+              for (let i = 0; i < num; i++ ) {
+                factorial = factorial * (i + 1)
+              }
+              console.log(`El factorial del numero ${num} es ${factorial}`)
+            }
+            calculoFactorial()
+            calculoFactorial("hola")
+            calculoFactorial(8)
+         </script> -->
+         <h2>
+            Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+         </h2>
+         <pre>
+          <code>
+            const numeroPrimo = (num = undefined) => {
+            if (num === undefined) return console.error("Asegurate de no dejar el campo vacío")
+            if (typeof num !== "number") return console.error("Asegurate de que el tipo de dato ingresado sea 'number'")
+            if(num === 0) return console.log("El numero 0 es no es primo pero tampoco primo")
+            if(Math.sign(num) === -1) return console.error("No es posible calcular si un numero negativo es primo")
+            if (num % 1 !== 0) return console.warn("Los numeros flotantes no pueden ser numeros primos")
+            if(num ===1) return console.log(true)
+            let contador = 0
+            for (let i = 0; i < num; i++ ) {
+              if (num % (i+1) === 0) {
+                contador++
+              }
+            }
+            if(contador === 2) return console.log(true)
+            console.log(false)
+          }
+        numeroPrimo()
+        numeroPrimo("2")
+        numeroPrimo(0)
+        numeroPrimo(-5)
+        numeroPrimo(1.5)
+        numeroPrimo(4)
+        numeroPrimo(11)
+          </code>
+         </pre>
+        <!--  <script>
+          const numeroPrimo = (num = undefined) => {
+            if (num === undefined) return console.error("Asegurate de no dejar el campo vacío")
+            if (typeof num !== "number") return console.error("Asegurate de que el tipo de dato ingresado sea 'number'")
+            if(num === 0) return console.log("El numero 0 es no es primo pero tampoco primo")
+            if(Math.sign(num) === -1) return console.error("No es posible calcular si un numero negativo es primo")
+            if (num % 1 !== 0) return console.warn("Los numeros flotantes no pueden ser numeros primos")
+            if(num ===1) return console.log(true)
+            let contador = 0
+            for (let i = 0; i < num; i++ ) {
+              if (num % (i+1) === 0) {
+                contador++
+              }
+            }
+            if(contador === 2) return console.log(true)
+            console.log(false)
+          }
+        numeroPrimo()
+        numeroPrimo("2")
+        numeroPrimo(0)
+        numeroPrimo(-5)
+        numeroPrimo(1.5)
+        numeroPrimo(4)
+        numeroPrimo(11)
+         </script> -->
+         <h2>
+          Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
+         </h2>
+         <pre>
+          <code>
+            const parOImpar = (num = undefined) => {
+            if (num === undefined) return console.error("Asegurate de no dejar el campo vacío")
+            if (typeof num !== "number") return console.error("Asegurate de que el tipo de dato ingresado sea 'number'")
+            if(Math.sign(num) === -1) return console.error("No es posible calcular si un numero negativo es par")
+            return (num % 2 === 0)
+            ? console.log("Par")
+            : console.log("Impar")
+          }
+          parOImpar()
+          parOImpar(0)
+          parOImpar(-2)
+          parOImpar(1.5)
+          parOImpar(10)
+          parOImpar(11)
+          </code>
+         </pre>
+        <!--  <script>
+          const parOImpar = (num = undefined) => {
+            if (num === undefined) return console.error("Asegurate de no dejar el campo vacío")
+            if (typeof num !== "number") return console.error("Asegurate de que el tipo de dato ingresado sea 'number'")
+            if(Math.sign(num) === -1) return console.error("No es posible calcular si un numero negativo es par")
+            return (num % 2 === 0)
+            ? console.log("Par")
+            : console.log("Impar")
+          }
+          parOImpar()
+          parOImpar(0)
+          parOImpar(-2)
+          parOImpar(1.5)
+          parOImpar(10)
+          parOImpar(11)
+         </script> -->
+         <h2>
+          Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+         </h2>
+         <pre>
+          <code>
+              console.log("Para el primer valor ingresar grados, para el segundo ingresar (C/F)")
+          const tempConvert = (grados = undefined, unidadDeTemperatura = "") => {
+            if(grados === undefined) return console.error("Ingrese los grados a convertir")
+            if(typeof grados !== "number") return console.error("Los grados deben ser de tipo 'number'")
+            if(!unidadDeTemperatura) return console.warn(`Ingrese a que escala de temperatura desea convertir ${grados} grados`)
+            if(typeof unidadDeTemperatura !== "string") return console.error("La escala debe ser ingresado en dato tipo string")
+            unidadDeTemperatura = unidadDeTemperatura.toLowerCase()
+            if(unidadDeTemperatura === 'c') {
+              let gradosEnCelsius = (grados - 32) * (5/9)
+              return console.log(`${grados}°F son ${gradosEnCelsius.toFixed(2)}°C`)
+            }
+            if(unidadDeTemperatura === 'f') {
+              let gradosEnFahrenheit = (grados * (9/5)) + 32
+              return console.log(`${grados}°C son ${gradosEnFahrenheit.toFixed(2)}°F`)
+            } else {
+              return console.error("El programa solo acepta F/C")
             }
           }
-          eliminarPatron("xyz1, xyz2, xyz3", "hola")
-         </script>
+          tempConvert(0, "c")
+          </code>
+         </pre>
+         <!-- <script>
+          console.log("Para el primer valor ingresar grados, para el segundo ingresar (C/F)")
+          const tempConvert = (grados = undefined, unidadDeTemperatura = "") => {
+            if(grados === undefined) return console.error("Ingrese los grados a convertir")
+            if(typeof grados !== "number") return console.error("Los grados deben ser de tipo 'number'")
+            if(!unidadDeTemperatura) return console.warn(`Ingrese a que escala de temperatura desea convertir ${grados} grados`)
+            if(typeof unidadDeTemperatura !== "string") return console.error("La escala debe ser ingresado en dato tipo string")
+            unidadDeTemperatura = unidadDeTemperatura.toLowerCase()
+            if(unidadDeTemperatura === 'c') {
+              let gradosEnCelsius = (grados - 32) * (5/9)
+              return console.log(`${grados}°F son ${gradosEnCelsius.toFixed(2)}°C`)
+            }
+            if(unidadDeTemperatura === 'f') {
+              let gradosEnFahrenheit = (grados * (9/5)) + 32
+              return console.log(`${grados}°C son ${gradosEnFahrenheit.toFixed(2)}°F`)
+            } else {
+              return console.error("El programa solo acepta F/C")
+            }
+          }
+          tempConvert(0, "c")
+         </script> -->
     <a href="index.html">volver...</a>
   </body>
 </html>
