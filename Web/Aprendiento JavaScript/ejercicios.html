@@ -659,6 +659,25 @@
           }
           tempConvert(0, "c")
          </script> -->
+         <h2>
+          Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
+         </h2>
+         <pre>
+          <code></code>
+         </pre>
+         <script>
+          const convertirNumero = (num = undefined, tipo = undefined) => {
+            let expresion = /^(2|10)$/
+            if (num === undefined) return console.error("La variable num está indefinida")
+            if (tipo === undefined) return console.error("La variable tipo está indefinida")
+            if(typeof num !== "number") return console.error("El dato ingresado a convertir debe de ser de tipo number")
+            if (typeof tipo !== "number") return console.error("La base del numero a convertir debe ser de tipo number")
+            if(Math.sign(num) === -1) return console.log("El numero a convertir no puede ser negativo")
+            if(expresion.test(tipo)) return console.log(true)
+          }
+        convertirNumero(10, 100)
+        console.log("us")
+         </script>
     <a href="index.html">volver...</a>
   </body>
 </html>
