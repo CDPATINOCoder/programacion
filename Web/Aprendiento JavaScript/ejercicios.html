@@ -1314,12 +1314,20 @@ La clase recibirá un objeto al momento de instanciarse con los siguentes datos:
          <script>
           class Pelicula {
             constructor(datos) {
+              this.id = datos.id,
+              this.tittle = datos.tittle,
               
             }
           }
           
           const datosPelicula = {
-            id: 
+            id: "tt1234567",
+            tittle: "Rain Man",
+            director: "Barry Levinson",
+            premiere: 1988,
+            country: ["United States"],
+            gender: ["drama", "road trip"],
+            qualify: 8.0
           }
          </script>
     <a href="index.html">volver...</a>
