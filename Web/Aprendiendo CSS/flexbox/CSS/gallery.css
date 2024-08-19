@@ -27,7 +27,7 @@ img {
 
 
 .flex-item div {
-  height: 200px;
+  height: 30vh;
   border: thin solid black;
   margin: 0.5rem .25rem;
 }

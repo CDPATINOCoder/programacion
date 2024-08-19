@@ -1314,21 +1314,136 @@ La clase recibirá un objeto al momento de instanciarse con los siguentes datos:
          <script>
           class Pelicula {
             constructor(datos) {
-              this.id = datos.id,
-              this.tittle = datos.tittle,
-              
+              //guardamos la longitud del objeto
+              let longitud = Object.keys(datos).length;
+              //creamos una expresion regular para validacion de id
+              let idExp = /^tt[0-9]{7}$/
+              //validamos de que tengamos 7 datos de la pelicula exactamente
+              let premiereExp = /^[0-9]{4}$/
+              let qualifyExp = /^(10|[0-9](\.[0-9])?)$/
+              if (longitud !== 7) return console.error(`Los datos necesarios son 7
+id:
+tittle:
+director:
+premiere:
+country:
+gender:
+qualify`)
+              //validamos de que todas las propiedades tengan un valor definido
+              for (let propiedad in datos) {
+                if (datos[propiedad] === "" || datos[propiedad] === undefined) return console.error("Todos los datos deben de estar definidos")
+              }
+              //validamos de que el objeto recibido tenga la propiedad 'id' para poder realizar otras validaciones y crear la propiedad id del objeto instanciado
+              if (datos.hasOwnProperty('id')) {
+                if (typeof datos.id !== 'string') return console.error("la id debe de ser de tipo string")
+                if (!(idExp.test(datos.id))) return console.error("El formato del id debe de de ser 'tt[0-9], por ej: tt0000121'")
+                this.id = datos.id
+              } else {
+                return console.error("Es necesario una propiedad 'id'")
+              }
+
+              if (datos.hasOwnProperty('tittle')) {
+                if (typeof datos.tittle !== 'string') return console.error("el titulo debe ser de tipo string")
+                if (datos.tittle.length > 100) return console.error("El titulo solo puede tener hasta 100 caracteres")
+                this.tittle = datos.tittle
+              } else {
+                return console.error("Es necesario una propiedad 'tittle'")
+              }
+
+              if (datos.hasOwnProperty('director')) {
+                if (typeof datos.director !== 'string') return console.error("El director debe de ser tipo string")
+                if (datos.director.length > 50) return console.error("El Nombre Del Director no debe exceder los 50 caracteres")
+                this.director = datos.director
+              } else {
+                return console.error("Es necesario una propiedad 'director'")
+              }
+
+              if (datos.hasOwnProperty('premiere')) {
+                if (typeof datos.premiere !== 'number') return console.error("La fecha debe ser de tipo number")
+                if (!(premiereExp.test(datos.premiere))) return console.error("El formato de año son 4 digitos, por ejemplo: 2004")
+                if (datos.premiere < 1985 || datos.premiere > 2024) return console.error("El rango de año de estreno permitido es entre 1985 y 2024")
+                this.premiere = datos.premiere
+              } else {
+                return console.error("Es necesario una propiedad 'premiere'")
+              }
+
+              if (datos.hasOwnProperty('country')) {
+                if (!(datos.country instanceof Array)) return console.error("El o Los Paises deben ser introducidos en un Arreglo")
+                if (datos.country.length === 0) return console.error("Debes de ingresar al menos un País en la propiedad country")
+                if (datos.country.some((elemento) => typeof elemento !== 'string')) return console.error("Asegurate de que todos los paises ingresados sean del tipo string")
+                this.country = datos.country
+              } else {
+                return console.error("Es necesario una propiedad 'country'")
+              }
+
+              if (datos.hasOwnProperty('gender')) {
+                if (!(datos.gender instanceof Array)) return console.error("El o Los Generos deben ser introducidos en un Arreglo")
+                if (datos.gender.length === 0) return console.error("Debes de ingresar al menos un Genero en la propiedad gender")
+                if (datos.gender.some((elemento) => typeof elemento !== 'string')) return console.error("Asegurate de que todos los Generos ingresados sean del tipo string")
+                const genderLower = datos.gender.map(generos => generos.toLowerCase())
+                const invalidsGender = []
+                for (let genero of genderLower) {
+                  if (!(Pelicula.validGender.includes(genero)))
+                  invalidsGender.push(genero)
+                }
+                if (invalidsGender.length > 0) {
+                  console.error("El/Los siguiente/s genero/s no son validos:")
+                  for (let genero of invalidsGender) {
+                    console.log(genero)
+                  }
+                  console.info("Estos son los generos validos: ")
+                  for (let genero of Pelicula.validGender) {
+                    console.log(genero)
+                  }
+                  return
+                }
+                this.gender = datos.gender
+              } else {
+                return console.error("Es necesario una propiedad 'gender'")
+              }
+
+              if (datos.hasOwnProperty('qualify')) {
+                if (typeof datos.qualify !== 'number') return console.error("La Calificación debe ser un número")
+                if (!(qualifyExp.test(datos.qualify))) return console.error("La calificacion debe ser del 0 al 10 y hasta un decimal luego de la coma")
+                this.qualify = datos.qualify.toFixed(1)
+              } else {
+                return console.error("Es necesario una propiedad 'qualify'")
+              }
+
             }
+
+            returnInfo() {
+              console.log(`ID: ${this.id}`)
+              console.log(`Titulo: ${this.tittle}`)
+              console.log(`Director: ${this.director}`)
+              console.log(`Fecha de Estreno: ${this.premiere}`)
+              console.log(`Pais/ses de origen: ${this.country.join(", ")}`)
+              console.log(`genero/s: ${this.gender.join(", ")}`)
+              console.log(`Calificacion IMDb: ${this.qualify}`)
+            }
+
+            static returnValidGender(validGender) {
+              console.log("Generos a validar:")
+              for (let elemento of this.validGender) {
+                console.log(`Genero: ${elemento}`)
+              }
+            }
+
           }
+          Pelicula.validGender = ["action", "adult", "adventure", "animation", "biography", "comedy", "crime", "Documentary" ,"drama", "Family", "fantasy", "film noir", "game-show", "history", "horror", "musical", "music", "mystery", "news", "reality-tv", "romance", "sci-fi", "short", "sport", "talk-show", "thriller", "war", "western"]
           
           const datosPelicula = {
-            id: "tt1234567",
+            id: "tt0000123",
             tittle: "Rain Man",
             director: "Barry Levinson",
-            premiere: 1988,
+            premiere: 2023,
             country: ["United States"],
-            gender: ["drama", "road trip"],
-            qualify: 8.0
+            gender: ["drama", "horror"],
+            qualify: 9.1
           }
+
+          const rainMan = new Pelicula(datosPelicula)
+          rainMan.returnInfo()
          </script>
     <a href="index.html">volver...</a>
   </body>
