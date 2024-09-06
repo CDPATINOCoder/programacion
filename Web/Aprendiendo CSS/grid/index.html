@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/grid.css">
+  <title>Aprendiendo Grid CSS</title>
+</head>
+
+<body>
+  <h1 id="top">Aprendiendo Grid CSS</h1>
+  <ul class="menu">
+    <li><a href="#grid-terms">Conceptos básicos</a></li>
+    <li><a href="#grid-explicit">Grid Explicita</a></li>
+    <li><a href="#grid-line-names">Grid con Nombres de Línea</a></li>
+    <li><a href="#grid-areas">Grid con Áreas</a></li>
+    <li><a href="#grid-implicit">Grid Implícita</a></li>
+    <li><a href="#grid-flow">Flujo de la Grid</a></li>
+    <li><a href="#grid-layer">Grid Items en Capas (superposición)</a></li>
+    <li><a href="#grid-order">Ordenamiento de Grid Items</a></li>
+    <li><a href="#grid-align">Alineamiento de Grid Items</a></li>
+    <li><a href="#grid-align-tracks">Alineamiento de Grid Tracks</a></li>
+    <li><a href="#grid-min-max">Tamaños Máximos y Mínimos de Grid Tracks</a></li>
+    <li><a href="#grid-repeat">Grid con Patrones Repetitivos</a></li>
+    <li><a href="#grid-dynamics">Grids Dinámicas</a></li>
+    <li><a href="#grid-responsive">Responsive sin Media Queries</a></li>
+    <li><a href="#grid-nested">Grids Anidados</a></li>
+    <li><a href="#subgrid">Subgrids</a></li>
+    <li><a href="grid_layout.html">Grid Layout con Líneas</a></li>
+    <li><a href="grid_layout_areas.html">Grid Layout con Áreas</a></li>
+    <li><a href="https://jonmircha.com/grid" target="_blank">Más Recursos</a></li>
+  </ul>
+  <h2>¿Qué es Grid CSS?</h2>
+  <p>
+    Grid Layout es un sistema de diseño bidimensional que permite crear diseños de páginas web complejos y flexibles con una sintaxis sencilla. Con Grid Layout podemos crear diseños de páginas web con una estructura de filas y columnas, donde los elementos hijos de un contenedor se distribuyen en una cuadrícula.
+  </p>
+  <h2 id="grid-terms">Conceptos Básicos</h2>
+  <a href="#top">🔝</a>
+  <img src="https://jonmircha.com/img/blog/grid-conceptos.png" alt="Conceptos Básicos">
+  <p>
+    <strong>Grid Container:</strong> Es el contenedor que tiene la propiedad <code>display: grid;</code> y que contiene a los Grid Items.
+  </p>
+  <p>
+    <strong>Grid Item:</strong> Son los elementos hijos directos de un Grid Container.
+  </p>
+  <p>
+    <strong>Grid Line:</strong> Son las líneas que dividen las filas y columnas de la cuadrícula.
+  </p>
+  <p>
+    <strong>Grid Track:</strong> Son las filas y columnas de la cuadrícula.
+  </p>
+  <p>
+    <strong>Grid Cell:</strong> Son las celdas de la cuadrícula, son los espacios entre las líneas.
+  </p>
+  <p>
+    <strong>Grid Area:</strong> Es un espacio de la cuadrícula que puede contener uno o más Grid Items.
+  </p>
+  <h3>Propiedades En Grid</h3>
+  <section>
+    <h4>Display</h4>
+    <p>
+      La propiedad <code>display</code> con el valor <code>grid</code> convierte a un elemento en un Grid Container.
+    </p>
+  </section>
+  <section>
+    <h4>Grid Template Columns</h4>
+    <p>
+      La propiedad <code>grid-template-columns</code> define el número y tamaño de las columnas de la cuadrícula. (anchura)
+    </p>
+    <p>
+      ejemplo: <code>grid-template-columns: 100px 200px 300px;</code>
+    </p>
+  </section>
+  <section>
+    <h4>Grid Template Rows</h4>
+    <p>
+      La propiedad <code>grid-template-rows</code> define el número y tamaño de las filas de la cuadrícula. (altura)
+    </p>
+    <p>
+      ejemplo: <code>grid-template-rows: 100px 200px 300px;</code>
+    </p>
+  </section>
+  <section>
+    <h4>Gap</h4>
+    <p>
+      La propiedad <code>gap</code> define el espacio entre las filas y columnas de la cuadrícula.
+    </p>
+    <p>
+      ejemplo: <code>gap: 10px;</code>
+    </p>
+    <p>
+      Adicionalmente para estas dos propiedades que definen el tamaño de las filas y columnas podemos usar el valor <code>repeat()</code> para definir un patrón repetitivo.
+    </p>
+    <p>
+      ejemplo: <code>grid-template-columns: repeat(3, 100px);</code>
+    </p>
+    <p>
+      Esto creará 3 columnas de 100px cada una.
+    </p>
+  </section>
+  <section>
+    <h4>grid-row</h4>
+    <p>
+      La propiedad <code>grid-row</code> es un shorthand para las propiedades <code>grid-row-start</code> y <code>grid-row-end</code>. Este sirve para definir el número de línea de inicio y fin de un Grid Item en el eje vertical.
+    </p>
+    <p>
+      Por ejemplo si queremos mover el item 2 a la fila 2 y 3 sería: 
+    </p>
+    <p>
+      <code>
+        grid-row: 2 / 3
+      </code>
+    </p>
+    <p>
+      Esto por defecto colocará el item 2 en la fila 2 y en la primera columna. Si queremos mover a otra columna usaremos la propiedad que veremos a continuación.
+    </p>
+  </section>
+  <section>
+    <h4>grid-columnn</h4>
+    <p>
+      La propiedad <code>grid-column</code> es un shorthand para las propiedades <code>grid-column-start</code> y <code>grid-column-end</code>. Este sirve para definir el número de línea de inicio y fin de un Grid Item en el eje horizontal.
+    </p>
+    <p>
+      por ejemplo si queremos continuar moviendo el item 2 a la columna 2 y 3 sería:
+    </p>
+    <p>
+      <code>
+        grid-column: 2 / 3
+      </code>
+    </p>
+    <p>
+      Esto colocará el item 2 en la fila 2 y en la columna 2.
+    </p>
+  </section>
+  <section>
+    <h4>grid-area</h4>
+    <p>
+      La propiedad <code>grid-area</code> es un shorhand para las propiedades <code>grid-row-start</code>, <code>grid-column-start</code>, <code>grid-row-end</code> y <code>grid-column-end</code>. Este sirve para definir el número de línea de inicio y fin de un Grid Item en el eje horizontal y vertical.
+    </p>
+    <p>
+      A demás de poder mover los items del contenedor también podemos extenderlos a través de la cuadrícula. Por ejemplo si queremos que el item 4 ocupe la fila 4 y la columna 3, y además que se extienda de tamaño 2 filas y 2 columnas sería:
+    </p>
+    <p>
+      <code>
+        grid-area: 4 / 3 / 6 / 5;
+      </code>
+    </p>
+    <section>
+      <h4>span</h4>
+      <p>
+        La palabra clave <code>span</code> nos permite extender un grid item a través de la cuadrícula desde la posicion que se encuentra.
+      </p>
+      <p>
+        Por ejemplo si queremos que el item 19 se extienda desde su posicion hasta el final de la cuadrícula sería:
+      </p>
+      <p>
+        <code>
+          grid-column: span 3;
+        </code>
+      </p>
+    </section>
+  </section>
+  <h2 id="grid-explicit">Grid Explícita</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-explicit">
+    <article class="item">
+      <p>Item 1</p>
+    </article>
+    <article class="item">
+      <p>Item 2</p>
+    </article>
+    <article class="item">
+      <p>Item 3</p>
+    </article>
+    <article class="item">
+      <p>Item 4</p>
+    </article>
+    <article class="item">
+      <p>Item 5</p>
+    </article>
+    <article class="item">
+      <p>Item 6</p>
+    </article>
+    <article class="item">
+      <p>Item 7</p>
+    </article>
+    <article class="item">
+      <p>Item 8</p>
+    </article>
+    <article class="item">
+      <p>Item 9</p>
+    </article>
+    <article class="item">
+      <p>Item 10</p>
+    </article>
+    <article class="item">
+      <p>Item 11</p>
+    </article>
+    <article class="item">
+      <p>Item 12</p>
+    </article>
+    <article class="item">
+      <p>Item 13</p>
+    </article>
+    <article class="item">
+      <p>Item 14</p>
+    </article>
+    <article class="item">
+      <p>Item 15</p>
+    </article>
+    <article class="item">
+      <p>Item 16</p>
+    </article>
+    <article class="item">
+      <p>Item 17</p>
+    </article>
+    <article class="item">
+      <p>Item 18</p>
+    </article>
+    <article class="item">
+      <p>Item 19</p>
+    </article>  
+  </section>
+  <h2 id="grid-line-names">Grid con Nombres de Línea</h2>
+  <a href="#top">🔝</a>
+  <p>
+    Podemos asignar nombres a las líneas de la cuadrícula para facilitar la lectura y el posicionamiento de los Grid Items.
+  </p> 
+  <p>
+    Para asignar nombres a las líneas de la cuadrícula usamos la propiedad <code>grid-template-rows</code> y <code>grid-template-columns</code> con la siguiente sintaxis:
+  </p>
+  <p>
+    <code>
+      grid-template-columns: [nombre1] 100px [nombre2] 200px [nombre3] 300px [nombre4];
+    </code>
+  </p>
+  <p>
+    <code>
+      grid-template-rows: [nombre1] 100px [nombre2] 200px [nombre3] 300px [nombre4];
+    </code>
+  </p>
+  <p>
+    Luego para asignar un Grid Item a una fila o columna usamos los nombres de las líneas en lugar de los números.
+  </p>
+  <p>
+    <code>
+      grid-column: nombre1 / nombre3;
+    </code>
+  </p>
+  <p>
+    <code>
+      grid-row: nombre1 / nombre3;
+    </code>
+  </p>
+  <p>
+    En el siguiente ejemplo hemos asignado nombres a las líneas de la cuadrícula y hemos asignado los Grid Items a través de los nombres.
+  </p>
+  <p>
+    <strong>Nota:</strong> Los nombres de las líneas deben ir entre corchetes.
+  </p>
+
+  <section class="container grid-line-names">
+    <article class="item1">
+      <p>Item 1</p>
+    </article>
+    <article class="item1">
+      <p>Item 2</p>
+    </article>
+    <article class="item1">
+      <p>Item 3</p>
+    </article>
+    <article class="item1">
+      <p>Item 4</p>
+    </article>
+    <article class="item1">
+      <p>Item 5</p>
+    </article>
+    <article class="item1">
+      <p>Item 6</p>
+    </article>
+    <article class="item1">
+      <p>Item 7</p>
+    </article>
+    <article class="item1">
+      <p>Item 8</p>
+    </article>
+    <article class="item1">
+      <p>Item 9</p>
+    </article>
+    <article class="item1">
+      <p>Item 10</p>
+    </article>
+    <article class="item1">
+      <p>Item 11</p>
+    </article>
+    <article class="item1">
+      <p>Item 12</p>
+    </article>
+    <article class="item1">
+      <p>Item 13</p>
+    </article>
+    <article class="item1">
+      <p>Item 14</p>
+    </article>
+    <article class="item1">
+      <p>Item 15</p>
+    </article>
+    <article class="item1">
+      <p>Item 16</p>
+    </article>
+    <article class="item1">
+      <p>Item 17</p>
+    </article>
+    <article class="item1">
+      <p>Item 18</p>
+    </article>
+    <article class="item1">
+      <p>Item 19</p>
+    </article>
+  </section>
+  <h2 id="grid-areas">Grid con Áreas</h2>
+  <p>
+    Podemos asignar nombres a las áreas de la cuadrícula para facilitar la lectura y el posicionamiento de los Grid Items.
+  </p>
+  <a href="#top">🔝</a>
+  <section class="container grid-areas">
+    <header class="item2 header">
+      <p>Header</p>
+    </header>
+    <article class="item2 content">
+      <p>Content</p>
+    </article>
+    <aside class="item2 sidebar">
+      <p>Sidebar</p>
+      </aside>
+    <footer class="item2 footer">
+      <p>Footer</p>
+    </footer>
+  </section>
+  <p>
+    Para lograr esta maquetación hemos asignado nombres a las áreas de la cuadrícula con la propiedad <code>grid-template-areas</code> y hemos asignado los Grid Items a través de los nombres de las áreas.
+  </p>
+  <p>
+    Primero definimos el tamaño de las filas y columnas con las propiedades <code>grid-template-rows</code> y <code>grid-template-columns</code>.
+  </p>
+  <p>
+    <code>
+      display: grid;
+      grid-template-rows: 100px repeat(2, 1fr) 80px;
+      grid-template-columns: 1fr 100px;
+    </code>
+  </p>
+  <p>
+    Luego asignamos nombres a las áreas de la cuadrícula con la propiedad <code>grid-template-areas</code>.
+  </p>
+  <p>
+    <code>
+      grid-template-areas:
+      "header header"
+      "content sidebar"
+      "content ."
+      "footer footer";
+    </code>
+  </p>
+  <p>
+    Finalmente asignamos los Grid Items a través de los nombres de las áreas.
+  </p>
+  <p>
+    <code>
+      grid-area: header;
+    </code>
+  </p>
+  <p>
+    <code>
+      grid-area: content;
+    </code>
+  </p>
+  <p>
+    <code>
+      grid-area: sidebar;
+    </code>
+  </p>
+  <p>
+    <code>
+      grid-area: footer;
+    </code>
+  </p>
+  <h2 id="grid-implicit">Grid Implícita</h2>
+  <p>
+    El concepto de la grid implicita es simplemente la capacidad de la cuadrícula de ajustarse automáticamente a los elementos hijos que no han sido asignados explícitamente a una fila o columna.
+  </p>
+  <p>
+    En la cuadrícula que vemos a continuacion se le asignaron 4 filas y 3 columnas, eso quiere decir que desde el item 1 hasta el item 12 estos tinen definidos su posición en la cuadrícula, mientras que los items 13 al 19 no tienen definida su posición, por lo que la cuadrícula se ajusta automáticamente a estos elementos.
+  </p>
+  <a href="#top">🔝</a>
+  <section class="container grid-implicit">
+    <article class="item3">
+      <p>item 1</p>
+    </article>
+    <article class="item3">
+      <p>item 2</p>
+    </article>
+    <article class="item3">
+      <p>item 3</p>
+    </article>
+    <article class="item3">
+      <p>item 4</p>
+    </article>
+    <article class="item3">
+      <p>item 5</p>
+    </article>
+    <article class="item3">
+      <p>item 6</p>
+    </article>
+    <article class="item3">
+      <p>item 7</p>
+    </article>
+    <article class="item3">
+      <p>item 8</p>
+    </article>
+    <article class="item3">
+      <p>item 9</p>
+    </article>
+    <article class="item3">
+      <p>item 10</p>
+    </article>
+    <article class="item3">
+      <p>item 11</p>
+    </article>
+    <article class="item3">
+      <p>item 12</p>
+    </article>
+    <article class="item3">
+      <p>item 13</p>
+    </article>
+    <article class="item3">
+      <p>item 14</p>
+    </article>
+    <article class="item3">
+      <p>item 15</p>
+    </article>
+    <article class="item3">
+      <p>item 16</p>
+    </article>
+    <article class="item3">
+      <p>item 17</p>
+    </article>
+    <article class="item3">
+      <p>item 18</p>
+    </article>
+    <article class="item3">
+      <p>item 19</p>
+    </article>
+  </section>
+  <h2 id="grid-flow">Flujo de la Grid</h2>
+  <p>
+    El flujo de la cuadrícula es la forma en que los elementos hijos de un Grid Container se distribuyen en la cuadrícula. El valor por defecto es <code>row</code> que distribuye los elementos en filas.
+  </p>
+  <a href="#top">🔝</a>
+  <section class="container grid-flow">
+    <article class="item4">
+      <p>item 1</p>
+    </article>
+    <article class="item4">
+      <p>item 2</p>
+    </article>
+    <article class="item4">
+      <p>item 3</p>
+    </article>
+    <article class="item4">
+      <p>item 4</p>
+    </article>
+    <article class="item4">
+      <p>item 5</p>
+    </article>
+    <article class="item4">
+      <p>item 6</p>
+    </article>
+    <article class="item4">
+      <p>item 7</p>
+    </article>
+    <article class="item4">
+      <p>item 8</p>
+    </article>
+    <article class="item4">
+      <p>item 9</p>
+    </article>
+    <article class="item4">
+      <p>item 10</p>
+    </article>
+    <article class="item4">
+      <p>item 11</p>
+    </article>
+    <article class="item4">
+      <p>item 12</p>
+    </article>
+    <article class="item4">
+      <p>item 13</p>
+    </article>
+    <article class="item4">
+      <p>item 14</p>
+    </article>
+    <article class="item4">
+      <p>item 15</p>
+    </article>
+    <article class="item4">
+      <p>item 16</p>
+    </article>
+    <article class="item4">
+      <p>item 17</p>
+    </article>
+    <article class="item4">
+      <p>item 18</p>
+    </article>
+    <article class="item4">
+      <p>item 19</p>
+    </article>
+  </section>
+  <br>
+  <p>
+    En el ejemplo que podemos ver cambiamos la propiedad <code>grid-auto-flow</code> a <code>column</code> y los elementos se distribuyen en columnas.
+  </p>
+  <br>
+  
+   <section class="container grid-flow-dense">
+    <article class="item4">
+      <p>item 1</p>
+    </article>
+    <article class="item4">
+      <p>item 2</p>
+    </article>
+    <article class="item4">
+      <p>item 3</p>
+    </article>
+    <article class="item4">
+      <p>item 4</p>
+    </article>
+    <article class="item4">
+      <p>item 5</p>
+    </article>
+    <article class="item4">
+      <p>item 6</p>
+    </article>
+    <article class="item4">
+      <p>item 7</p>
+    </article>
+    <article class="item4">
+      <p>item 8</p>
+    </article>
+    <article class="item4">
+      <p>item 9</p>
+    </article>
+    <article class="item4">
+      <p>item 10</p>
+    </article>
+    <article class="item4">
+      <p>item 11</p>
+    </article>
+    <article class="item4">
+      <p>item 12</p>
+    </article>
+    <article class="item4">
+      <p>item 13</p>
+    </article>
+    <article class="item4">
+      <p>item 14</p>
+    </article>
+    <article class="item4">
+      <p>item 15</p>
+    </article>
+    <article class="item4">
+      <p>item 16</p>
+    </article>
+    <article class="item4">
+      <p>item 17</p>
+    </article>
+    <article class="item4">
+      <p>item 18</p>
+    </article>
+    <article class="item4">
+      <p>item 19</p>
+    </article>
+  </section>
+  <br><br><br>
+  <p>
+    En el ejemplo que podemos ver cambiamos la propiedad <code>grid-auto-flow: row-dense;</code> y los elementos se distribuyen en filas y rellenan los huecos.
+  </p>
+  <section>
+    <h3>grid-auto-flow</h3>
+    <p>
+      La propiedad <code>grid-auto-flow</code> nos permite cambiar el flujo de la cuadrícula. Los valores que podemos usar son:
+    </p>
+    <ul>
+      <li><code>row</code>: Distribuye los elementos en filas.</li>
+      <li><code>column</code>: Distribuye los elementos en columnas.</li>
+      <li><code>row dense</code>: Distribuye los elementos en filas y rellena los huecos.</li>
+      <li><code>column dense</code>: Distribuye los elementos en columnas y rellena los huecos.</li>
+    </ul>
+  </section>
+  <section>
+    <h3>grid-auto-row</h3>
+    <p>
+      La propiedad <code>grid-auto-row</code> nos permite definir el tamaño de las filas que no han sido asignadas explícitamente.
+    </p>
+    <p>
+      <code>
+        grid-auto-row: 100px;
+      </code>
+    </p>
+    <p>
+      Lo que hicimos en el ejemplo fue definir un tamaño de 100px para las filas que no han sido asignadas explícitamente.
+    </p>
+  </section>
+  <section>
+    <h3>grid-auto-column</h3>
+    <p>
+      La propiedad <code>grid-auto-column</code> nos permite definir el tamaño de las columnas que no han sido asignadas explícitamente.
+    </p>
+    <p>
+      <code>
+        grid-auto-column: 100px;
+      </code>
+    </p>
+    <p>
+      Lo que hicimos en el ejemplo fue definir un tamaño de 100px para las columnas que no han sido asignadas explícitamente.
+    </p>
+  </section>
+  <h2 id="grid-layer">SuperPosicion</h2>
+  <a href="#top">🔝</a>
+  <section class="container grid-layer">
+    <article class="item5">
+      <p>item 1</p>
+    </article>
+    <article class="item5">
+      <p>item 2</p>
+    </article>
+    <article class="item5">
+      <p>item 3</p>
+    </article>
+    <article class="item5">
+      <p>item 4</p>
+    </article>
+    <article class="item5">
+      <p>item 5</p>
+    </article>
+  </section>
+  <!-- .grid-layer {
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .grid-layer .item5 {
+      padding: 1rem;
+      font-size: 1.25rem;
+      background-color: #666;
+      border: medium solid #999;
+    }
+    .grid-layer .item5:nth-child(1) {
+      background-color: aqua;
+      grid-row: 1 /3;
+      grid-column: 1 / 3;
+    }
+    .grid-layer .item5:nth-child(2) {
+      background-color: aquamarine;
+      grid-row: 1 / 3;
+      grid-column: 3 / 5;
+    }
+    .grid-layer .item5:nth-child(3) {
+      background-color: bisque;
+      grid-row: 3 / 5;
+      grid-column: 1 / 3;
+    }
+    .grid-layer .item5:nth-child(4) {
+      background-color: chartreuse;
+      grid-row: 3 / 5;
+      grid-column: 3 / 5;
+    }
+    .grid-layer .item5:nth-child(5) {
+      background-color: blueviolet;
+      opacity: 0.80;
+      grid-row: 2 / 4;
+      grid-column: 2 / 4;
+    } -->
+      <p>
+    En el ejemplo que podemos ver hemos superpuesto los elementos 1, 2, 3 y 4, y hemos colocado el elemento 5 en el centro de la cuadrícula.
+      </p>
+      <p>
+    Para lograr esto hemos asignado las propiedades <code>grid-row</code> y <code>grid-column</code> a los elementos 1, 2, 3 y 4, y hemos colocado el elemento 5 en el centro de la cuadrícula.
+      </p>
+      <pre>
+        <code>.grid-layer .item5 {</code>
+          <code>padding: 1rem;</code>
+          <code>font-size: 1.25rem;</code>
+          <code>background-color: #666;</code>
+          <code>border: medium solid #999;</code>
+        <code>}</code>
+        <code>.grid-layer .item5:nth-child(1) {</code>
+          <code>background-color: aqua;</code>
+          <code>grid-row: 1 /3;</code>
+          <code>grid-column: 1 / 3;</code>
+        <code>}</code>
+        <code>.grid-layer .item5:nth-child(2) {</code>
+          <code>background-color: aquamarine;</code>
+          <code>grid-row: 1 / 3;</code>
+          <code>grid-column: 3 / 5;</code>
+        <code>}</code>
+        <code>.grid-layer .item5:nth-child(3) {</code>
+          <code>background-color: bisque;</code>
+          <code>grid-row: 3 / 5;</code>
+          <code>grid-column: 1 / 3;</code>
+        <code>}</code>
+        <code>.grid-layer .item5:nth-child(4) {</code>
+          <code>background-color: chartreuse;</code>
+          <code>grid-row: 3 / 5;</code>
+          <code>grid-column: 3 / 5;</code>
+        <code>}</code>
+        <code>.grid-layer .item5:nth-child(5) {</code>
+          <code>background-color: blueviolet;</code>
+          <code>opacity: 0.80;</code>
+          <code>grid-row: 2 / 4;</code>
+          <code>grid-column: 2 / 4;</code>
+        <code>}</code>
+      </pre>
+      <p>
+        Algo que debemos de tener en cuenta es que al utilizar la palabra span, no tendremos el mismo resultado.
+      </p>
+  <h2 id="grid-order">Ordenamiento de Grid Items</h2>
+  <a href="#top">🔝</a>
+  <p>
+    En grid podemos cambiar el orden de los elementos hijos de un Grid Container con la propiedad <code>order</code>. Por defecto todos los elementos tienen un valor de 0.
+  </p>
+  <section class="container grid-order">
+    <article class="item6">
+      <p>item 1</p>
+    </article>
+    <article class="item6">
+      <p>item 2</p>
+    </article>
+    <article class="item6">
+      <p>item 3</p>
+    </article>
+    <article class="item6">
+      <p>item 4</p>
+    </article>
+    <article class="item6">
+      <p>item 5</p>
+    </article>
+  </section>
+  <!-- .grid-order {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, auto);
+    }
+    .grid-order .item6 {
+      padding: 1rem;
+      font-size: 1.25rem;
+      background-color: #666;
+      border: medium solid #999;
+    }
+    .grid-order .item6:nth-child(1) {
+      order: 1;
+    }
+    .grid-order .item6:nth-child(5) {
+      order: -1
+    } -->
+      <p>
+    En el ejemplo que podemos ver hemos cambiado el orden de los elementos 1 y 5.
+      </p>
+      <p>
+    Para lograr esto hemos asignado la propiedad <code>order</code> a los elementos 1 y 5.
+      </p>
+      <pre>
+        <code>.grid-order .item6 {</code>
+          <code>padding: 1rem;</code>
+          <code>font-size: 1.25rem;</code>
+          <code>background-color: #666;</code>
+          <code>border: medium solid #999;</code>
+        <code>}</code>
+        <code>.grid-order .item6:nth-child(1) {</code>
+          <code>order: 1;</code>
+        <code>}</code>
+        <code>.grid-order .item6:nth-child(5) {</code>
+          <code>order: -1;</code>
+        <code>}</code>
+      </pre>
+      <p>
+        Al asignar un valor negativo a la propiedad <code>order</code> el elemento se coloca al principio de la cuadrícula.
+      </p>
+      <p>
+        Al asignar un valor positivo a la propiedad <code>order</code> el elemento se coloca al final de la cuadrícula.
+      </p>
+   <h2 id="grid-align">Alineamiento de Grid Items</h2>
+  <a href="#top">🔝</a>
+  <section>
+    <h3>Justify Items</h3>
+    <p>
+      La propiedad <code>justify-items</code> nos permite alinear los Grid Items en el eje horizontal.
+    </p>
+    <ul>
+      <li><code>start</code>: Alinea los elementos al inicio del contenedor.</li>
+      <li><code>end</code>: Alinea los elementos al final del contenedor.</li>
+      <li><code>center</code>: Alinea los elementos al centro del contenedor.</li>
+      <li><code>stretch</code>: Estira los elementos para que ocupen todo el ancho del contenedor (valor por defecto).</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Align Items</h3>
+    <p>
+      La propiedad <code>align-items</code> nos permite alinear los Grid Items en el eje vertical.
+    </p>
+    <ul>
+      <li><code>start</code>: Alinea los elementos al inicio del contenedor.</li>
+      <li><code>end</code>: Alinea los elementos al final del contenedor.</li>
+      <li><code>center</code>: Alinea los elementos al centro del contenedor.</li>
+      <li><code>stretch</code>: Estira los elementos para que ocupen todo el alto del contenedor (valor por defecto).</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Justify Self</h3>
+    <p>
+      La propiedad <code>justify-self</code> nos permite alinear un Grid Item en el eje horizontal.
+    </p>
+    <ul>
+      <li><code>start</code>: Alinea el elemento al inicio del contenedor.</li>
+      <li><code>end</code>: Alinea el elemento al final del contenedor.</li>
+      <li><code>center</code>: Alinea el elemento al centro del contenedor.</li>
+      <li><code>stretch</code>: Estira el elemento para que ocupe todo el ancho del contenedor (valor por defecto).</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Align Self</h3>
+    <p>
+      La propiedad <code>align-self</code> nos permite alinear un Grid Item en el eje vertical.
+    </p>
+    <ul>
+      <li><code>start</code>: Alinea el elemento al inicio del contenedor.</li>
+      <li><code>end</code>: Alinea el elemento al final del contenedor.</li>
+      <li><code>center</code>: Alinea el elemento al centro del contenedor.</li>
+      <li><code>stretch</code>: Estira el elemento para que ocupe todo el alto del contenedor (valor por defecto).</li>
+    </ul>
+  </section>
+  <section class="container grid-align">
+    <article class="item7">
+      <p>item 1</p>
+    </article>
+    <article class="item7">
+      <p>item 2</p>
+    </article>
+    <article class="item7">
+      <p>item 3</p>
+    </article>
+    <article class="item7">
+      <p>item 4</p>
+    </article>
+    <article class="item7">
+      <p>item 5</p>
+    </article>
+  </section>
+  <!-- .grid-align {
+      display: grid;
+      grid-template-columns: repeat(3, 200px);
+      grid-template-rows: repeat(3, 200px);
+      justify-items: center;
+      align-items: center;
+    }
+    .grid-align .item7 {
+      padding: 1rem;
+      font-size: 1.25rem;
+      background-color: #666;
+      border: medium solid #999;
+    }
+    .grid-align .item7:nth-child(4) {
+      justify-self: end;
+      align-self: center;
+    } -->
+      <p>
+    En el ejemplo que podemos ver hemos alineado los elementos 1, 2, 3 y 5 al centro del contenedor y hemos alineado el elemento 4 al final del contenedor en el eje horizontal y al centro del contenedor en el eje vertical.
+      </p>
+      <p>
+    Para lograr esto hemos asignado las propiedades <code>justify-items</code> y <code>align-items</code> a los elementos 1, 2, 3 y 5 y hemos asignado las propiedades <code>justify-self</code> y <code>align-self</code> al elemento 4.
+      </p>
+      <pre>
+        <code>.grid-align .item7 {</code>
+          <code>padding: 1rem;</code>
+          <code>font-size: 1.25rem;</code>
+          <code>background-color: #666;</code>
+          <code>border: medium solid #999;</code>
+        <code>}</code>
+        <code>.grid-align .item7:nth-child(4) {</code>
+          <code>justify-self: end;</code>
+          <code>align-self: center;</code>
+        <code>}</code>
+      </pre>
+  <h2 id="grid-align-tracks">Alineamiento de Grid Tracks</h2>
+  <a href="#top">🔝</a>
+  <section>
+    <h3>Justify Content</h3>
+    <p>
+      La propiedad <code>justify-content</code> nos permite alinear las columnas de la cuadrícula en el eje horizontal.
+    </p>
+    <ul>
+      <li><code>start</code>: Alinea las columnas al inicio del contenedor.</li>
+      <li><code>end</code>: Alinea las columnas al final del contenedor.</li>
+      <li><code>center</code>: Alinea las columnas al centro del contenedor.</li>
+      <li><code>space-around</code>: Distribuye las columnas con un espacio alrededor de ellas.</li>
+      <li><code>space-between</code>: Distribuye las columnas con un espacio entre ellas.</li>
+      <li><code>space-evenly</code>: Distribuye las columnas con un espacio igual entre ellas.</li>
+    </ul>
+  </section>
+  <section>
+    <h3>Align Content</h3>
+    <p>
+      La propiedad <code>align-content</code> nos permite alinear las filas de la cuadrícula en el eje vertical.
+    </p>
+    <ul>
+      <li><code>start</code>: Alinea las filas al inicio del contenedor.</li>
+      <li><code>end</code>: Alinea las filas al final del contenedor.</li>
+      <li><code>center</code>: Alinea las filas al centro del contenedor.</li>
+      <li><code>space-around</code>: Distribuye las filas con un espacio alrededor de ellas.</li>
+      <li><code>space-between</code>: Distribuye las filas con un espacio entre ellas.</li>
+      <li><code>space-evenly</code>: Distribuye las filas con un espacio igual entre ellas.</li>
+    </ul>
+  </section>
+  <p>
+    para que estos valores funcionen es necesario que la cuadrícula tenga un tamaño definido.
+  </p>
+  <section class="container grid-align-tracks">
+    <article class="item8">
+      <p>item 1</p>
+    </article>
+    <article class="item8">
+      <p>item 2</p>
+    </article>
+    <article class="item8">
+      <p>item 3</p>
+    </article>
+    <article class="item8">
+      <p>item 4</p>
+    </article>
+    <article class="item8">
+      <p>item 5</p>
+    </article>
+  </section>
+  <!--   .grid-align-tracks {
+      display: grid;
+      grid-template-rows: repeat(2, 200px);
+      grid-template-columns: repeat(3, 200px);
+      justify-content: space-evenly;
+      align-content: space-between;
+    }
+    .grid-align-tracks .item8 {
+      padding: 1rem;
+      font-size: 1.25rem;
+      background-color: #666;
+      border: medium solid #999;
+    } -->
+      <p>
+    En el ejemplo que podemos ver hemos distribuido las filas con un espacio igual entre ellas y hemos distribuido las columnas con un espacio entre ellas.
+      </p>
+      <p>
+    Para lograr esto hemos asignado las propiedades <code>justify-content</code> y <code>align-content</code> a la cuadrícula.
+      </p>
+      <pre>
+        <code>grid-align-tracks {</code>
+          <code>display: grid;</code>
+          <code>grid-template-rows: repeat(2, 200px)</code>
+          <code>grid-template-columns: repeat(3, 200px);</code>
+          <code>justify-content: space-evenly;</code>
+          <code>align-content: space-between;</code>
+      </pre>
+  <h2 id="grid-min-max">Tamaños Máximos y Mínimos de Grid Tracks</h2>
+  <a href="#top">🔝</a>
+  <section>
+    <h3>MinMax</h3>
+    <p>
+      La función <code>minmax()</code> nos permite definir un tamaño mínimo y máximo para las filas y columnas de la cuadrícula.
+    </p>
+    <p>
+      <code>
+        grid-template-columns: repeat(3, minmax(100px, 1fr));
+      </code>
+    </p>
+    <p>
+      En el ejemplo que podemos ver hemos definido un tamaño mínimo de 100px y un tamaño máximo de 1fr para las columnas de la cuadrícula.
+    </p>
+  </section>
+  <section>
+    <h3>Min Content</h3>
+    <p>
+      La función <code>min-content</code> nos permite definir un tamaño mínimo para las filas y columnas de la cuadrícula.
+    </p>
+    <p>
+      <code>
+        grid-template-columns: repeat(3, min-content);
+      </code>
+    </p>
+    <p>
+      En el ejemplo que podemos ver hemos definido un tamaño mínimo para las columnas de la cuadrícula.
+    </p>
+  </section>
+  <section>
+    <h3>Max Content</h3>
+    <p>
+      La función <code>max-content</code> nos permite definir un tamaño máximo para las filas y columnas de la cuadrícula.
+    </p>
+    <p>
+      <code>
+        grid-template-columns: repeat(3, max-content);
+      </code>
+    </p>
+    <p>
+      En el ejemplo que podemos ver hemos definido un tamaño máximo para las columnas de la cuadrícula.
+    </p>
+  </section>
+  <section class="container grid-min-max">
+    <article class="item9">
+      <p>item 1</p>
+    </article>
+    <article class="item9">
+      <p>item 2</p>
+    </article>
+    <article class="item9">
+      <p>item 3</p>
+    </article>
+    <article class="item9">
+      <p>item 4</p>
+    </article>
+    <article class="item9">
+      <p>item 5</p>
+    </article>
+  </section>
+  <!-- 
+    .grid-min-max {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(min-content, max-content));
+    }
+    .grid-min-max .item9 {
+      padding: 1rem;
+      font-size: 1.25rem;
+      background-color: #666;
+      border: medium solid #999;
+    } -->
+      <p>
+    En el ejemplo que podemos ver hemos definido un tamaño mínimo y máximo para las columnas de la cuadrícula.
+      </p>
+      <p>
+    Para lograr esto hemos asignado la función <code>minmax()</code> a las columnas de la cuadrícula.
+      </p>
+      <pre>
+        <code>.grid-min-max {</code>
+          <code>display: grid;</code>
+          <code>grid-template-columns: repeat(4, minmax(min-content, max-content));</code>
+        <code>}</code>
+      </pre>
+  <h2 id="grid-repeat">Grid con Patrones Repetitivos</h2>
+  <a href="#top">🔝</a>
+  <p>
+    La función repeat puede permitirnos hacer que un patrón tanto como para filas y columnas se repita una cantidad especifica de veces.
+  </p>
+  <section class="container grid-repeat">
+    <article class="item10">
+      <p>item 1</p>
+    </article>
+    <article class="item10">
+      <p>item 2</p>
+    </article>
+    <article class="item10">
+      <p>item 3</p>
+    </article>
+    <article class="item10">
+      <p>item 4</p>
+    </article>
+    <article class="item10">
+      <p>item 5</p>
+    </article>
+    <article class="item10">
+      <p>item 6</p>
+    </article>
+    <article class="item10">
+      <p>item 7</p>
+    </article>
+    <article class="item10">
+      <p>item 8</p>
+    </article>
+    <article class="item10">
+      <p>item 9</p>
+    </article>
+    <article class="item10">
+      <p>item 10</p>
+    </article>
+    <article class="item10">
+      <p>item 11</p>
+    </article>
+    <article class="item10">
+      <p>item 12</p>
+    </article>
+    <article class="item10">
+      <p>item 13</p>
+    </article>
+    <article class="item10">
+      <p>item 14</p>
+    </article>
+    <article class="item10">
+      <p>item 15</p>
+    </article>
+    <article class="item10">
+      <p>item 16</p>
+    </article>
+    <article class="item10">
+      <p>item 17</p>
+    </article>
+    <article class="item10">
+      <p>item 18</p>
+    </article>
+    <article class="item10">
+      <p>item 19</p>
+    </article>
+    <article class="item10">
+      <p>item 20</p>
+    </article>
+    <article class="item10">
+      <p>item 21</p>
+    </article>
+    <article class="item10">
+      <p>item 22</p>
+    </article>
+    <article class="item10">
+      <p>item 23</p>
+    </article>
+    <article class="item10">
+      <p>item 24</p>
+    </article>
+    <article class="item10">
+      <p>item 25</p>
+    </article>
+    <article class="item10">
+      <p>item 26</p>
+    </article>
+    <article class="item10">
+      <p>item 27</p>
+    </article>
+    <article class="item10">
+      <p>item 28</p>
+    </article>
+    <article class="item10">
+      <p>item 29</p>
+    </article>
+    <article class="item10">
+      <p>item 30</p>
+    </article>
+    <article class="item10">
+      <p>item 31</p>
+    </article>
+  </section>
+  <!-- .grid-repeat {
+      display: grid;
+      grid-template-rows: repeat(4, 20% 30% 50%);
+      grid-template-columns: repeat(3, 1fr);
+    } -->
+      <p>
+    En el ejemplo que podemos ver hemos definido un patrón repetitivo para las filas de la cuadrícula.
+      </p>
+      <p>
+    Para lograr esto hemos asignado la función <code>repeat()</code> a las filas de la cuadrícula.
+      </p>
+      <p>
+        <pre>
+          <code>.grid-repeat {</code>
+            <code>display: grid;</code>
+            <code>grid-template-rows: repeat(4, 20% 30% 50%);</code>
+            <code>grid-template-columns: repeat(3, 1fr);</code>
+          <code>}</code>
+        </pre>
+      </p>
+      <p>
+        Esto quiere decir que van a ser en total 16 filas de manera explicita y las demás filas se van a ajustar automáticamente.
+      </p>
+  <h2 id="grid-dynamics">Grids Dinámicas</h2>
+  <section>
+    <h3>auto-fill</h3>
+    <p>
+      La función <code>auto-fill</code> nos permite crear un número de columnas o filas que se ajustan al tamaño del contenedor.
+    </p>
+    <p>
+      <code>
+        grid-template-columns: repeat(auto-fill, 100px);
+      </code>
+    </p>
+    <p>
+      Aquí por ejemplo se reservan 100px para cada columna y se ajustan al tamaño del contenedor.
+    </p>
+  </section>
+  <section>
+    <h3>auto-fit</h3>
+    <p>
+      La función <code>auto-fit</code> nos permite crear un número de columnas o filas que se ajustan al tamaño del contenedor y se ajustan al tamaño de los elementos.
+    </p>
+    <p>
+      <code>
+        grid-template-columns: repeat(auto-fit, 100px);
+      </code>
+    </p>
+    <p>
+      A diferencia de auto-fill aquí no se reservan 100px para cada columna, sino que se ajustan al tamaño del contenedor y al tamaño de los elementos.
+    </p>
+  </section>
+  <a href="#top">🔝</a>
+  <section class="container grid-dynamics">
+    <article class="item11">
+      <p>item1</p>
+    </article>
+    <article class="item11">
+      <p>item2</p>
+    </article>
+    <article class="item11">
+      <p>item3</p>
+    </article>
+    <article class="item11">
+      <p>item4</p>
+    </article>
+    <article class="item11">
+      <p>item5</p>
+    </article>
+  </section>
+  <!-- .grid-dynamics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    } -->
+      <p>
+    En el ejemplo que podemos ver hemos creado un número de columnas que se ajustan al tamaño del contenedor y se ajustan al tamaño de los elementos.
+      </p>
+      <p>
+    Para lograr esto hemos asignado la función <code>repeat()</code> y la función <code>minmax()</code> a las columnas de la cuadrícula.
+      </p>
+      <p>
+        <pre>
+          <code>.grid-dynamics {</code>
+            <code>display: grid;</code>
+            <code>grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));</code>
+          <code>}</code>
+        </pre>
+      </p>
+  <h2 id="grid-nested">Grids Anidados</h2>
+  <a href="#top">🔝</a>
+  <p>
+    Con Grid CSS podemos anidar cuadrículas. Esto significa que podemos tener una cuadrícula dentro de otra cuadrícula.
+  </p>
+  <section class="container grid-nested">
+    <article class="item12 grid-hijo">
+      <article class="grid-hijo-item1">
+        <p>item 1</p>
+      </article>
+      <article class="grid-hijo-item1">
+        <p>item 2</p>
+      </article>
+      <article class="grid-hijo-item1">
+        <p>item 3</p>
+      </article>
+      <article class="grid-hijo-item1">
+        <p>item 4</p>
+      </article>
+      <article class="grid-hijo-item1">
+        <p>item 5</p>
+      </article>
+    </article>
+    <article class="item12">
+      <p>item 2</p>
+    </article>
+    <article class="item12">
+      <p>item 3</p>
+    </article>
+    <article class="item12">
+      <p>item 4</p>
+    </article>
+    <article class="item12">
+      <p>item 5</p>
+    </article>
+  </section>
+  <!--  .grid-nested {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .grid-nested .item12 {
+      padding: 1rem;
+      font-size: 1.25rem;
+      background-color: #666;
+      border: medium solid #999;
+    }
+    .grid-nested .grid-hijo .grid-hijo-item1 {
+      padding: 1rem;
+      font-size: 1.25rem;
+      background-color: #666;
+      border: medium solid #999;
+    }
+    .grid-hijo {
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+    } -->
+      <p>
+    En el ejemplo que podemos ver hemos anidado una cuadrícula dentro de otra cuadrícula.
+      </p>
+      <p>
+    Para lograr esto hemos asignado la propiedad <code>display: grid;</code> a la cuadrícula interna.
+      </p>
+      <p>
+    También hemos asignado las propiedades <code>grid-template-rows</code> y <code>grid-template-columns</code> a la cuadrícula interna.
+      </p>
+      <p>
+    Y hemos asignado las propiedades <code>grid-template-rows</code> y <code>grid-template-columns</code> a la cuadrícula externa.
+      </p>
+      <p>
+        <pre>
+          <code>.grid-nested {</code>
+            <code>display: grid;</code>
+            <code>grid-template-rows: repeat(2, 1fr);</code>
+            <code>grid-template-columns: repeat(3, 1fr);</code>
+          <code>}</code>
+          <code>.grid-nested .grid-hijo .grid-hijo-item1 {</code>
+            <code>padding: 1rem;</code>
+            <code>font-size: 1.25rem;</code>
+            <code>background-color: #666;</code>
+            <code>border: medium solid #999;</code>
+          <code>}</code>
+          <code>.grid-hijo {</code>
+            <code>display: grid;</code>
+            <code>grid-template-rows: repeat(2, 1fr);</code>
+            <code>grid-template-columns: repeat(3, 1fr);</code>
+          <code>}</code>
+        </pre>
+      </p>
+  <h2 id="subgrid">Subgrids</h2>
+  <a href="#top">🔝</a>
+  <p>
+    Con Grid CSS podemos crear subgrids. Esto significa que podemos tener una cuadrícula dentro de otra cuadrícula y que las filas y columnas de la cuadrícula interna se ajusten a las filas y columnas de la cuadrícula externa. Para que esto se cumpla hay algunos requisitos:
+  </p>
+  <ul>
+    <li>Definir explicitamente el tamaño que ocupará el elemento que aplicará subgrid, es decir definir sus propiedades grid-row y grid-column.</li>
+    <li>Aplicar display grid al elemento que aplicará subgrid.</li>
+    <li>Aplicar el valor de subgrid a las columnas o filas o ambos.</li>
+  <section class="container grid">
+    <article class="item13 subgrid">
+      <article class="subgrid-item">
+        <p>item 1</p>
+      </article>
+      <article class="subgrid-item">
+        <p>item 2</p>
+      </article>
+      <article class="subgrid-item">
+        <p>item 3</p>
+      </article>
+      <article class="subgrid-item">
+        <p>item 4</p>
+      </article>
+      <article class="subgrid-item">
+        <p>item 5</p>
+      </article>
+    </article>
+    <article class="item13">
+      <p>item 2</p>
+    </article>
+    <article class="item13">
+      <p>item 3</p>
+    </article>
+    <article class="item13">
+      <p>item 4</p>
+    </article>
+    <article class="item13">
+      <p>item 5</p>
+    </article>
+  </section>
+  <!--  .grid {
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .grid .item13 {
+      padding: 1rem;
+      font-size: 1.25rem;
+      background-color: #666;
+      border: medium solid #999;
+    }
+    .subgrid-item {
+      padding: 1rem;
+      font-size: 1.25rem;
+      background-color: #666;
+      border: medium solid #999;
+    }
+    .subgrid {
+      grid-row: span 2;
+      grid-column: span 3;
+      display: grid;
+      grid-template-rows: subgrid;
+      grid-template-columns: subgrid;
+    } -->
+      <p>
+    En el ejemplo que podemos ver hemos creado un subgrid.
+      </p>
+      <p>
+    Para lograr esto hemos asignado la propiedad <code>display: grid;</code> al subgrid.
+      </p>
+      <p>
+    También hemos asignado las propiedades <code>grid-template-rows</code> y <code>grid-template-columns</code> al subgrid.
+      </p>
+      <p>
+    Y hemos asignado las propiedades <code>grid-row</code> y <code>grid-column</code> al subgrid.
+      </p>
+      <p>
+        <pre>
+          <code>.grid {</code>
+            <code>display: grid;</code>
+            <code>grid-template-rows: repeat(4, 1fr);</code>
+            <code>grid-template-columns: repeat(3, 1fr);</code>
+          <code>}</code>
+          <code>.grid .item13 {</code>
+            <code>padding: 1rem;</code>
+            <code>font-size: 1.25rem;</code>
+            <code>background-color: #666;</code>
+            <code>border: medium solid #999;</code>
+          <code>}</code>
+          <code>.subgrid-item {</code>
+            <code>padding: 1rem;</code>
+            <code>font-size: 1.25rem;</code>
+            <code>background-color: #666;</code>
+            <code>border: medium solid #999;</code>
+          <code>}</code>
+          <code>.subgrid {</code>
+            <code>grid-row: span 2;</code>
+            <code>grid-column: span 3;</code>
+            <code>display: grid;</code>
+            <code>grid-template-rows: subgrid;</code>
+            <code>grid-template-columns: subgrid;</code>
+          <code>}</code>
+        </pre>
+      </p>
+</body>
+</html>

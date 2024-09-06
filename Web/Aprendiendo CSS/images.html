@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Imagenes en CSS</title>
+    <link rel="stylesheet" href="CSS/images.css" />
+  </head>
+  <body>
+    <h1>Imagenes En CSS</h1>
+    <p>
+      Las imagenes en CSS se pueden utilizar de varias formas, como fondo de un
+      elemento, como imagen de un elemento, como imagen de fondo de la pagina,
+      etc. En esta sección veremos algunas propiedades que nos permiten trabajar
+      con imagenes en CSS.
+    </p>
+    <p>
+      Supongamos que estamos trabajando con una pagina web que tiene una sección
+      de cards, y queremos que cada card tenga una imagen de fondo junto al
+      titulo. Trabajaremos con este ejemplo donde un article contendrá la imagen
+      y un h4 como titulo o referencia a la imagen.
+    </p>
+    <section>
+      <h2>object-fit</h2>
+      <p>
+        La propiedad object-fill nos permite definir como se ajusta la imagen al
+        contenedor. Esta propiedad es muy util cuando trabajamos con imagenes
+        como fondo de un elemento. A continuación veremos algunos valores que
+        puede tomar esta propiedad.
+      </p>
+      <section>
+        <h3>fill</h3>
+        <p>
+          El valor fill ajusta la imagen al contenedor sin importar la relación
+          de aspecto de la imagen. Esto puede hacer que la imagen se deforme.
+        </p>
+        <article class="card">
+          <img class="img1" src="assets/puesta-sol.jpg" alt="puesta-de-sol" />
+          <h4>Puesta de Sol</h4>
+        </article>
+        <pre>
+          <code>
+            img {
+              width: 100%;
+              height: auto;
+            }
+          </code>
+        </pre>
+        <p>
+          Primero reseteamos cualquier imagen de esta manera para que se ajuste
+          de manera responsiva.
+        </p>
+        <pre>
+          <code>
+            .card {
+              width: 400px;
+              height: 400px;
+              background-color: aqua;
+              border: medium solid black;
+            }
+          </code>
+        </pre>
+        <p>
+          Luego definimos el ancho y alto del contenedor de la imagen (la carta)
+          y le damo su color de fondo. Esto lo hacemos simplemente para los
+          ejemplos que veremos.
+        </p>
+        <pre>
+          <code>
+            .img1 {
+              height: 300px;
+            object-fit: fill; /* valor por defecto */
+            }
+          </code>
+        </pre>
+      </section>
+      <section>
+        <h3>cover</h3>
+        <p>
+          El valor cover ajusta la imagen al contenedor sin deformarla, pero
+          puede que la imagen no se muestre completamente.
+        </p>
+        <article class="card">
+          <img class="img2" src="assets/puesta-sol.jpg" alt="puesta-de-sol" />
+          <h4>Puesta de Sol</h4>
+        </article>
+        <pre>
+          <code>
+            .img2 {
+              height: 300px;
+              object-fit: cover;
+            }
+          </code>
+        </pre>
+        <p>
+          En este caso la imagen se ajusta al contenedor sin deformarse, pero
+          puede que no se muestre completamente.
+        </p>
+      </section>
+      <section>
+        <h3>contain</h3>
+        <p>
+          El valor contain ajusta la imagen al contenedor sin deformarla y
+          asegurandose de que la imagen se muestre completamente.
+        </p>
+        <article class="card">
+          <img class="img3" src="assets/puesta-sol.jpg" alt="puesta-de-sol" />
+          <h4>Puesta de Sol</h4>
+        </article>
+        <pre>
+          <code>
+            .img3 {
+              height: 300px;
+              object-fit: contain;
+            }
+          </code>
+        </pre>
+        <p>
+          En este caso la imagen se ajusta al contenedor sin deformarse y se
+          asegura de que la imagen se muestre completamente. Esto puede hacer
+          que la imagen no ocupe todo el contenedor.
+        </p>
+      </section>
+      <section>
+        <h3>none</h3>
+        <p>
+          El valor none no ajusta la imagen al contenedor, por lo que la imagen
+          se muestra tal cual es.
+        </p>
+        <article class="card">
+          <img class="img4" src="assets/puesta-sol.jpg" alt="puesta-de-sol" />
+          <h4>Puesta de Sol</h4>
+        </article>
+        <pre>
+          <code>
+            .img4 {
+              height: 300px;
+              object-fit: none;
+            }
+          </code>
+        </pre>
+        <p>
+          En este caso la imagen no se ajusta al contenedor, por lo que se
+          muestra tal cual es.
+        </p>
+      </section>
+      <section>
+        <h3>scale-down</h3>
+        <p>
+          El valor scale-down ajusta la imagen al contenedor sin deformarla y
+          asegurandose de que la imagen se muestre completamente, pero solo si
+          la imagen es mas grande que el contenedor.
+        </p>
+        <article class="card">
+          <img class="img5" src="assets/puesta-sol.jpg" alt="puesta-de-sol" />
+          <h4>Puesta de Sol</h4>
+        </article>
+        <pre>
+          <code>
+            .img5 {
+              height: 300px;
+              object-fit: scale-down;
+            }
+          </code>
+        </pre>
+        <p>
+          En este caso la imagen se ajusta al contenedor sin deformarse y se
+          asegura de que la imagen se muestre completamente, pero solo si la
+          imagen es mas grande que el contenedor.
+        </p>
+      </section>
+    </section>
+    <section>
+      <h2>object-position</h2>
+      <p>
+        La propiedad object-position nos permite definir la posición de la
+        imagen en el contenedor. Esta propiedad es muy util cuando trabajamos
+        con imagenes como fondo de un elemento. A continuación veremos algunos
+        valores que puede tomar esta propiedad.
+      </p>
+      <section>
+        <h3>top</h3>
+        <p>
+          El valor top posiciona la imagen en la parte superior del contenedor.
+        </p>
+        <article class="card">
+          <img class="img6" src="assets/puesta-sol.jpg" alt="puesta-de-sol" />
+          <h4>Puesta de Sol</h4>
+        </article>
+        <pre>
+          <code>
+            .img6 {
+              height: 300px;
+              object-fit: contain;
+              object-position: top;
+            }
+          </code>
+        </pre>
+        <p>
+          En este caso la imagen se posiciona en la parte superior del
+          contenedor.
+        </p>
+      </section>
+      <section>
+        <h3>bottom</h3>
+        <p>
+          El valor bottom posiciona la imagen en la parte inferior del
+          contenedor.
+        </p>
+        <article class="card">
+          <img class="img7" src="assets/puesta-sol.jpg" alt="puesta-de-sol" />
+          <h4>Puesta de Sol</h4>
+        </article>
+        <pre>
+          <code>
+            .img7 {
+              height: 300px;
+              object-fit: contain;
+              object-position: bottom;
+            }
+          </code>
+        </pre>
+        <p>
+          En este caso la imagen se posiciona en la parte inferior del
+          contenedor.
+        </p>
+      </section>
+      <section>
+        <h3>left</h3>
+        <p>
+          El valor left posiciona la imagen en la parte izquierda del
+          contenedor.
+        </p>
+        <article class="card">
+          <img class="img8" src="assets/puesta-sol.jpg" alt="puesta-de-sol" />
+          <h4>Puesta de Sol</h4>
+        </article>
+        <pre>
+          <code>
+            .img8 {
+              height: 300px;
+              object-fit: contain;
+              object-position: left;
+            }
+          </code>
+        </pre>
+        <p>
+          En este caso la imagen se posiciona en la parte izquierda del
+          contenedor.
+        </p>
+      </section>
+      <section>
+        <h3>right</h3>
+        <p>
+          El valor right posiciona la imagen en la parte derecha del contenedor.
+        </p>
+        <article class="card">
+          <img class="img9" src="assets/puesta-sol.jpg" alt="puesta-de-sol" />
+          <h4>Puesta de Sol</h4>
+        </article>
+        <pre>
+          <code>
+            .img9 {
+              height: 300px;
+              object-fit: contain;
+              object-position: right;
+            }
+          </code>
+        </pre>
+        <p>
+          En este caso la imagen se posiciona en la parte derecha del
+          contenedor.
+        </p>
+      </section>
+      <section>
+        <h3>center</h3>
+        <p>El valor center posiciona la imagen en el centro del contenedor.</p>
+        <article class="card">
+          <img class="img10" src="assets/puesta-sol.jpg" alt="puesta-de-sol" />
+          <h4>Puesta de Sol</h4>
+        </article>
+        <pre>
+          <code>
+            .img10 {
+              height: 300px;
+              object-fit: contain;
+              object-position: center;
+            }
+          </code>
+        </pre>
+        <p>En este caso la imagen se posiciona en el centro del contenedor.</p>
+      </section>
+      <section>
+        <h3>alejar del contenedor</h3>
+        <p>
+          Podemos alejar la imagen del contenedor utilizando valores negativos.
+        </p>
+        <article class="card">
+          <img class="img11" src="assets/puesta-sol.jpg" alt="puesta-de-sol" />
+          <h4>Puesta de Sol</h4>
+        </article>
+        <pre>
+          <code>
+            .img11 {
+              height: 300px;
+              object-fit: contain;
+              object-position: -50px;
+            }
+          </code>
+        </pre>
+        <p>
+          En este caso la imagen se aleja del contenedor 50px en el lado derecho
+          horizontal.
+        </p>
+      </section>
+    </section>
+    <a href="Unidades-y-estilos-css.html">volver atras...</a>
+  </body>
+</html>

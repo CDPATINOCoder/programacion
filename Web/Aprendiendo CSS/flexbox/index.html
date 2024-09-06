@@ -1,0 +1,2079 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aprendiendo Flexbox</title>
+    <link rel="stylesheet" href="CSS/flexbox.css" />
+  </head>
+  <body>
+    <h1>Aprendiendo Flexbox</h1>
+    <p>
+      Flexbox es un modelo de diseño unidimensional que permite distribuir
+      elementos en un contenedor y alinearlos de manera que ocupen el espacio
+      disponible, con el objetivo de mejorar la distribución de los elementos en
+      una interfaz y la alineación de los mismos.
+    </p>
+    <p>
+      En este documento aprenderemos a utilizar Flexbox para distribuir y
+      alinear elementos en una interfaz web de manera sencilla y eficiente
+      utilizando CSS. Veremos conceptos y ejemplos para cada propiedad de
+      Flexbox y cómo aplicarlas en la práctica.
+    </p>
+    <p>
+      Antes de empezar a ver las propiedades que podemos utilizar con Flexbox,
+      debemos de saber algunas cosas que vienen de manera predeterminada en
+      flexbox:
+    </p>
+    <ul>
+      <li>
+        Los elementos flexibles se distribuyen en una fila de manera
+        predeterminada.
+      </li>
+      <li>Los elementos flexibles se ajustan al tamaño del contenedor.</li>
+      <li>
+        Los elementos flexibles se alinean en la dirección principal del
+        contenedor.
+      </li>
+      <li>Los elementos flexibles se alinean en el centro del contenedor.</li>
+    </ul>
+    <section id="flex">
+      <h2>Propiedad display: flex;</h2>
+      <p>
+        Para utilizar Flexbox en un contenedor, debemos definir la propiedad
+        <strong><code>display: flex;</code></strong> en el contenedor. De esta
+        manera, los elementos hijos del contenedor se convierten en elementos
+        flexibles y pueden ser distribuidos y alineados de acuerdo a las
+        propiedades de Flexbox. Trabajan en bloque.
+      </p>
+      <h3>Ejemplo:</h3>
+      <div class="container1">
+        <div class="item">Elemento 1</div>
+        <div class="item">Elemento 2</div>
+        <div class="item">Elemento 3</div>
+      </div>
+      <div class="container1">
+        <div class="item">Elemento 1</div>
+        <div class="item">Elemento 2</div>
+        <div class="item">Elemento 3</div>
+      </div>
+      <pre>
+        <code>
+          .container1 {
+            display: flex;
+            }
+        </code>
+      </pre>
+      <p>
+        En el ejemplo anterior, el contenedor
+        <strong><code>.container1</code></strong> tiene la propiedad
+        <strong><code>display: flex;</code></strong> y los elementos hijos
+        <strong><code>.item</code></strong> se distribuyen en una fila de manera
+        predeterminada.
+      </p>
+    </section>
+    <section id="inline-flex">
+      <h2>Propiedad display: inline-flex;</h2>
+      <p>
+        La propiedad <strong><code>display: inline-flex;</code></strong> es
+        similar a la propiedad <strong><code>display: flex;</code></strong
+        >, pero los elementos flexibles se distribuyen en una fila y se ajustan
+        al tamaño del contenedor, sin ocupar todo el ancho disponible. Trabajan
+        en linea.
+      </p>
+      <h3>Ejemplo:</h3>
+      <div class="container2">
+        <div class="item">Elemento 1</div>
+        <div class="item">Elemento 2</div>
+        <div class="item">Elemento 3</div>
+      </div>
+      <div class="container2">
+        <div class="item">Elemento 1</div>
+        <div class="item">Elemento 2</div>
+        <div class="item">Elemento 3</div>
+      </div>
+      <pre>
+        <code>
+          .container2 {
+            display: inline-flex;
+            }
+        </code>
+      </pre>
+      <p>
+        En el ejemplo anterior, el contenedor
+        <strong><code>.container2</code></strong> tiene la propiedad
+        <strong><code>display: inline-flex;</code></strong> y los elementos
+        hijos <strong><code>.item</code></strong> se distribuyen en una fila y
+        se ajustan al tamaño del contenedor.
+      </p>
+    </section>
+    <section class="flex-direction">
+      <h2>Propiedad flex-direction</h2>
+      <p>
+        La propiedad <strong><code>flex-direction</code></strong> define la
+        dirección en la que se distribuyen los elementos flexibles en el
+        contenedor. Puede tener los siguientes valores:
+      </p>
+      <section>
+        <h3>row</h3>
+        <p>
+          Este es el valor predeterminado de la propiedad y distribuye los
+          elementos flexibles en una fila de izquierda a derecha.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container3">
+          <div class="item">item1</div>
+          <div class="item">item2</div>
+          <div class="item">item3</div>
+          <div class="item">item4</div>
+          <div class="item">item5</div>
+          <div class="item">item6</div>
+          <div class="item">item7</div>
+          <div class="item">item8</div>
+          <div class="item">item9</div>
+          <div class="item">item10</div>
+          <div class="item">item11</div>
+          <div class="item">item12</div>
+          <div class="item">item13</div>
+          <div class="item">item14</div>
+          <div class="item">item15</div>
+          <div class="item">item16</div>
+          <div class="item">item17</div>
+          <div class="item">item18</div>
+          <div class="item">item19</div>
+          <div class="item">item20</div>
+        </div>
+        <pre>
+          <code>
+            .container3 {
+              display: flex;
+              flex-direction: row;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container3</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>flex-direction: row;</code></strong> y los elementos
+          hijos <strong><code>.item</code></strong> se distribuyen en una fila
+          de izquierda a derecha.
+        </p>
+      </section>
+      <section>
+        <h3>row-reverse</h3>
+        <p>
+          El valor <strong><code>row-reverse</code></strong> distribuye los
+          elementos flexibles en una fila de derecha a izquierda.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container4">
+          <div class="item">item1</div>
+          <div class="item">item2</div>
+          <div class="item">item3</div>
+          <div class="item">item4</div>
+          <div class="item">item5</div>
+          <div class="item">item6</div>
+          <div class="item">item7</div>
+          <div class="item">item8</div>
+          <div class="item">item9</div>
+          <div class="item">item10</div>
+          <div class="item">item11</div>
+          <div class="item">item12</div>
+          <div class="item">item13</div>
+          <div class="item">item14</div>
+          <div class="item">item15</div>
+          <div class="item">item16</div>
+          <div class="item">item17</div>
+          <div class="item">item18</div>
+          <div class="item">item19</div>
+          <div class="item">item20</div>
+        </div>
+        <pre>
+          <code>
+            .container4 {
+              display: flex;
+              flex-direction: row-reverse;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container4</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>flex-direction: row-reverse;</code></strong> y los
+          elementos hijos <strong><code>.item</code></strong> se distribuyen en
+          una fila de derecha a izquierda.
+        </p>
+      </section>
+      <section>
+        <h3>column</h3>
+        <p>
+          El valor <strong><code>column</code></strong> distribuye los elementos
+          flexibles en una columna de arriba hacia abajo.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container5">
+          <div class="item">item1</div>
+          <div class="item">item2</div>
+          <div class="item">item3</div>
+          <div class="item">item4</div>
+          <div class="item">item5</div>
+          <div class="item">item6</div>
+          <div class="item">item7</div>
+          <div class="item">item8</div>
+          <div class="item">item9</div>
+          <div class="item">item10</div>
+          <div class="item">item11</div>
+          <div class="item">item12</div>
+          <div class="item">item13</div>
+          <div class="item">item14</div>
+          <div class="item">item15</div>
+          <div class="item">item16</div>
+          <div class="item">item17</div>
+          <div class="item">item18</div>
+          <div class="item">item19</div>
+          <div class="item">item20</div>
+        </div>
+        <pre>
+          <code>
+            .container5 {
+              display: flex;
+              flex-direction: column;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container5</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>flex-direction: column;</code></strong> y los elementos
+          hijos <strong><code>.item</code></strong> se distribuyen en una
+          columna de arriba hacia abajo.
+        </p>
+      </section>
+      <section>
+        <h3>column-reverse</h3>
+        <p>
+          El valor <strong><code>column-reverse</code></strong> distribuye los
+          elementos flexibles en una columna de abajo hacia arriba.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container6">
+          <div class="item">item1</div>
+          <div class="item">item2</div>
+          <div class="item">item3</div>
+          <div class="item">item4</div>
+          <div class="item">item5</div>
+          <div class="item">item6</div>
+          <div class="item">item7</div>
+          <div class="item">item8</div>
+          <div class="item">item9</div>
+          <div class="item">item10</div>
+          <div class="item">item11</div>
+          <div class="item">item12</div>
+          <div class="item">item13</div>
+          <div class="item">item14</div>
+          <div class="item">item15</div>
+          <div class="item">item16</div>
+          <div class="item">item17</div>
+          <div class="item">item18</div>
+          <div class="item">item19</div>
+          <div class="item">item20</div>
+        </div>
+      </section>
+    </section>
+    <section>
+      <h2>Propiedad flex-wrap</h2>
+      <p>
+        La propiedad <strong><code>flex-wrap</code></strong> define si los
+        elementos flexibles se ajustan a una sola línea o se distribuyen en
+        varias líneas. Puede tener los siguientes valores:
+      </p>
+      <section>
+        <h3>nowrap</h3>
+        <p>
+          Este es el valor predeterminado de la propiedad y distribuye los
+          elementos flexibles en una sola fila o columna, sin ajustar su tamaño.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container7">
+          <div class="item-c7">item1</div>
+          <div class="item-c7">item2</div>
+          <div class="item-c7">item3</div>
+          <div class="item-c7">item4</div>
+          <div class="item-c7">item5</div>
+          <div class="item-c7">item6</div>
+          <div class="item-c7">item7</div>
+          <div class="item-c7">item8</div>
+          <div class="item-c7">item9</div>
+          <div class="item-c7">item10</div>
+          <div class="item-c7">item11</div>
+          <div class="item-c7">item12</div>
+          <div class="item-c7">item13</div>
+          <div class="item-c7">item14</div>
+          <div class="item-c7">item15</div>
+          <div class="item-c7">item16</div>
+          <div class="item-c7">item17</div>
+          <div class="item-c7">item18</div>
+          <div class="item-c7">item19</div>
+          <div class="item-c7">item20</div>
+        </div>
+        <pre>
+          <code>
+            .container7 {
+              display: flex;
+              flex-wrap: nowrap;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container7</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>flex-wrap: nowrap;</code></strong> y los elementos hijos
+          <strong><code>.item-c7</code></strong> se distribuyen en una sola fila
+          o columna.
+        </p>
+      </section>
+      <section>
+        <h3>wrap</h3>
+        <p>
+          El valor <strong><code>wrap</code></strong> distribuye los elementos
+          flexibles en varias líneas, ajustando su tamaño si es necesario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container8">
+          <div class="item-c8">item1</div>
+          <div class="item-c8">item2</div>
+          <div class="item-c8">item3</div>
+          <div class="item-c8">item4</div>
+          <div class="item-c8">item5</div>
+          <div class="item-c8">item6</div>
+          <div class="item-c8">item7</div>
+          <div class="item-c8">item8</div>
+          <div class="item-c8">item9</div>
+          <div class="item-c8">item10</div>
+          <div class="item-c8">item11</div>
+          <div class="item-c8">item12</div>
+          <div class="item-c8">item13</div>
+          <div class="item-c8">item14</div>
+          <div class="item-c8">item15</div>
+          <div class="item-c8">item16</div>
+          <div class="item-c8">item17</div>
+          <div class="item-c8">item18</div>
+          <div class="item-c8">item19</div>
+          <div class="item-c8">item20</div>
+        </div>
+        <pre>
+          <code>
+            .item-c8 {
+              background-color: brown;
+              border: thin solid black;
+              width: 20%;
+            }
+
+            .container8 {
+              background-color: aquamarine;
+              display: flex;
+              flex-wrap: wrap;
+            }
+          </code>
+        </pre>
+        <p>
+          En este caso como los items tienen un ancho del 20% y el contenedor el
+          <strong><code>flex-wrap: wrap;</code></strong> los items se ajustan al
+          tamaño del contenedor. Otro caso sería si el contenedor tuviera la
+          propiedad <strong><code>flex-direction: column;</code></strong> los
+          items se ajustarían al tamaño del contenedor en una columna.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container9">
+          <div class="item-c9">item1</div>
+          <div class="item-c9">item2</div>
+          <div class="item-c9">item3</div>
+          <div class="item-c9">item4</div>
+          <div class="item-c9">item5</div>
+          <div class="item-c9">item6</div>
+          <div class="item-c9">item7</div>
+          <div class="item-c9">item8</div>
+          <div class="item-c9">item9</div>
+          <div class="item-c9">item10</div>
+          <div class="item-c9">item11</div>
+          <div class="item-c9">item12</div>
+          <div class="item-c9">item13</div>
+          <div class="item-c9">item14</div>
+          <div class="item-c9">item15</div>
+          <div class="item-c9">item16</div>
+          <div class="item-c9">item17</div>
+          <div class="item-c9">item18</div>
+          <div class="item-c9">item19</div>
+          <div class="item-c9">item20</div>
+        </div>
+        <pre>
+          <code>
+            .item-c9 {
+              background-color: brown;
+              border: thin solid black;
+              width: 20%;
+              height: 10vh;
+            }
+
+            .container9 {
+              background-color: aquamarine;
+              display: flex;
+              flex-direction: column;
+              flex-wrap: wrap;
+              height: 80vh;
+            }
+          </code>
+        </pre>
+        <p>
+          En este caso como los items tienen una altura de 10vh y el contenedor
+          80 vh, los items se ajustan al tamaño del contenedor en una columna.
+        </p>
+      </section>
+      <section>
+        <h3>wrap-reverse</h3>
+        <p>
+          El valor <strong><code>wrap-reverse</code></strong> distribuye los
+          elementos flexibles en varias líneas, ajustando su tamaño si es
+          necesario, pero en orden inverso de abajo hacia arriba y de izquierda
+          a derecha.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container10">
+          <div class="item-c10">item1</div>
+          <div class="item-c10">item2</div>
+          <div class="item-c10">item3</div>
+          <div class="item-c10">item4</div>
+          <div class="item-c10">item5</div>
+          <div class="item-c10">item6</div>
+          <div class="item-c10">item7</div>
+          <div class="item-c10">item8</div>
+          <div class="item-c10">item9</div>
+          <div class="item-c10">item10</div>
+          <div class="item-c10">item11</div>
+          <div class="item-c10">item12</div>
+          <div class="item-c10">item13</div>
+          <div class="item-c10">item14</div>
+          <div class="item-c10">item15</div>
+          <div class="item-c10">item16</div>
+          <div class="item-c10">item17</div>
+          <div class="item-c10">item18</div>
+          <div class="item-c10">item19</div>
+          <div class="item-c10">item20</div>
+        </div>
+        <pre>
+          <code>
+            .item-c10 {
+              background-color: brown;
+              border: thin solid black;
+              width: 20%;
+              height: 80px;
+            }
+
+            .container10 {
+              background-color: aquamarine;
+              display: flex;
+              flex-wrap: wrap-reverse;
+            }
+          </code>
+        </pre>
+        <p>
+          En este caso como los items tienen un ancho del 20% y el contenedor el
+          <strong><code>flex-wrap: wrap-reverse;</code></strong> los items se
+          ajustan al tamaño del contenedor en orden inverso de abajo hacia
+          arriba y de izquierda a derecha.
+        </p>
+      </section>
+    </section>
+    <section>
+      <h2>Propiedad flex-flow</h2>
+      <p>
+        La propiedad <strong><code>flex-flow</code></strong> es una propiedad
+        abreviada que combina las propiedades
+        <strong><code>flex-direction</code></strong> y
+        <strong><code>flex-wrap</code></strong
+        >. Puede tener los siguientes valores:
+      </p>
+      <section>
+        <h3>row nowrap</h3>
+        <p>
+          Este es el valor predeterminado de la propiedad y distribuye los
+          elementos flexibles en una fila de izquierda a derecha, sin ajustar su
+          tamaño.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container11">
+          <div class="item-c11">item1</div>
+          <div class="item-c11">item2</div>
+          <div class="item-c11">item3</div>
+          <div class="item-c11">item4</div>
+          <div class="item-c11">item5</div>
+          <div class="item-c11">item6</div>
+          <div class="item-c11">item7</div>
+          <div class="item-c11">item8</div>
+          <div class="item-c11">item9</div>
+          <div class="item-c11">item10</div>
+          <div class="item-c11">item11</div>
+          <div class="item-c11">item12</div>
+          <div class="item-c11">item13</div>
+          <div class="item-c11">item14</div>
+          <div class="item-c11">item15</div>
+          <div class="item-c11">item16</div>
+          <div class="item-c11">item17</div>
+          <div class="item-c11">item18</div>
+          <div class="item-c11">item19</div>
+          <div class="item-c11">item20</div>
+        </div>
+        <pre>
+          <code>
+            .item-c11 {
+              background-color: brown;
+              border: thin solid black;
+              width: 20%;
+            }
+
+            .container11 {
+              background-color: aquamarine;
+              display: flex;
+              flex-flow: row nowrap;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container11</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>flex-flow: row nowrap;</code></strong> y los elementos
+          hijos <strong><code>.item-c11</code></strong> se distribuyen en una
+          fila de izquierda a derecha, sin ajustar su tamaño.
+        </p>
+      </section>
+      <section>
+        <h3>row wrap</h3>
+        <p>
+          El valor <strong><code>row wrap</code></strong> distribuye los
+          elementos flexibles en una fila de izquierda a derecha, ajustando su
+          tamaño si es necesario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container12">
+          <div class="item-c12">item1</div>
+          <div class="item-c12">item2</div>
+          <div class="item-c12">item3</div>
+          <div class="item-c12">item4</div>
+          <div class="item-c12">item5</div>
+          <div class="item-c12">item6</div>
+          <div class="item-c12">item7</div>
+          <div class="item-c12">item8</div>
+          <div class="item-c12">item9</div>
+          <div class="item-c12">item10</div>
+          <div class="item-c12">item11</div>
+          <div class="item-c12">item12</div>
+          <div class="item-c12">item13</div>
+          <div class="item-c12">item14</div>
+          <div class="item-c12">item15</div>
+          <div class="item-c12">item16</div>
+          <div class="item-c12">item17</div>
+          <div class="item-c12">item18</div>
+          <div class="item-c12">item19</div>
+          <div class="item-c12">item20</div>
+        </div>
+        <pre>
+          <code>
+            .item-c12 {
+              background-color: brown;
+              border: thin solid black;
+              width: 20%;
+            }
+
+            .container12 {
+              background-color: aquamarine;
+              display: flex;
+              flex-flow: row wrap;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container12</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>flex-flow: row wrap;</code></strong> y los elementos
+          hijos se distribuyen en una fila de izquierda a derecha, ajustando su
+          tamaño si es necesario.
+        </p>
+      </section>
+      <section>
+        <h3>column nowrap</h3>
+        <p>
+          El valor <strong><code>column nowrap</code></strong> distribuye los
+          elementos flexibles en una columna de arriba hacia abajo, sin ajustar
+          su tamaño.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container13">
+          <div class="item-c13">item1</div>
+          <div class="item-c13">item2</div>
+          <div class="item-c13">item3</div>
+          <div class="item-c13">item4</div>
+          <div class="item-c13">item5</div>
+          <div class="item-c13">item6</div>
+          <div class="item-c13">item7</div>
+          <div class="item-c13">item8</div>
+          <div class="item-c13">item9</div>
+          <div class="item-c13">item10</div>
+          <div class="item-c13">item11</div>
+          <div class="item-c13">item12</div>
+          <div class="item-c13">item13</div>
+          <div class="item-c13">item14</div>
+          <div class="item-c13">item15</div>
+          <div class="item-c13">item16</div>
+          <div class="item-c13">item17</div>
+          <div class="item-c13">item18</div>
+          <div class="item-c13">item19</div>
+          <div class="item-c13">item20</div>
+        </div>
+        <pre>
+          <code>
+            .item-c13 {
+              background-color: brown;
+              border: thin solid black;
+              width: 20%;
+            }
+
+            .container13 {
+              background-color: aquamarine;
+              display: flex;
+              flex-flow: column nowrap;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container13</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>flex-flow: column nowrap;</code></strong> y los
+          elementos hijos se distribuyen en una columna de arriba hacia abajo,
+          sin ajustar su tamaño.
+        </p>
+      </section>
+      <section>
+        <h3>column wrap</h3>
+        <p>
+          El valor <strong><code>column wrap</code></strong> distribuye los
+          elementos flexibles en una columna de arriba hacia abajo, ajustando su
+          tamaño si es necesario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container14">
+          <div class="item-c14">item1</div>
+          <div class="item-c14">item2</div>
+          <div class="item-c14">item3</div>
+          <div class="item-c14">item4</div>
+          <div class="item-c14">item5</div>
+          <div class="item-c14">item6</div>
+          <div class="item-c14">item7</div>
+          <div class="item-c14">item8</div>
+          <div class="item-c14">item9</div>
+          <div class="item-c14">item10</div>
+          <div class="item-c14">item11</div>
+          <div class="item-c14">item12</div>
+          <div class="item-c14">item13</div>
+          <div class="item-c14">item14</div>
+          <div class="item-c14">item15</div>
+          <div class="item-c14">item16</div>
+          <div class="item-c14">item17</div>
+          <div class="item-c14">item18</div>
+          <div class="item-c14">item19</div>
+          <div class="item-c14">item20</div>
+        </div>
+        <pre>
+          <code>
+            .item-c14 {
+              background-color: brown;
+              border: thin solid black;
+              width: 20%;
+            }
+
+            .container14 {
+              background-color: aquamarine;
+              display: flex;
+              flex-flow: column wrap;
+              height: 40vh;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container14</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>flex-flow: column wrap;</code></strong> y los elementos
+          se distribuyen en una columna de arriba hacia abajo, ajustando su
+          tamaño si es necesario.
+        </p>
+      </section>
+    </section>
+    <section class="justify-content">
+      <h2>Propiedad justify-content</h2>
+      <p>
+        La propiedad <strong><code>justify-content</code></strong> alinea los
+        elementos flexibles en el contenedor a lo largo del eje principal. Puede
+        tener los siguientes valores:
+      </p>
+      <section>
+        <h3>flex-start</h3>
+        <p>
+          Este es el valor predeterminado de la propiedad y alinea los elementos
+          flexibles al principio del contenedor.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container15">
+          <div class="item-c15">item1</div>
+          <div class="item-c15">item2</div>
+          <div class="item-c15">item3</div>
+          <div class="item-c15">item4</div>
+          <div class="item-c15">item5</div>
+          <div class="item-c15">item6</div>
+          <div class="item-c15">item7</div>
+          <div class="item-c15">item8</div>
+          <div class="item-c15">item9</div>
+          <div class="item-c15">item10</div>
+          <div class="item-c15">item11</div>
+          <div class="item-c15">item12</div>
+        </div>
+        <pre>
+          <code>
+            .item-c15 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container15 {
+              background-color: aquamarine;
+              display: flex;
+              justify-content: flex-start;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container15</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>justify-content: flex-start;</code></strong> y los
+          elementos se alinean al principio del contenedor en la dirección del
+          eje principal.
+        </p>
+      </section>
+      <section>
+        <h3>center</h3>
+        <p>
+          El valor <strong><code>center</code></strong> alinea los elementos
+          flexibles en el centro del contenedor.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container16">
+          <div class="item-c16">item1</div>
+          <div class="item-c16">item2</div>
+          <div class="item-c16">item3</div>
+          <div class="item-c16">item4</div>
+          <div class="item-c16">item5</div>
+          <div class="item-c16">item6</div>
+          <div class="item-c16">item7</div>
+          <div class="item-c16">item8</div>
+          <div class="item-c16">item9</div>
+          <div class="item-c16">item10</div>
+          <div class="item-c16">item11</div>
+          <div class="item-c16">item12</div>
+        </div>
+        <pre>
+          <code>
+            .item-c16 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container16 {
+              background-color: aquamarine;
+              display: flex;
+              justify-content: center;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container16</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>justify-content: center;</code></strong> y los elementos
+          se alinean en el centro del contenedor en la dirección del eje
+          principal.
+        </p>
+      </section>
+      <section>
+        <h3>flex-end</h3>
+        <p>
+          El valor <strong><code>flex-end</code></strong> alinea los elementos
+          flexibles al final del contenedor.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container17">
+          <div class="item-c17">item1</div>
+          <div class="item-c17">item2</div>
+          <div class="item-c17">item3</div>
+          <div class="item-c17">item4</div>
+          <div class="item-c17">item5</div>
+          <div class="item-c17">item6</div>
+          <div class="item-c17">item7</div>
+          <div class="item-c17">item8</div>
+          <div class="item-c17">item9</div>
+          <div class="item-c17">item10</div>
+          <div class="item-c17">item11</div>
+          <div class="item-c17">item12</div>
+        </div>
+        <pre>
+          <code>
+            .item-c17 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container17 {
+              background-color: aquamarine;
+              display: flex;
+              justify-content: flex-end;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container17</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>justify-content: flex-end;</code></strong> y los
+          elementos se alinean al final del contenedor en la dirección del eje
+          principal.
+        </p>
+      </section>
+      <section>
+        <h3>space-between</h3>
+        <p>
+          El valor <strong><code>space-between</code></strong> distribuye los
+          elementos flexibles con el mismo espacio entre ellos.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container18">
+          <div class="item-c18">item1</div>
+          <div class="item-c18">item2</div>
+          <div class="item-c18">item3</div>
+          <div class="item-c18">item4</div>
+          <div class="item-c18">item5</div>
+          <div class="item-c18">item6</div>
+          <div class="item-c18">item7</div>
+          <div class="item-c18">item8</div>
+          <div class="item-c18">item9</div>
+          <div class="item-c18">item10</div>
+          <div class="item-c18">item11</div>
+          <div class="item-c18">item12</div>
+        </div>
+        <pre>
+          <code>
+            .item-c18 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container18 {
+              background-color: aquamarine;
+              display: flex;
+              justify-content: space-between;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container18</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>justify-content: space-between;</code></strong> y los
+          elementos se distribuyen con el mismo espacio entre ellos en la
+          dirección del eje principal.
+        </p>
+      </section>
+      <section>
+        <h3>space-around</h3>
+        <p>
+          El valor <strong><code>space-around</code></strong> distribuye los
+          elementos flexibles con el mismo espacio alrededor de ellos.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container19">
+          <div class="item-c19">item1</div>
+          <div class="item-c19">item2</div>
+          <div class="item-c19">item3</div>
+          <div class="item-c19">item4</div>
+          <div class="item-c19">item5</div>
+          <div class="item-c19">item6</div>
+          <div class="item-c19">item7</div>
+          <div class="item-c19">item8</div>
+          <div class="item-c19">item9</div>
+          <div class="item-c19">item10</div>
+          <div class="item-c19">item11</div>
+          <div class="item-c19">item12</div>
+        </div>
+        <pre>
+          <code>
+            .item-c19 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container19 {
+              background-color: aquamarine;
+              display: flex;
+              justify-content: space-around;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container19</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>justify-content: space-around;</code></strong> y los
+          elementos se distribuyen con el mismo espacio alrededor de ellos en la
+          dirección del eje principal.
+        </p>
+      </section>
+      <section>
+        <h3>space-evenly</h3>
+        <p>
+          El valor <strong><code>space-evenly</code></strong> distribuye los
+          elementos flexibles con el mismo espacio alrededor de ellos, incluido
+          el espacio antes del primer elemento y después del último.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container20">
+          <div class="item-c20">item1</div>
+          <div class="item-c20">item2</div>
+          <div class="item-c20">item3</div>
+          <div class="item-c20">item4</div>
+          <div class="item-c20">item5</div>
+          <div class="item-c20">item6</div>
+          <div class="item-c20">item7</div>
+          <div class="item-c20">item8</div>
+          <div class="item-c20">item9</div>
+          <div class="item-c20">item10</div>
+          <div class="item-c20">item11</div>
+          <div class="item-c20">item12</div>
+        </div>
+        <pre>
+          <code>
+            .item-c20 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container20 {
+              background-color: aquamarine;
+              display: flex;
+              justify-content: space-evenly;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container20</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>justify-content: space-evenly;</code></strong> y los
+          elementos se distribuyen con el mismo espacio alrededor de ellos,
+          incluido el espacio antes del primer elemento y después del último en
+          la dirección del eje principal.
+        </p>
+      </section>
+    </section>
+    <section class="align-items">
+      <h2>Propiedad align-items</h2>
+      <p>
+        La propiedad <strong><code>align-items</code></strong> alinea los
+        elementos flexibles en el contenedor a lo largo del eje secundario
+        (cross axis). Puede tener los siguientes valores:
+      </p>
+      <section>
+        <h3>stretch</h3>
+        <p>
+          Este es el valor predeterminado de la propiedad y estira los elementos
+          flexibles para que ocupen todo el espacio disponible en el eje
+          secundario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container21">
+          <div class="item-c21">item1</div>
+          <div class="item-c21">item2</div>
+          <div class="item-c21">item3</div>
+          <div class="item-c21">item4</div>
+          <div class="item-c21">item5</div>
+          <div class="item-c21">item6</div>
+          <div class="item-c21">item7</div>
+          <div class="item-c21">item8</div>
+          <div class="item-c21">item9</div>
+          <div class="item-c21">item10</div>
+          <div class="item-c21">item11</div>
+          <div class="item-c21">item12</div>
+        </div>
+        <pre>
+          <code>
+            .item-c21 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container21 {
+              background-color: aquamarine;
+              display: flex;
+              align-items: stretch;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container21</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>align-items: stretch;</code></strong> y los elementos se
+          estiran para que ocupen todo el espacio disponible en el eje
+          secundario.
+        </p>
+      </section>
+      <section>
+        <h3>flex-start</h3>
+        <p>
+          El valor <strong><code>flex-start</code></strong> alinea los elementos
+          flexibles al principio del contenedor en el eje secundario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container22">
+          <div class="item-c22">item1</div>
+          <div class="item-c22">item2</div>
+          <div class="item-c22">item3</div>
+          <div class="item-c22">item4</div>
+          <div class="item-c22">item5</div>
+          <div class="item-c22">item6</div>
+          <div class="item-c22">item7</div>
+          <div class="item-c22">item8</div>
+          <div class="item-c22">item9</div>
+          <div class="item-c22">item10</div>
+          <div class="item-c22">item11</div>
+          <div class="item-c22">item12</div>
+        </div>
+        <pre>
+          <code>
+            .item-c22 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container22 {
+              background-color: aquamarine;
+              display: flex;
+              align-items: flex-start;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container22</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>align-items: flex-start;</code></strong> y los elementos
+          se alinean al principio del contenedor en el eje secundario.
+        </p>
+      </section>
+      <section>
+        <h3>center</h3>
+        <p>
+          El valor <strong><code>center</code></strong> alinea los elementos
+          flexibles en el centro del contenedor en el eje secundario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container23">
+          <div class="item-c23">item1</div>
+          <div class="item-c23">item2</div>
+          <div class="item-c23">item3</div>
+          <div class="item-c23">item4</div>
+          <div class="item-c23">item5</div>
+          <div class="item-c23">item6</div>
+          <div class="item-c23">item7</div>
+          <div class="item-c23">item8</div>
+          <div class="item-c23">item9</div>
+          <div class="item-c23">item10</div>
+          <div class="item-c23">item11</div>
+          <div class="item-c23">item12</div>
+        </div>
+        <pre>
+          <code>
+            .item-c23 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container23 {
+              background-color: aquamarine;
+              display: flex;
+              align-items: center;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container23</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>align-items: center;</code></strong> y los elementos se
+          alinean en el centro del contenedor en el eje secundario.
+        </p>
+      </section>
+      <section>
+        <h3>flex-end</h3>
+        <p>
+          El valor <strong><code>flex-end</code></strong> alinea los elementos
+          flexibles al final del contenedor en el eje secundario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container24">
+          <div class="item-c24">item1</div>
+          <div class="item-c24">item2</div>
+          <div class="item-c24">item3</div>
+          <div class="item-c24">item4</div>
+          <div class="item-c24">item5</div>
+          <div class="item-c24">item6</div>
+          <div class="item-c24">item7</div>
+          <div class="item-c24">item8</div>
+          <div class="item-c24">item9</div>
+          <div class="item-c24">item10</div>
+          <div class="item-c24">item11</div>
+          <div class="item-c24">item12</div>
+        </div>
+        <pre>
+          <code>
+            .item-c24 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container24 {
+              background-color: aquamarine;
+              display: flex;
+              align-items: flex-end;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container24</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>align-items: flex-end;</code></strong> y los elementos
+          se alinean al final del contenedor en el eje secundario.
+        </p>
+      </section>
+      <section>
+        <h3>baseline</h3>
+        <p>
+          El valor <strong><code>baseline</code></strong> alinea los elementos
+          flexibles en la línea base del contenedor en el eje secundario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container25">
+          <div class="item-c25">item1</div>
+          <div class="item-c25">item2</div>
+          <div class="item-c25">item3</div>
+          <div class="item-c25">item4</div>
+          <div class="item-c25">item5</div>
+          <div class="item-c25">item6</div>
+          <div class="item-c25">item7</div>
+          <div class="item-c25">item8</div>
+          <div class="item-c25">item9</div>
+          <div class="item-c25">item10</div>
+          <div class="item-c25">item11</div>
+          <div class="item-c25">item12</div>
+        </div>
+        <pre>
+          <code>
+            .item-c25 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container25 {
+              background-color: aquamarine;
+              display: flex;
+              align-items: baseline;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container25</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong> y
+          <strong><code>align-items: baseline;</code></strong> y los elementos
+          se alinean en la línea base del contenedor en el eje secundario.
+        </p>
+      </section>
+    </section>
+    <section class="align-content">
+      <h2>Propiedad align-content</h2>
+      <p>
+        La propiedad <strong><code>align-content</code></strong> alinea las
+        líneas de los elementos flexibles en el contenedor a lo largo del eje
+        secundario. Solo se aplica si hay varias líneas de elementos flexibles
+        en el contenedor (propiedad wrap en : wrap o wrap-reverse). Puede tener
+        los siguientes valores:
+      </p>
+      <section>
+        <h3>stretch</h3>
+        <p>
+          Este es el valor predeterminado de la propiedad y estira las líneas de
+          los elementos flexibles para que ocupen todo el espacio disponible en
+          el eje secundario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container26">
+          <div class="item-c26">item1</div>
+          <div class="item-c26">item2</div>
+          <div class="item-c26">item3</div>
+          <div class="item-c26">item4</div>
+          <div class="item-c26">item5</div>
+          <div class="item-c26">item6</div>
+          <div class="item-c26">item7</div>
+          <div class="item-c26">item8</div>
+          <div class="item-c26">item9</div>
+          <div class="item-c26">item10</div>
+          <div class="item-c26">item11</div>
+          <div class="item-c26">item12</div>
+          <div class="item-c26">item13</div>
+          <div class="item-c26">item14</div>
+          <div class="item-c26">item15</div>
+          <div class="item-c26">item16</div>
+          <div class="item-c26">item17</div>
+          <div class="item-c26">item18</div>
+          <div class="item-c26">item19</div>
+          <div class="item-c26">item20</div>
+        </div>
+        <pre>
+          <code>
+            .item-c26 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container26 {
+              background-color: aquamarine;
+              display: flex;
+              flex-wrap: wrap;
+              align-content: stretch;
+              height: 40vh;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container26</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong
+          >, <strong><code>flex-wrap : wrap;</code></strong> y la propiedad
+          <strong><code>align-content: stretch;</code></strong> y las líneas de
+          los elementos se estiran para que ocupen todo el espacio disponible en
+          el eje secundario.
+        </p>
+      </section>
+      <section>
+        <h3>flex-start</h3>
+        <p>
+          El valor <strong><code>flex-start</code></strong> alinea las líneas de
+          los elementos flexibles al principio del contenedor en el eje
+          secundario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container27">
+          <div class="item-c27">item1</div>
+          <div class="item-c27">item2</div>
+          <div class="item-c27">item3</div>
+          <div class="item-c27">item4</div>
+          <div class="item-c27">item5</div>
+          <div class="item-c27">item6</div>
+          <div class="item-c27">item7</div>
+          <div class="item-c27">item8</div>
+          <div class="item-c27">item9</div>
+          <div class="item-c27">item10</div>
+          <div class="item-c27">item11</div>
+          <div class="item-c27">item12</div>
+          <div class="item-c27">item13</div>
+          <div class="item-c27">item14</div>
+          <div class="item-c27">item15</div>
+          <div class="item-c27">item16</div>
+          <div class="item-c27">item17</div>
+          <div class="item-c27">item18</div>
+          <div class="item-c27">item19</div>
+          <div class="item-c27">item20</div>
+        </div>
+        <pre>
+          <code>
+            .item-c27 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container27 {
+              background-color: aquamarine;
+              display: flex;
+              flex-wrap: wrap;
+              align-content: flex-start;
+              height: 40vh;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container27</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong
+          >, <strong><code>flex-wrap : wrap;</code></strong> y la propiedad
+          <strong><code>align-content: flex-start;</code></strong> y las líneas
+          de los elementos se alinean al principio del contenedor en el eje
+          secundario.
+        </p>
+      </section>
+      <section>
+        <h3>center</h3>
+        <p>
+          El valor <strong><code>center</code></strong> alinea las líneas de los
+          elementos flexibles en el centro del contenedor en el eje secundario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container28">
+          <div class="item-c28">item1</div>
+          <div class="item-c28">item2</div>
+          <div class="item-c28">item3</div>
+          <div class="item-c28">item4</div>
+          <div class="item-c28">item5</div>
+          <div class="item-c28">item6</div>
+          <div class="item-c28">item7</div>
+          <div class="item-c28">item8</div>
+          <div class="item-c28">item9</div>
+          <div class="item-c28">item10</div>
+          <div class="item-c28">item11</div>
+          <div class="item-c28">item12</div>
+          <div class="item-c28">item13</div>
+          <div class="item-c28">item14</div>
+          <div class="item-c28">item15</div>
+          <div class="item-c28">item16</div>
+          <div class="item-c28">item17</div>
+          <div class="item-c28">item18</div>
+          <div class="item-c28">item19</div>
+          <div class="item-c28">item20</div>
+        </div>
+        <pre>
+          <code>
+            .item-c28 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container28 {
+              background-color: aquamarine;
+              display: flex;
+              flex-wrap: wrap;
+              align-content: center;
+              height: 40vh;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container28</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong
+          >, <strong><code>flex-wrap : wrap;</code></strong> y la propiedad
+          <strong><code>align-content: center;</code></strong> y las líneas de
+          los elementos se alinean en el centro del contenedor en el eje
+          secundario.
+        </p>
+      </section>
+      <section>
+        <h3>flex-end</h3>
+        <p>
+          El valor <strong><code>flex-end</code></strong> alinea las líneas de
+          los elementos flexibles al final del contenedor en el eje secundario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container29">
+          <div class="item-c29">item1</div>
+          <div class="item-c29">item2</div>
+          <div class="item-c29">item3</div>
+          <div class="item-c29">item4</div>
+          <div class="item-c29">item5</div>
+          <div class="item-c29">item6</div>
+          <div class="item-c29">item7</div>
+          <div class="item-c29">item8</div>
+          <div class="item-c29">item9</div>
+          <div class="item-c29">item10</div>
+          <div class="item-c29">item11</div>
+          <div class="item-c29">item12</div>
+          <div class="item-c29">item13</div>
+          <div class="item-c29">item14</div>
+          <div class="item-c29">item15</div>
+          <div class="item-c29">item16</div>
+          <div class="item-c29">item17</div>
+          <div class="item-c29">item18</div>
+          <div class="item-c29">item19</div>
+          <div class="item-c29">item20</div>
+        </div>
+        <pre>
+          <code>
+            .item-c29 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container29 {
+              background-color: aquamarine;
+              display: flex;
+              flex-wrap: wrap;
+              align-content: flex-end;
+              height: 40vh;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container29</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong
+          >, <strong><code> flex-wrap : wrap;</code></strong> y la propiedad
+          <strong><code>align-content: flex-end;</code></strong> y las líneas de
+          los elementos se alinean al final del contenedor en el eje secundario.
+        </p>
+      </section>
+      <section>
+        <h3>space-between</h3>
+        <p>
+          El valor <strong><code>space-between</code></strong> distribuye las
+          líneas de los elementos flexibles con el mismo espacio entre ellas.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container30">
+          <div class="item-c30">item1</div>
+          <div class="item-c30">item2</div>
+          <div class="item-c30">item3</div>
+          <div class="item-c30">item4</div>
+          <div class="item-c30">item5</div>
+          <div class="item-c30">item6</div>
+          <div class="item-c30">item7</div>
+          <div class="item-c30">item8</div>
+          <div class="item-c30">item9</div>
+          <div class="item-c30">item10</div>
+          <div class="item-c30">item11</div>
+          <div class="item-c30">item12</div>
+          <div class="item-c30">item13</div>
+          <div class="item-c30">item14</div>
+          <div class="item-c30">item15</div>
+          <div class="item-c30">item16</div>
+          <div class="item-c30">item17</div>
+          <div class="item-c30">item18</div>
+          <div class="item-c30">item19</div>
+          <div class="item-c30">item20</div>
+        </div>
+        <pre>
+          <code>
+            .item-c30 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container30 {
+              background-color: aquamarine;
+              display: flex;
+              flex-wrap: wrap;
+              align-content: space-between;
+              height: 40vh;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container30</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong
+          >, <strong><code>flex-wrap : wrap;</code></strong> y la propiedad
+          <strong><code>align-content: space-between;</code></strong> y las
+          líneas de los elementos se distribuyen con el mismo espacio entre
+          ellas en el eje secundario.
+        </p>
+      </section>
+      <section>
+        <h3>space-around</h3>
+        <p>
+          El valor <strong><code>space-around</code></strong> distribuye las
+          líneas de los elementos flexibles con el mismo espacio alrededor de
+          ellas.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container31">
+          <div class="item-c31">item1</div>
+          <div class="item-c31">item2</div>
+          <div class="item-c31">item3</div>
+          <div class="item-c31">item4</div>
+          <div class="item-c31">item5</div>
+          <div class="item-c31">item6</div>
+          <div class="item-c31">item7</div>
+          <div class="item-c31">item8</div>
+          <div class="item-c31">item9</div>
+          <div class="item-c31">item10</div>
+          <div class="item-c31">item11</div>
+          <div class="item-c31">item12</div>
+          <div class="item-c31">item13</div>
+          <div class="item-c31">item14</div>
+          <div class="item-c31">item15</div>
+          <div class="item-c31">item16</div>
+          <div class="item-c31">item17</div>
+          <div class="item-c31">item18</div>
+          <div class="item-c31">item19</div>
+          <div class="item-c31">item20</div>
+        </div>
+        <pre>
+          <code>
+            .item-c31 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container31 {
+              background-color: aquamarine;
+              display: flex;
+              flex-wrap: wrap;
+              align-content: space-around;
+              height: 40vh;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container31</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong
+          >, <strong><code>flex -wrap : wrap;</code></strong> y la propiedad
+          <strong><code>align-content: space-around;</code></strong> y las
+          líneas de los elementos se distribuyen con el mismo espacio alrededor
+          de ellas en el eje secundario.
+        </p>
+      </section>
+      <section>
+        <h3>space-evenly</h3>
+        <p>
+          El valor <strong><code>space-evenly</code></strong> distribuye las
+          líneas de los elementos flexibles con el mismo espacio alrededor de
+          ellas, incluido el espacio antes de la primera línea y después de la
+          última.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container32">
+          <div class="item-c32">item1</div>
+          <div class="item-c32">item2</div>
+          <div class="item-c32">item3</div>
+          <div class="item-c32">item4</div>
+          <div class="item-c32">item5</div>
+          <div class="item-c32">item6</div>
+          <div class="item-c32">item7</div>
+          <div class="item-c32">item8</div>
+          <div class="item-c32">item9</div>
+          <div class="item-c32">item10</div>
+          <div class="item-c32">item11</div>
+          <div class="item-c32">item12</div>
+          <div class="item-c32">item13</div>
+          <div class="item-c32">item14</div>
+          <div class="item-c32">item15</div>
+          <div class="item-c32">item16</div>
+          <div class="item-c32">item17</div>
+          <div class="item-c32">item18</div>
+          <div class="item-c32">item19</div>
+          <div class="item-c32">item20</div>
+        </div>
+        <pre>
+          <code>
+            .item-c32 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+            }
+
+            .container32 {
+              background-color: aquamarine;
+              display: flex;
+              flex-wrap: wrap;
+              align-content: space-evenly;
+              height: 40vh;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container32</code></strong> tiene la propiedad
+          <strong><code>display: flex;</code></strong
+          >, <strong><code>flex-wrap : wrap;</code></strong> y la propiedad
+          <strong><code>align-content: space-evenly;</code></strong> y las
+          líneas de los elementos se distribuyen con el mismo espacio alrededor
+          de ellas, incluido el espacio antes de la primera línea y después de
+          la última en el eje secundario.
+        </p>
+      </section>
+      <p><strong>Nota:</strong>
+      A diferencia de la propiedad <strong><code>justify-content</code></strong>, la propiedad <strong><code>align-content</code></strong> no tiene efecto si solo hay una línea de elementos flexibles en el contenedor.</p>
+      </p>
+    </section>
+    <section class="flex-grow">
+      <h2>Propiedad flex-grow</h2>
+      <p>
+        La propiedad <strong><code>flex-grow</code></strong> especifica cuánto
+        debe crecer un elemento flexible en relación con los otros elementos
+        flexibles cuando hay espacio adicional en el contenedor. El valor por defecto es <strong><code>flex-grow: 0;</code></strong>      
+      </p>
+      <h4>Ejemplo:</h4>
+      <div class="container33">
+        <div class="item-c33">item1</div>
+        <div class="item-c33">item2</div>
+        <div class="item-c33">item3</div>
+      </div>
+      <pre>
+        <code>
+          .item-c33 {
+            background-color: brown;
+            border: thin solid black;
+            width: 100px;
+            flex-grow: 1;
+          }
+          .container33 {
+            width: 100%;
+            height: 50vh;
+            background-color: aquamarine;
+            display: flex;
+          }
+        </code>
+      </pre>
+      <p>
+        En el ejemplo anterior, los elementos flexibles tienen la propiedad
+        <strong><code>flex-grow: 1;</code></strong> y crecen en relación con los
+        otros elementos flexibles cuando hay espacio adicional en el contenedor.
+      </p>
+    </section>
+    <section>
+      <h2>Propiedad flex-shrink</h2>
+      <p>
+        La propiedad <strong><code>flex-shrink</code></strong> especifica cuánto
+        debe encogerse un elemento flexible en relación con los otros elementos
+        flexibles cuando no hay espacio suficiente en el contenedor. El valor por defecto es <strong><code>flex-shrink: 1;</code></strong>
+      </p>
+      <h4>Ejemplo:</h4>
+      <div class="container34">
+        <div class="item-c34">item1</div>
+        <div class="item-c34">item2</div>
+        <div class="item-c34">item3</div>
+      </div>
+      <pre>
+        <code>
+          .item-c34 {
+            background-color: brown;
+            border: thin solid black;
+            width: 100px;
+            flex-shrink: 1;
+          }
+          .item-c34:nth-child(2) {
+            flex-shrink: 2;
+          }
+          .container34 {
+            width: 100%;
+            height: 50vh;
+            background-color: aquamarine;
+            display: flex;
+          }
+        </code>
+      </pre>
+      <p>
+        En el ejemplo anterior, los elementos flexibles tienen la propiedad
+        <strong><code>flex-shrink: 1;</code></strong> y se encogen en relación
+        con los otros elementos flexibles cuando no hay espacio suficiente en el
+        contenedor. El segundo elemento tiene la propiedad
+        <strong><code>flex-shrink: 2;</code></strong> y se encoge el doble que
+        los otros elementos flexibles.
+      </p>
+      <p> 
+        <strong>Nota:</strong> Si todos los elementos flexibles tienen
+        <strong><code>flex-shrink: 0;</code></strong>, no se encogerán.
+      </p>
+    </section>
+    <section class="flex-basis">
+      <h2>Propiedad flex-basis</h2>
+      <p>
+        La propiedad <strong><code>flex-basis</code></strong> especifica el
+        tamaño inicial de un elemento flexible antes de que se distribuya el
+        espacio adicional o se encoge. El valor por defecto es <strong><code>flex-basis: auto;</code></strong>
+      </p>
+      <h4>Ejemplo:</h4>
+      <div class="container35">
+        <div class="item-c35">item1</div>
+        <div class="item-c35">item2</div>
+        <div class="item-c35">item3</div>
+      </div>
+      <pre>
+        <code>
+          .item-c35 {
+            background-color: brown;
+            border: thin solid black;
+            width: 100px;
+            flex-basis: 200px;
+          }
+          .container35 {
+            width: 100%;
+            height: 50vh;
+            background-color: aquamarine;
+            display: flex;
+          }
+        </code>
+      </pre>
+      <p>
+        En el ejemplo anterior, los elementos flexibles tienen la propiedad
+        <strong><code>flex-basis: 200px;</code></strong> y tienen un tamaño
+        inicial de 200px antes de que se distribuya el espacio adicional o se
+        encogen.
+      </p>
+      <p>
+        Si el flex direction es row, la propiedad <strong><code>flex-basis</code></strong> establece el ancho inicial del elemento flexible. Si el flex direction es column, la propiedad <strong><code>flex-basis</code></strong> establece la altura inicial del elemento flexible.
+      </p>
+    </section>
+    <section class="shorthand-flex">
+      <h2>Shorthand flex</h2>
+      <p>
+        La propiedad <strong><code>flex</code></strong> es una propiedad abreviada
+        que combina las propiedades <strong><code>flex-grow</code></strong>,
+        <strong><code>flex-shrink</code></strong> y
+        <strong><code>flex-basis</code></strong> en una sola propiedad.
+      </p>
+      <h4>Ejemplo:</h4>
+      <div>
+        <div class="container36">
+          <div class="item-c36">item1</div>
+          <div class="item-c36">item2</div>
+          <div class="item-c36">item3</div>
+        </div>
+        <pre>
+          <code>
+            .item-c36 {
+              background-color: brown;
+              border: thin solid black;
+              flex: 1 1 200px;
+            }
+            .container36 {
+              width: 100%;
+              height: 50vh;
+              background-color: aquamarine;
+              display: flex;
+            }
+          </code>
+        </pre>
+        <P>
+          En el ejemplo anterior, los elementos flexibles tienen la propiedad
+          <strong><code>flex: 1 1 200px;</code></strong> que es una propiedad
+          abreviada de <strong><code>flex-grow: 1;</code></strong>,
+          <strong><code>flex-shrink: 1;</code></strong> y
+          <strong><code>flex-basis: 200px;</code></strong>.
+        </P>
+        <p>
+          Si se especifica un solo valor, este es el valor de
+          <strong><code>flex-grow</code></strong>. Si se especifican dos valores,
+          el primer valor es el valor de <strong><code>flex-grow</code></strong> y
+          el segundo valor es el valor de <strong><code>flex-shrink</code></strong>.
+          Si se especifican tres valores, el primer valor es el valor de
+          <strong><code>flex-grow</code></strong>, el segundo valor es el valor de
+          <strong><code>flex-shrink</code></strong> y el tercer valor es el valor de
+          <strong><code>flex-basis</code></strong>.
+        </p>
+    </section>
+    <section class="order">
+      <h2>Propiedad order</h2>
+      <p>
+        La propiedad <strong><code>order</code></strong> especifica el orden de
+        los elementos flexibles en el contenedor. El valor por defecto es
+        <strong><code>order: 0;</code></strong>
+      </p>
+      <h4>Ejemplo:</h4>
+      <div class="container37">
+        <div class="item-c37">item1</div>
+        <div class="item-c37">item2</div>
+        <div class="item-c37">item3</div>
+      </div>
+      <pre>
+        <code>
+          .container37 {
+            width: 100%;
+            height: 50vh;
+            background-color: aquamarine;
+            display: flex;
+            flex-direction: row;
+          }
+          .item-c37 {
+            background-color: brown;
+            border: thin solid black;
+            width: 100px;
+          }
+          .item-c37:nth-child(2) {
+            order: -1;
+          }
+        </code>
+      </pre>
+      <p>
+        En el ejemplo anterior, el segundo elemento tiene la propiedad
+        <strong><code>order: -1;</code></strong> y se muestra antes que los
+        otros elementos flexibles en el contenedor.
+      </p>
+      <p>
+        Los elementos flexibles con un valor de <strong><code>order</code></strong>
+        menor se muestran antes que los elementos flexibles con un valor de
+        <strong><code>order</code></strong> mayor.
+      </p>
+    </section>
+    <section class="align-self">
+      <h2>Propiedad align-self</h2>
+      <p>
+        La propiedad <strong><code>align-self</code></strong> especifica la
+        alineación de un elemento flexible en el contenedor, anulando la
+        propiedad <strong><code>align-items</code></strong> del contenedor. El
+        valor por defecto es <strong><code>align-self: auto;</code></strong>.Esta propiedad puede tener los siguientes valores:
+      </p>
+      <section>
+        <h3>auto</h3>
+        <p>
+          El valor <strong><code>auto</code></strong> usa el valor de la
+          propiedad <strong><code>align-items</code></strong> del contenedor.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container38">
+          <div class="item-c38">item1</div>
+          <div class="item-c38">item2</div>
+          <div class="item-c38">item3</div>
+        </div>
+        <pre>
+          <code>
+            .container38 {
+              width: 100%;
+              height: 50vh;
+              background-color: aquamarine;
+              display: flex;
+              align-items: flex-start;
+            }
+            .item-c38 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+              align-self: auto;
+            }
+            .item-c38:nth-child(2) {
+              align-self: flex-end;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container38</code></strong> tiene la propiedad
+          <strong><code>align-items: flex-start;</code></strong> y el segundo
+          elemento tiene la propiedad
+          <strong><code>align-self: flex-end;</code></strong> y se alinea al
+          final del contenedor en el eje secundario.
+        </p>
+      </section>
+      <section>
+        <h3>flex-start</h3>
+        <p>
+          El valor <strong><code>flex-start</code></strong> alinea el elemento
+          flexible al principio del contenedor en el eje secundario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container39">
+          <div class="item-c39">item1</div>
+          <div class="item-c39">item2</div>
+          <div class="item-c39">item3</div>
+        </div>
+        <pre>
+          <code>
+            .container39 {
+              width: 100%;
+              height: 50vh;
+              background-color: aquamarine;
+              display: flex;
+              align-items: flex-start;
+            }
+            .item-c39 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+              align-self: flex-start;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container39</code></strong> tiene la propiedad
+          <strong><code>align-items: flex-start;</code></strong> y los elementos
+          se alinean al principio del contenedor en el eje secundario.
+        </p>
+      </section>
+      <section>
+        <h3>flex-end</h3>
+        <p>
+          El valor <strong><code>flex-end</code></strong> alinea el elemento
+          flexible al final del contenedor en el eje secundario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container40">
+          <div class="item-c40">item1</div>
+          <div class="item-c40">item2</div>
+          <div class="item-c40">item3</div>
+        </div>
+        <pre>
+          <code>
+            .container40 {
+              width: 100%;
+              height: 50vh;
+              background-color: aquamarine;
+              display: flex;
+              align-items: flex-start;
+            }
+            .item-c40 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+              align-self: flex-end;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container40</code></strong> tiene la propiedad
+          <strong><code>align-items: flex-start;</code></strong> y los elementos
+          se alinean al final del contenedor en el eje secundario.
+        </p>
+      </section>
+      <section>
+        <h3>center</h3>
+        <p>
+          El valor <strong><code>center</code></strong> alinea el elemento
+          flexible en el centro del contenedor en el eje secundario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container41">
+          <div class="item-c41">item1</div>
+          <div class="item-c41">item2</div>
+          <div class="item-c41">item3</div>
+        </div>
+        <pre>
+          <code>
+            .container41 {
+              width: 100%;
+              height: 50vh;
+              background-color: aquamarine;
+              display: flex;
+              align-items: flex-start;
+            }
+            .item-c41 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+              align-self: center;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container41</code></strong> tiene la propiedad
+          <strong><code>align-items: flex-start;</code></strong> y los elementos
+          se alinean en el centro del contenedor en el eje secundario.
+        </p>
+      </section>
+      <section>
+        <h3>baseline</h3>
+        <p>
+          El valor <strong><code>baseline</code></strong> alinea el elemento
+          flexible en la línea base del contenedor en el eje secundario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container42">
+          <div class="item-c42">item1</div>
+          <div class="item-c42">item2</div>
+          <div class="item-c42">item3</div>
+        </div>
+        <pre>
+          <code>
+            .container42 {
+              width: 100%;
+              height: 50vh;
+              background-color: aquamarine;
+              display: flex;
+              align-items: flex-start;
+            }
+            .item-c42 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+              align-self: baseline;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container42</code></strong> tiene la propiedad
+          <strong><code>align-items: flex-start;</code></strong> y los elementos
+          se alinean en la línea base del contenedor en el eje secundario.
+        </p>
+      </section>
+      <section>
+        <h3>stretch</h3>
+        <p>
+          El valor <strong><code>stretch</code></strong> estira el elemento
+          flexible para llenar el contenedor en el eje secundario.
+        </p>
+        <h4>Ejemplo:</h4>
+        <div class="container43">
+          <div class="item-c43">item1</div>
+          <div class="item-c43">item2</div>
+          <div class="item-c43">item3</div>
+        </div>
+        <pre>
+          <code>
+            .container43 {
+              width: 100%;
+              height: 50vh;
+              background-color: aquamarine;
+              display: flex;
+              align-items: flex-start;
+            }
+            .item-c43 {
+              background-color: brown;
+              border: thin solid black;
+              width: 100px;
+              align-self: stretch;
+            }
+          </code>
+        </pre>
+        <p>
+          En el ejemplo anterior, el contenedor
+          <strong><code>.container43</code></strong> tiene la propiedad
+          <strong><code>align-items: flex-start;</code></strong> y los elementos
+          se estiran para llenar el contenedor en el eje secundario.
+        </p>
+      </section>
+    </section>
+  </body>
+</html>
